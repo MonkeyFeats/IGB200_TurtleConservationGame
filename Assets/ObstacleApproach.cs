@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleApproach : MonoBehaviour
 {
-    public float moveSpeed = 2;
+    public float moveSpeed = 1;
 
     // Start is called before the first frame update
     void Start()
