@@ -168,7 +168,8 @@ namespace Match3
             {
                 FadeOut(() =>
                 {
-                    SceneManager.LoadScene(1, LoadSceneMode.Single); 
+                    //SceneManager.LoadScene(0);
+                    SceneManager.LoadScene(0); 
                 });
             };
             
@@ -239,7 +240,7 @@ namespace Match3
             var shopButton = m_Document.rootVisualElement.Q<Button>("ShopButton");
             shopButton.clicked += () =>
             {
-                ShowShop(true);
+                //ShowShop(true);
             };
 
             m_ShopRoot = m_Document.rootVisualElement.Q<VisualElement>("Shop");
@@ -423,7 +424,7 @@ namespace Match3
         void ShowWin()
         {
             MatchGameManager.Instance.WinTriggered();
-            TriggerCharacterAnimation(CharacterAnimation.Win);
+           // TriggerCharacterAnimation(CharacterAnimation.Win);
             
             m_EndTitleContent.style.display = DisplayStyle.Flex;
             m_LoseTitle.style.display = DisplayStyle.None;
@@ -454,6 +455,52 @@ namespace Match3
             
             UpdateTopBarData();
             m_EndScreen.style.display = DisplayStyle.Flex;
+        }
+
+        public GameObject gameOverUI;
+
+        // Function to call when the game ends
+        public void EndGame()
+        {
+            // Optionally disable player controls or other game mechanics
+            DisablePlayerControls();
+
+            // Display the game over UI
+            if (gameOverUI != null)
+            {
+                gameOverUI.SetActive(true);
+            }
+
+            // Optionally save the player's score or other game data
+            SavePlayerScore();
+
+            // Optionally restart the game or load a specific scene after a delay
+            Invoke("RestartGame", 2f); // Restarts the game after a 2-second delay
+
+            // Or directly load a specific scene (e.g., a Game Over scene)
+            // SceneManager.LoadScene("GameOverScene");
+        }
+
+        private void DisablePlayerControls()
+        {
+            // Example: Disable player controls or pause the game
+            Time.timeScale = 0f; // Pauses the game
+                                 // Disable your player control script here, e.g.,
+                                 // player.GetComponent<PlayerControlScript>().enabled = false;
+        }
+
+        private void SavePlayerScore()
+        {
+            // Example: Save the player's score or other relevant data
+            // PlayerPrefs.SetInt("HighScore", currentScore);
+            // PlayerPrefs.Save();
+        }
+
+        private void RestartGame()
+        {
+            // Example: Restart the game by reloading the current scene
+            Time.timeScale = 1f; // Resume time
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void ToggleSettingMenu(bool display)

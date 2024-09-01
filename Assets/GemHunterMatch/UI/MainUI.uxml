@@ -32,7 +32,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="BottomBar">
+        <ui:VisualElement name="BottomBar" style="opacity: 0;">
             <ui:VisualElement name="BottomBarBackground" style="position: absolute; left: 0; top: 0; width: 100%; height: 150%; background-image: url(&quot;project://database/Assets/GemHunterMatch/Images/UI/Sprite_UI_BottomBar_BG.png?fileID=2800000&amp;guid=59e42bc163d2a4d10aab5d7236332064&amp;type=3#Sprite_UI_BottomBar_BG&quot;); -unity-background-scale-mode: stretch-to-fill;" />
             <ui:VisualElement name="BoosterZone" style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center;">
                 <ui:Instance template="ButtonBooster" name="ButtonBooster" />
@@ -44,7 +44,7 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="Settings" class="fullscreen-dark">
-        <ui:VisualElement name="PopUpWindow" style="height: 1374px;">
+        <ui:VisualElement name="PopUpWindow" style="height: 1374px; opacity: 0;">
             <ui:Slider picking-mode="Ignore" label="Main" value="1" high-value="1" name="MainVolumeSlider" class="setting-slider" style="margin-top: 106px; width: 629px;" />
             <ui:Slider picking-mode="Ignore" label="Music" value="1" high-value="1" name="MusicVolumeSlider" class="setting-slider" style="width: 622px;" />
             <ui:Slider picking-mode="Ignore" label="SFX" value="1" high-value="1" name="SFXVolumeSlider" class="setting-slider" style="width: 614px;" />
@@ -81,10 +81,10 @@
             <ui:VisualElement name="EndContent" class="end-content" style="background-color: rgba(0, 0, 0, 0); flex-grow: 1;">
                 <ui:VisualElement name="Spacer" />
                 <ui:VisualElement name="ReturnToMenuButtonZone" style="background-color: rgba(0, 0, 0, 0);">
-                    <ui:Button text="Select Level" display-tooltip-when-elided="true" name="SelectLevelButton" class="match-button button-green" />
+                    <ui:Button text="Return Home" display-tooltip-when-elided="true" name="SelectLevelButton" class="match-button button-green" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ShopAgainButtonsZone" style="background-color: rgba(0, 0, 0, 0);">
-                    <ui:Button text="Shop" display-tooltip-when-elided="true" name="ShopButton" class="match-button" style="width: 40%;" />
+                    <ui:Button text="Shop" display-tooltip-when-elided="true" name="ShopButton" class="match-button" style="width: 40%; opacity: 0; display: none;" />
                     <ui:Button text=" Replay" display-tooltip-when-elided="true" name="ReplayButton" class="match-button" style="width: 40%;" />
                 </ui:VisualElement>
             </ui:VisualElement>

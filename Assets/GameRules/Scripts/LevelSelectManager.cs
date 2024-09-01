@@ -3,30 +3,30 @@ using UnityEngine.UI;
 using Cinemachine;
 using System.Collections;
 using TMPro;
+using UnityEngine.Events;
 
 public class LevelSelectManager : MonoBehaviour
 {
     public GameObject infoPanel;        // The panel displaying level information
-    public TextMeshProUGUI levelTitle;             // Text component to display level title
-    public TextMeshProUGUI levelDescription;       // Text component to display level description
+    public TextMeshProUGUI levelTitle;  // Text component to display level title
+    public TextMeshProUGUI levelDescription; // Text component to display level description
     public Image levelImage;            // Image component to display level image (optional)
     public CinemachineDollyCart dollyCart; // The dolly cart controlling the camera
     public CinemachineSmoothPath dollyPath; // The smooth path the dolly follows
+    public Button levelActionButton;    // Button to trigger level-specific action
     public float panelExpandDuration = 0.5f; // Duration to expand/shrink the info panel
     public float transitionDuration = 1.0f;  // Duration for the smooth camera transition from one level to next
 
-    public LevelSelectData[] levels;          // Array to hold data for all levels
+    public LevelSelectData[] levels;    // Array to hold data for all levels
 
     public int currentLevelIndex = 0;
     private bool isTransitioning = false; // To prevent multiple transitions at the same time
 
     void Start()
     {
-        //infoPanel.SetActive(false); // Hide info panel initially
-
         // Set the initial dolly position and panel info
         dollyCart.m_Position = 0f;
-        UpdateInfoPanel(0); // Optional: Update info panel to first level on start
+        UpdateInfoPanel(0); // Update info panel to the first level on start
     }
 
     public void MoveToNextWaypoint()
@@ -48,6 +48,7 @@ public class LevelSelectManager : MonoBehaviour
             StartCoroutine(SmoothTransition(previousWaypoint));
         }
     }
+
     private IEnumerator SmoothTransition(int targetLevelIndex)
     {
         isTransitioning = true;
@@ -75,7 +76,7 @@ public class LevelSelectManager : MonoBehaviour
         StartCoroutine(ExpandInfoPanel());
     }
 
-    void UpdateInfoPanel(int levelIndex = 1)
+    void UpdateInfoPanel(int levelIndex = 0)
     {
         LevelSelectData selectedLevel = levels[levelIndex];
         Debug.Log(levelIndex);
@@ -86,6 +87,13 @@ public class LevelSelectManager : MonoBehaviour
         if (levelImage != null && selectedLevel.levelImage != null)
         {
             levelImage.sprite = selectedLevel.levelImage;
+        }
+
+        // Update the button action to the level-specific action
+        levelActionButton.onClick.RemoveAllListeners(); // Clear existing listeners
+        if (selectedLevel.onButtonPressed != null)
+        {
+            levelActionButton.onClick.AddListener(selectedLevel.onButtonPressed.Invoke);
         }
     }
 

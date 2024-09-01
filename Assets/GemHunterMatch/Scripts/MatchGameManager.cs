@@ -24,7 +24,7 @@ namespace Match3
                 #if UNITY_EDITOR
                 if (s_Instance == null && !s_IsShuttingDown)
                 {
-                    var newInstance = Instantiate(Resources.Load<MatchGameManager>("MatchGameManager"));
+                    var newInstance = Instantiate(Resources.Load<MatchGameManager>("GameManager"));
                     newInstance.Awake();
                 }
                 #endif
@@ -94,7 +94,7 @@ namespace Match3
             if (s_Instance == null)
             {
                 s_Instance = this;
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
                 
                 Application.targetFrameRate = 60;
             

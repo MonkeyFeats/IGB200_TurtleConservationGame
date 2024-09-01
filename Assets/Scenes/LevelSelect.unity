@@ -2025,7 +2025,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -2047,7 +2047,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -92.9682, y: 0, z: -95.72967, w: -3.6818676}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2856,31 +2856,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 777473805}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7605817563137976370}
-        m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
-        m_MethodName: StartDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1445370566}
-        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-        m_MethodName: set_alpha
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &777473805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3178,6 +3154,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 8dfb3bdf788cbc345a338b5bd53d276b, type: 3}
   m_PrefabInstance: {fileID: 829930841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &833367194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6449296285829880533, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
+  m_PrefabInstance: {fileID: 1132302547}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &837497937
 GameObject:
@@ -3747,6 +3728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1089727367}
   - component: {fileID: 1089727366}
+  - component: {fileID: 1089727368}
   m_Layer: 0
   m_Name: LevelSelectManager
   m_TagString: Untagged
@@ -3772,36 +3754,102 @@ MonoBehaviour:
   levelImage: {fileID: 0}
   dollyCart: {fileID: 772119691}
   dollyPath: {fileID: 1062782897}
+  levelActionButton: {fileID: 777473804}
   panelExpandDuration: 0.15
   transitionDuration: 1.25
   levels:
-  - levelName: Awakening
-    levelDescription: The Baby turtles are hatching along the shore. We need to go
-      down and help protect the hatchlings to ensure they start their journeys safely.
+  - levelName: Katie Intro
+    levelDescription: Meet Ranger Katie!
     levelImage: {fileID: 0}
     levelIndex: 0
     topScore: 0
-  - levelName: MatchThree
-    levelDescription: Match the things to match the things because matching things
-      is a thing
+    onButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7605817563137976370}
+          m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1445370566}
+          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_MethodName: set_alpha
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - levelName: 'Nesting '
+    levelDescription: Match Up Mini Game
     levelImage: {fileID: 0}
     levelIndex: 1
     topScore: 0
-  - levelName: Turtles vs Zombies
-    levelDescription: Zombie segulls are attacking!
+    onButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1089727368}
+          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+          m_MethodName: LoadSceneByIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - levelName: Protect The Nests
+    levelDescription: Protect the turtles from the seagulls
     levelImage: {fileID: 0}
     levelIndex: 2
     topScore: 0
-  - levelName: EndlessRunner
-    levelDescription: Turtles can't run you bozos
+    onButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1089727368}
+          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+          m_MethodName: LoadSceneByIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - levelName: Migration
+    levelDescription: Turtles are migrating
     levelImage: {fileID: 0}
     levelIndex: 3
     topScore: 0
-  - levelName: Untitled Turtle Level
-    levelDescription: A mingame without a game
-    levelImage: {fileID: 0}
-    levelIndex: 4
-    topScore: 0
+    onButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1089727368}
+          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+          m_MethodName: LoadSceneByIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   currentLevelIndex: 0
 --- !u!4 &1089727367
 Transform:
@@ -3818,6 +3866,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1089727368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089727365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1af56c48cd629447ba470893cb97ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameCanvas: {fileID: 0}
 --- !u!1001 &1096273196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4019,7 +4080,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -3.6818886}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8792,7 +8853,7 @@ MonoBehaviour:
   triggerState: 1
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
-    sentence: Hello, my name is Katie, I'm a Widlife Ranger.
+    sentence: Hi, my name is Katie, I'm a Widlife Ranger.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: bc0377eca9e9921499596204077422f8, type: 3}
     sentenceEvent:
@@ -8806,12 +8867,43 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
-    sentence: Aren't they so cute!
+    sentence: Aww, aren't they so cute!
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 7948fa11c840b4a4ab6f74df22ddc6c2, type: 3}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
+  - dialogueCharacter: {fileID: 0}
+    sentence: 
+    skipDelayTime: 0
+    sentenceSound: {fileID: 0}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 833367194}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1445370566}
+          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_MethodName: set_alpha
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

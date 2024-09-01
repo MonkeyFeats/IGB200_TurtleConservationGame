@@ -10,6 +10,7 @@
     -unity-font-definition: url("project://database/Assets/GemHunterMatch/Fonts/CurseCasual/Curse%20Casual%20SDF.asset?fileID=11400000&guid=0a460f6750bafb142b0340a5e205adf4&type=2#Curse Casual SDF");
     color: rgb(38, 41, 104);
     text-shadow: 0 2.9px 0 rgb(38, 41, 104);
+    opacity: 1;
 }
 
 #FullContent {
@@ -30,6 +31,7 @@
     padding-bottom: 0;
     padding-left: 0;
     top: -4%;
+    opacity: 0;
 }
 
 .button-booster-container {
@@ -532,6 +534,7 @@
     background-color: rgb(0, 0, 0);
     position: absolute;
     transition-duration: 2s;
+    opacity: 1;
 }
 
 .no-transition {
