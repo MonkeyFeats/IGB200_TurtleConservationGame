@@ -10,6 +10,7 @@ public class TurtleHealth : MonoBehaviour
     float invincibleTime = 1;
     MeshRenderer meshRenderer;
     [SerializeField] private GameObject[] livesImages;
+    public SceneManagerScript SceneManager;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class TurtleHealth : MonoBehaviour
             if (hits <= 0)
             {
                 Destroy(gameObject);
+                SceneManager.EndGame();
             }
             else
             {

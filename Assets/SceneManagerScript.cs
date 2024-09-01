@@ -3,6 +3,26 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+
+    public GameObject endGameCanvas;
+    private void DisablePlayerControls()
+    {
+        Time.timeScale = 0f; // Pauses the game
+        // Disable your player control script here, e.g.,
+        // player.GetComponent<PlayerControlScript>().enabled = false;
+    }
+
+    public void EndGame()
+    {
+        DisablePlayerControls();
+
+        // Display the game over UI
+        if (endGameCanvas != null)
+        {
+            endGameCanvas.SetActive(true);
+        }
+    }
+
     // Loads a scene by its name
     public void LoadSceneByName(string sceneName)
     {
