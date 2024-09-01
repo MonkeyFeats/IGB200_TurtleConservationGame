@@ -35,7 +35,7 @@ public class PlantCardManager : MonoBehaviour
 
         for (int i = 0; i < amtOfCards; i++)
         {
-            AddPlantCardSelection(i);
+            //AddPlantCardSelection(i);
         }
     }
 
@@ -48,7 +48,7 @@ public class PlantCardManager : MonoBehaviour
     {
         for (int i = 0; i < amtOfCards; i++)
         {
-            //AddPlantCard(i);
+            AddPlantCard(i);
         }
     }
 

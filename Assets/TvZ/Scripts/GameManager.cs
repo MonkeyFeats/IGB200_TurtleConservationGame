@@ -32,6 +32,8 @@ public class PvzGameManager : MonoBehaviour
 
         CardManager.isGameStart = false;
         AddSun(startingSunAmnt);
+
+        StartMatch();
     }
 
 	public void Update()

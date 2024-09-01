@@ -119,15 +119,6 @@ public class ZombieController : MonoBehaviour
 				}
             }
 
-            Transform head = this.transform.GetChild(0);
-
-            head.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            head.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
-
-            head.SetParent(null);
-
-            Destroy(head.gameObject, 1.5f);
-
             Destroy(this.GetComponent<Rigidbody2D>());
 
             foreach (var item in this.GetComponents<BoxCollider2D>())
