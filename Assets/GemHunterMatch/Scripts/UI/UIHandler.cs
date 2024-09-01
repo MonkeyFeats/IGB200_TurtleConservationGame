@@ -35,7 +35,7 @@ namespace Match3
 
             public void UpdateButtonState()
             {
-                BuyButton.SetEnabled(GameManager.Instance.Coins >= LinkedItem.Price);
+                BuyButton.SetEnabled(MatchGameManager.Instance.Coins >= LinkedItem.Price);
             }
         }
 
@@ -211,7 +211,7 @@ namespace Match3
             m_MusicVolumeSlider = m_SettingMenuRoot.Q<Slider>("MusicVolumeSlider");
             m_SFXVolumeSlider = m_SettingMenuRoot.Q<Slider>("SFXVolumeSlider");
 
-            var soundData = GameManager.Instance.Volumes;
+            var soundData = MatchGameManager.Instance.Volumes;
             m_MainVolumeSlider.value = soundData.MainVolume;
             m_MusicVolumeSlider.value = soundData.MusicVolume;
             m_SFXVolumeSlider.value = soundData.SFXVolume;
@@ -219,19 +219,19 @@ namespace Match3
             m_MainVolumeSlider.RegisterValueChangedCallback(evt =>
             {
                 soundData.MainVolume = evt.newValue;
-                GameManager.Instance.UpdateVolumes();
+                MatchGameManager.Instance.UpdateVolumes();
             });
             
             m_MusicVolumeSlider.RegisterValueChangedCallback(evt =>
             {
                 soundData.MusicVolume = evt.newValue;
-                GameManager.Instance.UpdateVolumes();
+                MatchGameManager.Instance.UpdateVolumes();
             });
             
             m_SFXVolumeSlider.RegisterValueChangedCallback(evt =>
             {
                 soundData.SFXVolume = evt.newValue;
-                GameManager.Instance.UpdateVolumes();
+                MatchGameManager.Instance.UpdateVolumes();
             });
 
             // Shop
@@ -245,7 +245,7 @@ namespace Match3
             m_ShopRoot = m_Document.rootVisualElement.Q<VisualElement>("Shop");
             m_ShopScrollView = m_Document.rootVisualElement.Q<ScrollView>("ShopContentScroll");
 
-            foreach (var shopItem in GameManager.Instance.Settings.ShopSettings.Items)
+            foreach (var shopItem in MatchGameManager.Instance.Settings.ShopSettings.Items)
             {
                 var newElem = ShopItemEntryTemplate.Instantiate();
                 var itemIcon = newElem.Q<VisualElement>("ItemIcon");
@@ -264,7 +264,7 @@ namespace Match3
                 newShopEntry.BuyButton.clicked += () =>
                 {
                     newShopEntry.LinkedItem.Buy();
-                    GameManager.Instance.ChangeCoins(-newShopEntry.LinkedItem.Price);
+                    MatchGameManager.Instance.ChangeCoins(-newShopEntry.LinkedItem.Price);
                 
                     UpdateTopBarData();
                     UpdateShopEntry();
@@ -280,7 +280,7 @@ namespace Match3
                 ShowShop(false);
             };
             
-            var curve = GameManager.Instance.Settings.VisualSettings.MatchFlyCurve;
+            var curve = MatchGameManager.Instance.Settings.VisualSettings.MatchFlyCurve;
             m_MatchEffectEndTime = curve.keys[curve.keys.Length-1].time;
 
             m_CoverElement = m_Document.rootVisualElement.Q<VisualElement>("Cover");
@@ -422,7 +422,7 @@ namespace Match3
 
         void ShowWin()
         {
-            GameManager.Instance.WinTriggered();
+            MatchGameManager.Instance.WinTriggered();
             TriggerCharacterAnimation(CharacterAnimation.Win);
             
             m_EndTitleContent.style.display = DisplayStyle.Flex;
@@ -430,12 +430,12 @@ namespace Match3
             m_WinTitle.style.display = DisplayStyle.Flex;
             m_WinTitle.style.scale = Vector2.one;
 
-            StartCoroutine(ShowEndControl(GameManager.Instance.Settings.SoundSettings.WinSound));
+            StartCoroutine(ShowEndControl(MatchGameManager.Instance.Settings.SoundSettings.WinSound));
         }
 
         void ShowLose()
         {
-            GameManager.Instance.LooseTriggered();
+            MatchGameManager.Instance.LooseTriggered();
             TriggerCharacterAnimation(CharacterAnimation.Lose);
             
             m_EndTitleContent.style.display = DisplayStyle.Flex;
@@ -443,14 +443,14 @@ namespace Match3
             m_LoseTitle.style.display = DisplayStyle.Flex;
             m_LoseTitle.style.scale = Vector2.one;
 
-            StartCoroutine(ShowEndControl(GameManager.Instance.Settings.SoundSettings.LooseSound));
+            StartCoroutine(ShowEndControl(MatchGameManager.Instance.Settings.SoundSettings.LooseSound));
         }
 
         IEnumerator ShowEndControl(AudioClip clip)
         {
             yield return new WaitForSeconds(3.0f);
             
-            GameManager.Instance.PlaySFX(clip);
+            MatchGameManager.Instance.PlaySFX(clip);
             
             UpdateTopBarData();
             m_EndScreen.style.display = DisplayStyle.Flex;
@@ -459,11 +459,11 @@ namespace Match3
         public void ToggleSettingMenu(bool display)
         {
             m_SettingMenuRoot.style.display = display ? DisplayStyle.Flex : DisplayStyle.None;
-            GameManager.Instance.Board.ToggleInput(!display);
+            MatchGameManager.Instance.Board.ToggleInput(!display);
 
             if (!display)
             {
-                GameManager.Instance.SaveSoundData();
+                MatchGameManager.Instance.SaveSoundData();
             }
         }
 
@@ -546,8 +546,8 @@ namespace Match3
                 StartPosition = pos,
                 StartToEnd = target - pos,
                 UIElement = elem,
-                EndClip = GameManager.Instance.Settings.SoundSettings.CoinSound,
-                Curve = GameManager.Instance.Settings.VisualSettings.CoinFlyCurve
+                EndClip = MatchGameManager.Instance.Settings.SoundSettings.CoinSound,
+                Curve = MatchGameManager.Instance.Settings.VisualSettings.CoinFlyCurve
             });
         }
 
@@ -558,7 +558,7 @@ namespace Match3
 
         private void Update()
         {
-            var matchCurve = GameManager.Instance.Settings.VisualSettings.MatchFlyCurve;
+            var matchCurve = MatchGameManager.Instance.Settings.VisualSettings.MatchFlyCurve;
         
             for (int i = 0; i < m_CurrentGemAnimations.Count; ++i)
             {
@@ -601,7 +601,7 @@ namespace Match3
                     i--;
 
                     if(anim.EndClip != null)
-                        GameManager.Instance.PlaySFX(anim.EndClip);
+                        MatchGameManager.Instance.PlaySFX(anim.EndClip);
                 }
                 else
                 {
@@ -613,9 +613,9 @@ namespace Match3
 
         public void UpdateTopBarData()
         {
-            m_CoinLabel.text = GameManager.Instance.Coins.ToString();
-            m_LiveLabel.text = GameManager.Instance.Lives.ToString();
-            m_StarLabel.text = GameManager.Instance.Stars.ToString();
+            m_CoinLabel.text = MatchGameManager.Instance.Coins.ToString();
+            m_LiveLabel.text = MatchGameManager.Instance.Lives.ToString();
+            m_StarLabel.text = MatchGameManager.Instance.Stars.ToString();
         }
 
         public void CreateBottomBar()
@@ -626,9 +626,9 @@ namespace Match3
                 var icon = child.Q<VisualElement>("ImageBooster");
                 var bonusButton = child.Q<Button>("ButtonBooster");
                 
-                if (currentBonus < GameManager.Instance.BonusItems.Count)
+                if (currentBonus < MatchGameManager.Instance.BonusItems.Count)
                 {
-                    var item = GameManager.Instance.BonusItems[currentBonus];
+                    var item = MatchGameManager.Instance.BonusItems[currentBonus];
                     
                     icon.style.display = DisplayStyle.Flex;
                     icon.style.backgroundImage = Background.FromSprite(item.Item.DisplaySprite);
@@ -641,14 +641,14 @@ namespace Match3
                         //clicking back on an already selected item just deselect it
                         if (currentSelected == child)
                         {
-                            GameManager.Instance.ActivateBonusItem(null);
+                            MatchGameManager.Instance.ActivateBonusItem(null);
                             return;
                         }
                         
                         m_SelectedBonusItem = child;
                         m_SelectedBonusItem.AddToClassList("selected");
 
-                        GameManager.Instance.ActivateBonusItem(item.Item);
+                        MatchGameManager.Instance.ActivateBonusItem(item.Item);
                     };
                 }
                 else
@@ -670,9 +670,9 @@ namespace Match3
                 var count = child.Q<Label>("LabelBoosterNumber");
                 var bonusButton = child.Q<Button>("ButtonBooster");
 
-                if (currentBonus < GameManager.Instance.BonusItems.Count)
+                if (currentBonus < MatchGameManager.Instance.BonusItems.Count)
                 {
-                    var item = GameManager.Instance.BonusItems[currentBonus];
+                    var item = MatchGameManager.Instance.BonusItems[currentBonus];
                     count.text = item.Amount.ToString();
                     
                     bonusButton.SetEnabled(item.Amount != 0);
@@ -686,7 +686,7 @@ namespace Match3
         {
             if (m_SelectedBonusItem == null) return;
         
-            GameManager.Instance.ActivateBonusItem(null);
+            MatchGameManager.Instance.ActivateBonusItem(null);
             m_SelectedBonusItem.RemoveFromClassList("selected");
             m_SelectedBonusItem = null;
         }

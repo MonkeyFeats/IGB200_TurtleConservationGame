@@ -29,21 +29,21 @@ namespace Match3
             
             var dir = Vertical ? Vector3Int.up : Vector3Int.right;
 
-            GameManager.Instance.PlaySFX(TriggerSound);
+            MatchGameManager.Instance.PlaySFX(TriggerSound);
             
             //delete itself first.
-            var newMatch = GameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
-            HandleContent(GameManager.Instance.Board.CellContent[m_CurrentIndex], newMatch);
+            var newMatch = MatchGameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
+            HandleContent(MatchGameManager.Instance.Board.CellContent[m_CurrentIndex], newMatch);
 
             //if there is a cell on a side, we add a new board action that will go in that direction.
-            if (GameManager.Instance.Board.CellContent.ContainsKey(m_CurrentIndex + dir))
+            if (MatchGameManager.Instance.Board.CellContent.ContainsKey(m_CurrentIndex + dir))
             {
-                GameManager.Instance.Board.AddNewBoardAction(new RocketAction(m_CurrentIndex, dir, VisualPrefab, 0));
+                MatchGameManager.Instance.Board.AddNewBoardAction(new RocketAction(m_CurrentIndex, dir, VisualPrefab, 0));
             }
 
-            if (GameManager.Instance.Board.CellContent.ContainsKey(m_CurrentIndex - dir))
+            if (MatchGameManager.Instance.Board.CellContent.ContainsKey(m_CurrentIndex - dir))
             {
-                GameManager.Instance.Board.AddNewBoardAction(new RocketAction(m_CurrentIndex, -dir, VisualPrefab,
+                MatchGameManager.Instance.Board.AddNewBoardAction(new RocketAction(m_CurrentIndex, -dir, VisualPrefab,
                     Vertical ? 2 : 1));
             }
         }
@@ -67,10 +67,10 @@ namespace Match3
             m_CurrentCell = startCell;
             m_Direction = direction;
             
-            GameManager.Instance.Board.LockMovement();
+            MatchGameManager.Instance.Board.LockMovement();
 
             m_Visual = GameObject.Instantiate(visualPrefab, 
-                GameManager.Instance.Board.GetCellCenter(m_CurrentCell), 
+                MatchGameManager.Instance.Board.GetCellCenter(m_CurrentCell), 
                 Quaternion.identity);
 
             switch (flip)
@@ -89,13 +89,13 @@ namespace Match3
         {
             m_Visual.transform.position += (Vector3)(m_Direction) * (Time.deltaTime * MoveSpeed);
 
-            var cell = GameManager.Instance.Board.WorldToCell(m_Visual.transform.position);
+            var cell = MatchGameManager.Instance.Board.WorldToCell(m_Visual.transform.position);
 
             while (m_CurrentCell != cell)
             {
                 m_CurrentCell += m_Direction;
 
-                if (GameManager.Instance.Board.CellContent.TryGetValue(m_CurrentCell, out var content) && content.ContainingGem != null)
+                if (MatchGameManager.Instance.Board.CellContent.TryGetValue(m_CurrentCell, out var content) && content.ContainingGem != null)
                 {
                     if (content.Obstacle != null)
                     {
@@ -107,16 +107,16 @@ namespace Match3
                     }
                     else if (!content.ContainingGem.Damage(1))
                     {
-                        GameManager.Instance.Board.DestroyGem(m_CurrentCell, true);
+                        MatchGameManager.Instance.Board.DestroyGem(m_CurrentCell, true);
                         
                     }
                 }
 
-                if (!GameManager.Instance.Board.CellContent.ContainsKey(m_CurrentCell + m_Direction))
+                if (!MatchGameManager.Instance.Board.CellContent.ContainsKey(m_CurrentCell + m_Direction))
                 {
                     GameObject.Destroy(m_Visual);
                     //if we don't have a cell after that one, we reached the end, return false to finish that BoardAction
-                    GameManager.Instance.Board.UnlockMovement();
+                    MatchGameManager.Instance.Board.UnlockMovement();
                     return false;
                 }
             }

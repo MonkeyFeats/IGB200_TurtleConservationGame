@@ -5,7 +5,7 @@ namespace Match3
 {
     /// <summary>
     /// Bonus Gem is a special gem that contains a list of MatchShape.
-    /// Bonus Gems are listed in the Game Settings on the GameManager.
+    /// Bonus Gems are listed in the Game Settings on the MatchGameManager.
     /// When a match happens, the system goes over all BonusGem and check if one of the MatchShape match the shape of the
     /// match and if it does, spawn that bonus gem there.
     /// </summary>
@@ -41,13 +41,13 @@ namespace Match3
         //the effect won't be triggered. So Bonus item call this function to trigger the VFX
         public void BonusTriggerEffect()
         {
-            var position = GameManager.Instance.Board.GetCellCenter(m_CurrentIndex); 
+            var position = MatchGameManager.Instance.Board.GetCellCenter(m_CurrentIndex); 
             foreach (var effectPrefab in MatchEffectPrefabs)
             {
                 //normally the game will instantiate the bonus vfx when it first get spawn, but if using a bonus item
                 //before that happen, this ensure the vfx will get instantiated first 
-                GameManager.Instance.PoolSystem.AddNewInstance(effectPrefab, 8);
-                GameManager.Instance.PoolSystem.PlayInstanceAt(effectPrefab, position);
+                MatchGameManager.Instance.PoolSystem.AddNewInstance(effectPrefab, 8);
+                MatchGameManager.Instance.PoolSystem.PlayInstanceAt(effectPrefab, position);
             }
         }
     }

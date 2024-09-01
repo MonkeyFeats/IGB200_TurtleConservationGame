@@ -16,7 +16,7 @@ namespace Match3
     
         void Start()
         {
-            GameManager.Instance.MainMenuOpened();
+            MatchGameManager.Instance.MainMenuOpened();
         
             m_Document = GetComponent<UIDocument>();
             UIHandler.ApplySafeArea(m_Document.rootVisualElement);

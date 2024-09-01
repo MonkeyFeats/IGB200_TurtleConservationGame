@@ -7,7 +7,7 @@ namespace Match3
     {
         public override void Buy()
         {
-            GameManager.Instance.AddLive(1);
+            MatchGameManager.Instance.AddLive(1);
         }
     }
 }

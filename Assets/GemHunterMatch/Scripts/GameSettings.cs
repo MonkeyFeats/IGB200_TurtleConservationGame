@@ -5,7 +5,7 @@ using UnityEngine.VFX;
 namespace Match3
 {
     /// <summary>
-    /// Contains all the settings for the game so they can be found in a single place. This is stored on the GameManager
+    /// Contains all the settings for the game so they can be found in a single place. This is stored on the MatchGameManager
     /// in the Resource folder if you need to edit it.
     /// </summary>
     [System.Serializable]
@@ -66,7 +66,7 @@ namespace Match3
 
             public virtual bool CanBeBought()
             {
-                return GameManager.Instance.Coins >= Price; 
+                return MatchGameManager.Instance.Coins >= Price; 
             }
         
             public abstract void Buy();

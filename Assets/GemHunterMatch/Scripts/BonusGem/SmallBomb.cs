@@ -23,11 +23,11 @@ namespace Match3
 
             m_Used = true;
             
-            var newMatch = GameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
+            var newMatch = MatchGameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
             newMatch.ForcedDeletion = true;
-            HandleContent(GameManager.Instance.Board.CellContent[m_CurrentIndex], newMatch);
+            HandleContent(MatchGameManager.Instance.Board.CellContent[m_CurrentIndex], newMatch);
 
-            GameManager.Instance.PlaySFX(TriggerSound);
+            MatchGameManager.Instance.PlaySFX(TriggerSound);
 
             Vector3Int[] spaces = new[]
             {
@@ -39,7 +39,7 @@ namespace Match3
         
             foreach (var idx in spaces)
             {
-                if (GameManager.Instance.Board.CellContent.TryGetValue(idx, out var content) &&
+                if (MatchGameManager.Instance.Board.CellContent.TryGetValue(idx, out var content) &&
                     content.ContainingGem != null)
                 {
                     HandleContent(content, newMatch);

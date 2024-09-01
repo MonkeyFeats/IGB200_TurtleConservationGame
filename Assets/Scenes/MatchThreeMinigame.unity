@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &817819593
 Transform:
   m_ObjectHideFlags: 0
@@ -599,7 +599,7 @@ MonoBehaviour:
     Count: 8
   BorderMargin: 0.3
   Background: {fileID: 1069508640}
-  Music: {fileID: 8300000, guid: 800028ab827bd554284b052dc022f8bb, type: 3}
+  Music: {fileID: 0}
 --- !u!483693784 &811190055383988852
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2264,8 +2264,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 662d74de368854541a3bfb06081f7ed1, type: 3}
   - m_RefCount: 9
-    m_Data: {fileID: 7482667652216324306, guid: ec714f6c2e8f5854c9a7c50c90352116,
-      type: 3}
+    m_Data: {fileID: 7482667652216324306, guid: ec714f6c2e8f5854c9a7c50c90352116, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: e5b8e6f26730d484ea0b523e1d65f25e, type: 3}
   - m_RefCount: 2
@@ -3476,10 +3475,8 @@ MonoBehaviour:
   - {fileID: 3930743957587144661, guid: f3e47e37930ff8f48b693da87b4025c7, type: 3}
   - {fileID: 7927807542344970777, guid: 924c8da2c1342cd41a99abdae62388df, type: 3}
   - {fileID: 7927807542344970777, guid: bb60bc505e820734584f3d8bd0a16f53, type: 3}
-  GemHoldPrefab: {fileID: 3377509351392185962, guid: 0e57c286bfbf10045b66afa053c4ad34,
-    type: 3}
-  HoldTrailPrefab: {fileID: 3411754766572351756, guid: 021bbf96a19906642a0e41fb58b29fc4,
-    type: 3}
+  GemHoldPrefab: {fileID: 3377509351392185962, guid: 0e57c286bfbf10045b66afa053c4ad34, type: 3}
+  HoldTrailPrefab: {fileID: 3411754766572351756, guid: 021bbf96a19906642a0e41fb58b29fc4, type: 3}
   m_StartClickPosition: {x: 0, y: 0, z: 0}
 --- !u!156049354 &8887083185857284730
 Grid:

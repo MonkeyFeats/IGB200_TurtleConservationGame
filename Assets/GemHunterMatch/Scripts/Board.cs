@@ -124,8 +124,8 @@ namespace Match3
         private void OnDestroy()
         {
             //order of deletion when quitting the game can make the manager be destroyed first so we make sure it's not
-            //shutting down, otherwise in editor, calling GameManager.Instance would create a new game manager.
-            if(!GameManager.IsShuttingDown()) GameManager.Instance.PoolSystem.Clean();
+            //shutting down, otherwise in editor, calling MatchGameManager.Instance would create a new game manager.
+            if(!MatchGameManager.IsShuttingDown()) MatchGameManager.Instance.PoolSystem.Clean();
         }
 
         void GetReference()
@@ -155,18 +155,18 @@ namespace Match3
 
         public void Init()
         {
-            m_VisualSettingReference = GameManager.Instance.Settings.VisualSettings;
+            m_VisualSettingReference = MatchGameManager.Instance.Settings.VisualSettings;
             m_LastClickTime = Time.time;
 
             UIHandler.Instance.Init();
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            foreach (var bonus in GameManager.Instance.Settings.BonusSettings.Bonuses)
+            foreach (var bonus in MatchGameManager.Instance.Settings.BonusSettings.Bonuses)
             {
                 UIHandler.Instance.RegisterGemToDebug(bonus);
             }
         
-            foreach (var gem in GameManager.Instance.Board.ExistingGems)
+            foreach (var gem in MatchGameManager.Instance.Board.ExistingGems)
             {
                 UIHandler.Instance.RegisterGemToDebug(gem);
             }
@@ -182,7 +182,7 @@ namespace Match3
             GenerateBoard();
             FindAllPossibleMatch();
         
-            m_HintIndicator = Instantiate(GameManager.Instance.Settings.VisualSettings.HintPrefab);
+            m_HintIndicator = Instantiate(MatchGameManager.Instance.Settings.VisualSettings.HintPrefab);
             m_HintIndicator.SetActive(false);
         
             m_BoardWasInit = true;
@@ -472,7 +472,7 @@ namespace Match3
             if(!m_BoardWasInit)
                 return;
             
-            GameManager.Instance.PoolSystem.Update();
+            MatchGameManager.Instance.PoolSystem.Update();
 
             for (int i = 0; i < m_BoardActions.Count; ++i)
             {
@@ -503,7 +503,7 @@ namespace Match3
                 //to avoid sound clash we make sure we only play a falling sound if none are already playing
                 if (m_TickingCells.Count == 0 && (m_FallingSoundSource == null || !m_FallingSoundSource.isPlaying))
                 {
-                    m_FallingSoundSource = GameManager.Instance.PlaySFX(GameManager.Instance.Settings.SoundSettings.FallSound);
+                    m_FallingSoundSource = MatchGameManager.Instance.PlaySFX(MatchGameManager.Instance.Settings.SoundSettings.FallSound);
                 }
 
                 incrementHintTimer = false;
@@ -545,7 +545,7 @@ namespace Match3
                 m_SwapStage = SwapStage.Forward;
                 m_SwappingCells = (m_StartSwipe, m_EndSwipe);
                 
-                GameManager.Instance.PlaySFX(GameManager.Instance.Settings.SoundSettings.SwipSound);
+                MatchGameManager.Instance.PlaySFX(MatchGameManager.Instance.Settings.SoundSettings.SwipSound);
 
                 m_SwipeQueued = false;
                 incrementHintTimer = false;
@@ -590,7 +590,7 @@ namespace Match3
                 else
                 {
                     m_SinceLastHint += Time.deltaTime;
-                    if (m_SinceLastHint >= GameManager.Instance.Settings.InactivityBeforeHint && m_InputEnabled)
+                    if (m_SinceLastHint >= MatchGameManager.Instance.Settings.InactivityBeforeHint && m_InputEnabled)
                     {
                         m_HintIndicator.transform.position = m_Grid.GetCellCenterWorld(match.StartPosition);
                         m_HintIndicator.SetActive(true);
@@ -833,8 +833,8 @@ namespace Match3
                         //we only spawn coins for non bonus match
                         if (match.DeletedCount >= 4 && !match.ForcedDeletion)
                         {
-                            GameManager.Instance.ChangeCoins(1);
-                            GameManager.Instance.PoolSystem.PlayInstanceAt(GameManager.Instance.Settings.VisualSettings.CoinVFX,
+                            MatchGameManager.Instance.ChangeCoins(1);
+                            MatchGameManager.Instance.PoolSystem.PlayInstanceAt(MatchGameManager.Instance.Settings.VisualSettings.CoinVFX,
                                 gem.transform.position);
                         }
                     
@@ -854,7 +854,7 @@ namespace Match3
                             
                             foreach (var matchEffectPrefab in gem.MatchEffectPrefabs)
                             {
-                                GameManager.Instance.PoolSystem.PlayInstanceAt(matchEffectPrefab, m_Grid.GetCellCenterWorld(gem.CurrentIndex));
+                                MatchGameManager.Instance.PoolSystem.PlayInstanceAt(matchEffectPrefab, m_Grid.GetCellCenterWorld(gem.CurrentIndex));
                             }
 
                             gem.gameObject.SetActive(false);
@@ -868,7 +868,7 @@ namespace Match3
                         
                         foreach (var matchEffectPrefab in gem.MatchEffectPrefabs)
                         {
-                            GameManager.Instance.PoolSystem.PlayInstanceAt(matchEffectPrefab, m_Grid.GetCellCenterWorld(gem.CurrentIndex));
+                            MatchGameManager.Instance.PoolSystem.PlayInstanceAt(matchEffectPrefab, m_Grid.GetCellCenterWorld(gem.CurrentIndex));
                         }
 
                         gem.gameObject.SetActive(false);
@@ -1047,7 +1047,7 @@ namespace Match3
             {
                 foreach (var matchEffectPrefab in gemPrefab.MatchEffectPrefabs)
                 {
-                    GameManager.Instance.PoolSystem.AddNewInstance(matchEffectPrefab, 16);
+                    MatchGameManager.Instance.PoolSystem.AddNewInstance(matchEffectPrefab, 16);
                 }
             }
 
@@ -1224,7 +1224,7 @@ namespace Match3
             List<Vector3Int> temporaryShapeMatch = new();
             MatchShape matchedShape = null;
             List<BonusGem> matchedBonusGem = new();
-            foreach (var bonusGem in GameManager.Instance.Settings.BonusSettings.Bonuses)
+            foreach (var bonusGem in MatchGameManager.Instance.Settings.BonusSettings.Bonuses)
             {
                 foreach (var shape in bonusGem.Shapes)
                 {
@@ -1313,10 +1313,10 @@ namespace Match3
             
             var mainCam = Camera.main;
         
-            var pressedThisFrame = GameManager.Instance.ClickAction.WasPressedThisFrame();
-            var releasedThisFrame = GameManager.Instance.ClickAction.WasReleasedThisFrame();
+            var pressedThisFrame = MatchGameManager.Instance.ClickAction.WasPressedThisFrame();
+            var releasedThisFrame = MatchGameManager.Instance.ClickAction.WasReleasedThisFrame();
         
-            var clickPos = GameManager.Instance.ClickPosition.ReadValue<Vector2>();
+            var clickPos = MatchGameManager.Instance.ClickPosition.ReadValue<Vector2>();
             var worldPos = mainCam.ScreenToWorldPoint(clickPos);
             worldPos.z = 0;
             
@@ -1354,7 +1354,7 @@ namespace Match3
                     var clickedCell = m_Grid.WorldToCell(mainCam.ScreenToWorldPoint(clickPos));
                     if (CellContent.TryGetValue(clickedCell, out var content) && content.ContainingGem != null)
                     {
-                        GameManager.Instance.UseBonusItem(m_ActivatedBonus, clickedCell);
+                        MatchGameManager.Instance.UseBonusItem(m_ActivatedBonus, clickedCell);
                         m_ActivatedBonus = null;
                         return;
                     }

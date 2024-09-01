@@ -33,7 +33,7 @@ namespace Match3
             
             foreach (var state in LockState)
             {
-                GameManager.Instance.PoolSystem.AddNewInstance(state.UndoneVFX, 4);
+                MatchGameManager.Instance.PoolSystem.AddNewInstance(state.UndoneVFX, 4);
             }
         }
 
@@ -59,7 +59,7 @@ namespace Match3
             m_CurrentState = newState;
             //play the undone effect of the state before this one
             if(m_CurrentState-1 >= 0)
-                GameManager.Instance.PoolSystem.PlayInstanceAt(LockState[m_CurrentState - 1].UndoneVFX, transform.position);
+                MatchGameManager.Instance.PoolSystem.PlayInstanceAt(LockState[m_CurrentState - 1].UndoneVFX, transform.position);
             
             if (m_CurrentState < LockState.Length)
             {

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a597820e364d073499c6b0051f4a97ad, type: 3}
+  m_Name: Pole Vaulter
+  m_EditorClassIdentifier: 
+  zombieDefault: {fileID: 3987133898451156565, guid: 66f872246af4e2142a870354cf9a334c, type: 3}
+  zombieAccessory: {fileID: 3330526956472489617, guid: 231c889c406ec054aa53ac18524e148e, type: 3}
+  zombieType: 3
+  accessoryHealth: 0
+  zombieHealth: 250
+  zombieHandHealth: 100
+  zombieDamage: 5
+  zombieSpeed: 1
+  attackInterval: 1
+  ovveridDefaultSprite: 1
+  useChildObjects: 0
+  jumpDuration: 1.5
+  jumpPower: 75
+  newSprite: {fileID: 21300000, guid: 5a062a3edd8c6d2409e7964449dd6ad3, type: 3}
+  coinDropPercent: 10

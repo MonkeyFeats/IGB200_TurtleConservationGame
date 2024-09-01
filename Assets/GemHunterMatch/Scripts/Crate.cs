@@ -27,7 +27,7 @@ namespace Match3
             base.Init(startIdx);
             
             if(DamageEffect != null)
-                GameManager.Instance.PoolSystem.AddNewInstance(DamageEffect, 6);
+                MatchGameManager.Instance.PoolSystem.AddNewInstance(DamageEffect, 6);
 
             if (CanBeDestroyedWithAdjacentMatch)
             {
@@ -41,10 +41,10 @@ namespace Match3
 
         public override bool Damage(int damage)
         {
-            GameManager.Instance.PlaySFX(DamagedClip);
+            MatchGameManager.Instance.PlaySFX(DamagedClip);
             
             if(DamageEffect != null)
-                GameManager.Instance.PoolSystem.PlayInstanceAt(DamageEffect, transform.position);
+                MatchGameManager.Instance.PoolSystem.PlayInstanceAt(DamageEffect, transform.position);
             
             var ret = base.Damage(damage);
             UpdateState();
@@ -67,7 +67,7 @@ namespace Match3
         {
             if (!Damage(1))
             {
-                GameManager.Instance.Board.DestroyGem(m_CurrentIndex);
+                MatchGameManager.Instance.Board.DestroyGem(m_CurrentIndex);
             }
         }
 

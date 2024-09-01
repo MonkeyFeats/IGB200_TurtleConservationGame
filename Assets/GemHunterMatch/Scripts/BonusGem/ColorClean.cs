@@ -19,7 +19,7 @@ namespace Match3
         {
             m_Usable = true;
             
-            GameManager.Instance.PoolSystem.AddNewInstance(UseEffect, 2);
+            MatchGameManager.Instance.PoolSystem.AddNewInstance(UseEffect, 2);
             m_PositionMap = new Texture2D(64, 1, TextureFormat.RGBAFloat, false);
         }
 
@@ -42,7 +42,7 @@ namespace Match3
             {//we either swapped with another bonus or we double clicked, so that bonus will clear the gem with the most type
                 Dictionary<int, int> typeCount = new();
 
-                foreach (var (cell, content) in GameManager.Instance.Board.CellContent)
+                foreach (var (cell, content) in MatchGameManager.Instance.Board.CellContent)
                 {
                     if (content.ContainingGem != null)
                     {
@@ -71,12 +71,12 @@ namespace Match3
             int currentColor = 0;
 
             //we create a new match in the board, set its type to force deletion (as this match came from a bonus, not a swap)
-            var newMatch = GameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
+            var newMatch = MatchGameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
             newMatch.ForcedDeletion = true;
             //we grab from the cell and not use "this" because when used as a Bonus Item, the item at this index won't be the gem
-            HandleContent(GameManager.Instance.Board.CellContent[m_CurrentIndex], newMatch);
+            HandleContent(MatchGameManager.Instance.Board.CellContent[m_CurrentIndex], newMatch);
 
-            foreach (var (cell, content) in GameManager.Instance.Board.CellContent)
+            foreach (var (cell, content) in MatchGameManager.Instance.Board.CellContent)
             {
                 
                 if (content.ContainingGem?.GemType == type)
@@ -100,16 +100,16 @@ namespace Match3
             m_PositionMap.SetPixels(infoColor, 0);
             m_PositionMap.Apply();
 
-            var vfxInst = GameManager.Instance.PoolSystem.GetInstance(UseEffect);
+            var vfxInst = MatchGameManager.Instance.PoolSystem.GetInstance(UseEffect);
             
             vfxInst.Stop();
             vfxInst.SetTexture(Shader.PropertyToID("PosMap"), m_PositionMap);
             vfxInst.SetInt(Shader.PropertyToID("PosCount"), currentColor);
 
-            vfxInst.transform.position = GameManager.Instance.Board.GetCellCenter(m_CurrentIndex);
+            vfxInst.transform.position = MatchGameManager.Instance.Board.GetCellCenter(m_CurrentIndex);
             vfxInst.Play();
             
-            GameManager.Instance.PlaySFX(TriggerSound);
+            MatchGameManager.Instance.PlaySFX(TriggerSound);
         }
     }
 }

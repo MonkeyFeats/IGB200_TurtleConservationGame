@@ -5,7 +5,7 @@ namespace Match3
 {
     /// <summary>
     /// Contains all the data for the Level in which this is : Goals and max number of Moves. This will also  notify the
-    /// GameManager that we loaded a level
+    /// MatchGameManager that we loaded a level
     /// </summary>
     [DefaultExecutionOrder(12000)]
     public class LevelData : MonoBehaviour
@@ -51,7 +51,7 @@ namespace Match3
             Instance = this;
             RemainingMove = MaxMove;
             GoalLeft = Goals.Length;
-            GameManager.Instance.StartLevel();
+            MatchGameManager.Instance.StartLevel();
         }
 
         void Start()
@@ -69,7 +69,7 @@ namespace Match3
             //and recompute camera zoom
             if (Screen.width != m_StartingWidth || Screen.height != m_StartingHeight)
             {
-                GameManager.Instance.ComputeCamera();
+                MatchGameManager.Instance.ComputeCamera();
             }
         }
 
@@ -92,8 +92,8 @@ namespace Match3
                         GoalLeft -= 1;
                         if (GoalLeft == 0)
                         {
-                            GameManager.Instance.WinStar();
-                            GameManager.Instance.Board.ToggleInput(false);
+                            MatchGameManager.Instance.WinStar();
+                            MatchGameManager.Instance.Board.ToggleInput(false);
                             OnAllGoalFinished?.Invoke();
                         }
                     }

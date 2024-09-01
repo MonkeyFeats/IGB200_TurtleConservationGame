@@ -23,23 +23,23 @@ namespace Match3
 
             m_Used = true;
             
-            var newMatch = GameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
+            var newMatch = MatchGameManager.Instance.Board.CreateCustomMatch(m_CurrentIndex);
             newMatch.ForcedDeletion = true;
 
             //we still test the content of the index as this could be a bonus used from the Ui so the clicked position
             //won't contains "this" but a different gem
-            var currentContent = GameManager.Instance.Board.CellContent[m_CurrentIndex];
+            var currentContent = MatchGameManager.Instance.Board.CellContent[m_CurrentIndex];
             HandleContent(currentContent, newMatch);
 
 
-            GameManager.Instance.PlaySFX(TriggerSound);
+            MatchGameManager.Instance.PlaySFX(TriggerSound);
 
             for (int x = -2; x <= 2; ++x)
             {
                 for (int y = -2; y <= 2; ++y)
                 {
                     var idx = m_CurrentIndex + new Vector3Int(x, y, 0);
-                    if (GameManager.Instance.Board.CellContent.TryGetValue(idx, out var content) &&
+                    if (MatchGameManager.Instance.Board.CellContent.TryGetValue(idx, out var content) &&
                         content.ContainingGem != null)
                     {
                         HandleContent(content, newMatch);
