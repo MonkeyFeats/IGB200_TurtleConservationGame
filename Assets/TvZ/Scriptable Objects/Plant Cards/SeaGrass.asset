@@ -18,12 +18,12 @@ MonoBehaviour:
   zombieLayer:
     serializedVersion: 2
     m_Bits: 64
-  cost: 50
-  cooldown: 3
+  cost: 20
+  cooldown: 0.5
   isSunFlower: 0
-  sunSpawnerTemplate: {fileID: 0}
-  health: 5000
-  damage: 0
+  sunSpawnerTemplate: {fileID: 1501243854906866995, guid: 950582ccc7b092249a3a898adb7ad2a6, type: 3}
+  health: 20
+  damage: 40
   range: 0
   speed: 0
   fireRate: 0
@@ -36,4 +36,4 @@ MonoBehaviour:
   size: {x: 0.19, y: 0.19}
   colliderSize: {x: 4.8956375, y: 5.9531364}
   radius: 3.019517
-  name: 
+  name: SeaGrass

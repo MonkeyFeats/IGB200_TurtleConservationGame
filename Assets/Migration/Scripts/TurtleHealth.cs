@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TurtleHealth : MonoBehaviour
 {
-    int hits = 4;
+    int hits = 3;
     bool invincible = false;
     float invincibleTimer = 0;
     float invincibleTime = 1;
     MeshRenderer meshRenderer;
+    [SerializeField] private GameObject[] livesImages;
 
     void Start()
     {
@@ -38,6 +39,8 @@ public class TurtleHealth : MonoBehaviour
         if (!invincible)
         {
             hits--;
+            print(hits);
+            livesImages[hits].SetActive(false);
             if (hits <= 0)
             {
                 Destroy(gameObject);

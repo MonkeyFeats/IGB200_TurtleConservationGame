@@ -53,17 +53,18 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
             if (prevName != colliderName || prevName == null)
             {
-                if (!colliderName.isOccupied)
-                {
-                    plant.transform.position = new Vector3(0, 0, -1);
-                    plant.transform.localPosition = new Vector3(0, 0, -1);
-                    isOverCollider = false;
-                    if (prevName != null)
-                    {
-                        prevName.plant = null;
-                    }
-                    prevName = colliderName;
-                }
+                print(colliderName);
+                //if (!colliderName.isOccupied)
+                //{
+                //    plant.transform.position = new Vector3(0, 0, -1);
+                //    plant.transform.localPosition = new Vector3(0, 0, -1);
+                //    isOverCollider = false;
+                //    if (prevName != null)
+                //    {
+                //        prevName.plant = null;
+                //    }
+                //    prevName = colliderName;
+                //}
             }
             else
             {

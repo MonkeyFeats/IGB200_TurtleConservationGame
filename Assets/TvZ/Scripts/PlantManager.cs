@@ -89,7 +89,7 @@ public class PlantManager : MonoBehaviour
 
         if (plantVisual != default)
         {
-            plantVisual.GetComponent<Animator>().SetBool(dropedName, true);
+            //plantVisual.GetComponent<Animator>().SetBool(dropedName, true);
         }
     }
 

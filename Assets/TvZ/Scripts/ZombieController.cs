@@ -74,7 +74,7 @@ public class ZombieController : MonoBehaviour
 
         if (!isAttacking && !isDying)
         {
-            Debug.Log("Walking!");
+            //Debug.Log("Walking!");
             isWalking = true;
             this.GetComponent<Animator>().SetBool("IsWalking", isWalking);
             this.transform.position += Vector3.left * speed * Time.deltaTime;

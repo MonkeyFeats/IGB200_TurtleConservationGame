@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathManager : MonoBehaviour
 {
-
+    public PvzGameManager gameManager;
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collided death!");
@@ -13,6 +13,8 @@ public class DeathManager : MonoBehaviour
         {
             //Ending Code here
             Debug.Log("Died!");
+            gameManager.EndGame();
         }
     }
+
 }

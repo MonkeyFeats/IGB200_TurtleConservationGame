@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a597820e364d073499c6b0051f4a97ad, type: 3}
-  m_Name: Segull1
+  m_Name: Seagull1
   m_EditorClassIdentifier: 
   zombieDefault: {fileID: 3987133898451156565, guid: d9b54ee5a59402742aafcf047a560c29, type: 3}
   zombieAccessory: {fileID: 0}
-  zombieType: 2
+  zombieType: 0
   accessoryHealth: 50
-  zombieHealth: 150
+  zombieHealth: 120
   zombieHandHealth: 50
   zombieDamage: 10
   zombieSpeed: 0.5

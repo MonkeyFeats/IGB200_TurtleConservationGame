@@ -14,6 +14,7 @@ public class PvzGameManager : MonoBehaviour
     public GameObject decorativeZombies;
 
     public Transform cardSlotsHolder;
+    public GameObject endGameCanvas;
 
     public ZombieManager zombieManager;
 
@@ -43,11 +44,16 @@ public class PvzGameManager : MonoBehaviour
             preCurrentAmount = currentAmount;
             //coinDisplay.SetText(currentAmount + "");
         }
+
+        if (Time.frameCount % 60 == 0)
+        {
+            AddSun(5);
+        }
 	}
 
 	public void StartMatch()
 	{
-        cameraPan.SetTrigger("PanToPlants");
+        //cameraPan.SetTrigger("PanToGulls");
         CardManager.isGameStart = true;
         RefreshAllPlantCards();
         zombieManager.SpawnZombies();
@@ -85,7 +91,26 @@ public class PvzGameManager : MonoBehaviour
         currentAmount += value;
     }
 
-	public void OnApplicationQuit()
+
+    private void DisablePlayerControls()
+    {
+        Time.timeScale = 0f; // Pauses the game
+        // Disable your player control script here, e.g.,
+        // player.GetComponent<PlayerControlScript>().enabled = false;
+    }
+
+    public void EndGame()
+    {
+        DisablePlayerControls();
+
+        // Display the game over UI
+        if (endGameCanvas != null)
+        {
+            endGameCanvas.SetActive(true);
+        }
+    }
+
+    public void OnApplicationQuit()
 	{
         PlayerPrefs.SetInt(coinPrefsName, currentAmount);
 	}
