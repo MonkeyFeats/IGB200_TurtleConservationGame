@@ -49,9 +49,7 @@ public class RandomObstacleSpawner : MonoBehaviour
         // Set the spawn position, preserving the prefab's X position and applying a height offset
         Vector3 spawnPosition = new Vector3(prefabX, obstaclePrefab.transform.position.y + spawnHeightOffset, player.position.z + spawnDistance);
 
-        // Instantiate the obstacle at the calculated position
-        Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+        // Instantiate the obstacle at the calculated position with its original rotation
+        Instantiate(obstaclePrefab, spawnPosition, obstaclePrefab.transform.rotation);
     }
 }
-
-

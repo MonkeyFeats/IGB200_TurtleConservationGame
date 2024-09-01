@@ -10,7 +10,7 @@ public class ObstacleDeletion : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if (other.gameObject.name == "OffscreenBorder")
+        else if (other.gameObject.name == "OffScreenBorder")
         {
             Destroy(gameObject);
         }

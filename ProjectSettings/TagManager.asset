@@ -9,6 +9,8 @@ TagManager:
   - Zombie
   - Undefined
   - Sun
+  - Jellyfish
+  - Food
   layers:
   - Default
   - TransparentFX
