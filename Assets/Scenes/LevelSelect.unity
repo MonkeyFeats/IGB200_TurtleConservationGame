@@ -3798,10 +3798,10 @@ MonoBehaviour:
     onButtonPressed:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1089727368}
-          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
-          m_MethodName: LoadSceneByIndex
-          m_Mode: 3
+        - m_Target: {fileID: 1510313909}
+          m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4214,7 +4214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285614807723, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_text
-      value: 'Katie
+      value: 'Ranger Katie
 
 '
       objectReference: {fileID: 0}
@@ -6279,6 +6279,210 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 8dfb3bdf788cbc345a338b5bd53d276b, type: 3}
   m_PrefabInstance: {fileID: 1449576895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1510313908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1510313911}
+  - component: {fileID: 1510313909}
+  - component: {fileID: 1510313910}
+  m_Layer: 0
+  m_Name: Awakening Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1510313909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510313908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 1
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+    sentence: Hi, my name is Katie, I'm a Widlife Ranger.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 0}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+    sentence: Welcome to the Island aquatic and wildlife reserve!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 0}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+    sentence: Oh, I see you found an injured Turtle on the beach? Well that just
+      won't do!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 0}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+    sentence: I'm going to take this little fella back to the reserve why don't you
+      go have a look around the island for an activity and then meet me back at the
+      reserve!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 0}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 0}
+    sentence: 
+    skipDelayTime: 0
+    sentenceSound: {fileID: 0}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1089727368}
+          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+          m_MethodName: LoadSceneByIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!82 &1510313910
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510313908}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1510313911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510313908}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3519287, y: 145.72156, z: -6.56}
+  m_LocalScale: {x: 5.1497602, y: 5.1497602, z: 5.1497602}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520107080
 GameObject:
   m_ObjectHideFlags: 0
@@ -8729,7 +8933,7 @@ GameObject:
   - component: {fileID: 7605817563137976370}
   - component: {fileID: 5505283195169310637}
   m_Layer: 0
-  m_Name: Dialogue
+  m_Name: Katie Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8844,7 +9048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 5505283195169310637}
+  audioSource: {fileID: 0}
   startDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8859,14 +9063,14 @@ MonoBehaviour:
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
     sentence: Hi, my name is Katie, I'm a Widlife Ranger.
     skipDelayTime: 0
-    sentenceSound: {fileID: 8300000, guid: bc0377eca9e9921499596204077422f8, type: 3}
+    sentenceSound: {fileID: 0}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
     sentence: Welcome to the Island aquatic and wildlife reserve!
     skipDelayTime: 0
-    sentenceSound: {fileID: 8300000, guid: b593f4c37c69e3f4c93d7221601a129f, type: 3}
+    sentenceSound: {fileID: 0}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -8874,7 +9078,7 @@ MonoBehaviour:
     sentence: Oh, I see you found an injured Turtle on the beach? Well that just
       won't do!
     skipDelayTime: 0
-    sentenceSound: {fileID: 8300000, guid: 7948fa11c840b4a4ab6f74df22ddc6c2, type: 3}
+    sentenceSound: {fileID: 0}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -8926,5 +9130,6 @@ SceneRoots:
   - {fileID: 1957765896}
   - {fileID: 1132302547}
   - {fileID: 5200451048607414047}
+  - {fileID: 1510313911}
   - {fileID: 726143321}
   - {fileID: 1089727367}
