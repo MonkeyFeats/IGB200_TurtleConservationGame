@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 23178709}
   - component: {fileID: 23178708}
   m_Layer: 0
-  m_Name: ocean-underwater_0
+  m_Name: ocean background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

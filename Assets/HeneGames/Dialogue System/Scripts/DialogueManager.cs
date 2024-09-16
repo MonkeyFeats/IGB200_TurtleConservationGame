@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;  // Required for Button
 
 namespace HeneGames.DialogueSystem
 {
@@ -11,6 +12,8 @@ namespace HeneGames.DialogueSystem
         private float coolDownTimer;
         private bool dialogueIsOn;
         private DialogueTrigger dialogueTrigger;
+        [SerializeField] private Button dialogueButton;  // Reference to your button in the scene
+
 
         public enum TriggerState
         {
@@ -170,65 +173,71 @@ namespace HeneGames.DialogueSystem
         public void StartDialogue()
         {
             //Start event
-            if(dialogueTrigger != null)
+            if (dialogueTrigger != null)
             {
                 dialogueTrigger.startDialogueEvent.Invoke();
             }
 
-            //Reset sentence index
             currentSentence = 0;
-
-            //Show first sentence in dialogue UI
             ShowCurrentSentence();
-
-            //Play dialogue sound
             PlaySound(sentences[currentSentence].sentenceSound);
 
-            //Cooldown timer
             coolDownTimer = sentences[currentSentence].skipDelayTime;
+
+            // Assign the button click event to proceed to the next sentence
+            UpdateButtonListener();
         }
+
+        private void UpdateButtonListener()
+        {
+            // Remove any previous listeners to avoid duplicate invocations
+            dialogueButton.onClick.RemoveAllListeners();
+
+            // Add listener to trigger the NextSentence function when clicked
+            dialogueButton.onClick.AddListener(Testing);  // You can use NextSentence if that's the preferred method
+        }
+
 
         public void Testing()
         {
             //The next sentence cannot be changed immediately after starting
             if (coolDownTimer > 0f)
             {
-               // lastSentence = false;
+                // lastSentence = false;
                 return;
             }
 
-            //Add one to sentence index
-            currentSentence++;
-
-            //Next sentence event
-            if (dialogueTrigger != null)
+            //Add one to     public void Testing()
             {
-                dialogueTrigger.nextSentenceDialogueEvent.Invoke();
+                // The next sentence cannot be changed immediately after starting
+                if (coolDownTimer > 0f)
+                {
+                    return;
+                }
+
+                currentSentence++;
+
+                if (dialogueTrigger != null)
+                {
+                    dialogueTrigger.nextSentenceDialogueEvent.Invoke();
+                }
+
+                nextSentenceDialogueEvent.Invoke();
+
+                // Check if it's the last sentence
+                if (currentSentence > sentences.Count - 1)
+                {
+                    StopDialogue();
+                    return;
+                }
+
+                // Continue with next sentence
+                PlaySound(sentences[currentSentence].sentenceSound);
+                ShowCurrentSentence();
+
+                // Reset the cooldown timer
+                coolDownTimer = sentences[currentSentence].skipDelayTime;
             }
-
-            nextSentenceDialogueEvent.Invoke();
-
-            //If last sentence stop dialogue and return
-            if (currentSentence > sentences.Count - 1)
-            {
-                StopDialogue();
-
-                //lastSentence = true;
-
-                return;
-            }
-
-            //If not last sentence continue...
-            //lastSentence = false;
-
-            //Play dialogue sound
-            PlaySound(sentences[currentSentence].sentenceSound);
-
-            //Show next sentence in dialogue UI
-            ShowCurrentSentence();
-
-            //Cooldown timer
-            coolDownTimer = sentences[currentSentence].skipDelayTime;
         }
 
         public void NextSentence(out bool lastSentence)
@@ -276,26 +285,25 @@ namespace HeneGames.DialogueSystem
 
         public void StopDialogue()
         {
-            //Stop dialogue event
+            // End dialogue, clean up UI, etc.
             if (dialogueTrigger != null)
             {
                 dialogueTrigger.endDialogueEvent.Invoke();
             }
 
             endDialogueEvent.Invoke();
-
-            //Hide dialogue UI
             DialogueUI.instance.ClearText();
 
-            //Stop audiosource so that the speaker's voice does not play in the background
-            if(audioSource != null)
+            if (audioSource != null)
             {
                 audioSource.Stop();
             }
 
-            //Remove trigger refence
             dialogueIsOn = false;
             dialogueTrigger = null;
+
+            // Remove the button listener once the dialogue ends
+            dialogueButton.onClick.RemoveAllListeners();
         }
 
         private void PlaySound(AudioClip _audioClip)

@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueButton: {fileID: 0}
   audioSource: {fileID: 0}
   startDialogueEvent:
     m_PersistentCalls:
@@ -1410,7 +1411,7 @@ Transform:
   m_GameObject: {fileID: 420875511}
   serializedVersion: 2
   m_LocalRotation: {x: -0.24333152, y: 0.7200808, z: 0.3055084, w: 0.57353115}
-  m_LocalPosition: {x: 1.6599998, y: 0.5999996, z: 2.19}
+  m_LocalPosition: {x: 1.663, y: 0.5999996, z: 2.204}
   m_LocalScale: {x: 0.5800969, y: 0.62877, z: 0.62877}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2303,15 +2304,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5316b3783210d0642b67f41bff1e2c51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.321841
+      value: 13.33
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5316b3783210d0642b67f41bff1e2c51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4589999
+      value: -3.34
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5316b3783210d0642b67f41bff1e2c51, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.347225
+      value: 27.36
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5316b3783210d0642b67f41bff1e2c51, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6574,6 +6575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueButton: {fileID: 324075794}
   audioSource: {fileID: 0}
   startDialogueEvent:
     m_PersistentCalls:
@@ -6976,6 +6978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueButton: {fileID: 0}
   audioSource: {fileID: 0}
   startDialogueEvent:
     m_PersistentCalls:
@@ -9378,7 +9381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5316b3783210d0642b67f41bff1e2c51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4589999
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5316b3783210d0642b67f41bff1e2c51, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9576,6 +9579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueButton: {fileID: 324075794}
   audioSource: {fileID: 0}
   startDialogueEvent:
     m_PersistentCalls:
@@ -9648,6 +9652,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1089727368}
+          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+          m_MethodName: LoadSceneByIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
             m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
