@@ -337,31 +337,31 @@ MonoBehaviour:
   triggerState: 1
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
-    sentence: Hi, my name is Katie, I'm a Widlife Ranger.
+    sentence: Look 'Player'! The Beach is covered in lots of debris from the storm
+      last night!
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
-    sentence: Welcome to the Island aquatic and wildlife reserve!
+    sentence: Let's go searching and find any harmful items, such as plastics, glass
+      and metals that may have blown through.
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
-    sentence: Oh, I see you found an injured Turtle on the beach? Well that just
-      won't do!
+    sentence: Make sure to keep an eye out there may be some animals that need help
+      down there too!
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
-    sentence: I'm going to take this little fella back to the reserve why don't you
-      go have a look around the island for an activity and then meet me back at the
-      reserve!
+    sentence: Good luck and be safe!
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
     sentenceEvent:
@@ -4050,18 +4050,31 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - levelName: Protect The Nests
-    levelDescription: Protect the turtles from the seagulls
+  - levelName: Beach Search
+    levelDescription: A Storm has blown debris all over the beach, search it for
+      potentially harmful items, and any little critters that may have gotten lost.
     levelImage: {fileID: 0}
     levelIndex: 2
     topScore: 0
     onButtonPressed:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1089727368}
-          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
-          m_MethodName: LoadSceneByIndex
-          m_Mode: 3
+        - m_Target: {fileID: 26457504}
+          m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1445370566}
+          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_MethodName: set_alpha
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4078,10 +4091,22 @@ MonoBehaviour:
     onButtonPressed:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1089727368}
-          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
-          m_MethodName: LoadSceneByIndex
-          m_Mode: 3
+        - m_Target: {fileID: 1532437864}
+          m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1445370566}
+          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_MethodName: set_alpha
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7051,7 +7076,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
+            m_IntArgument: 3
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
