@@ -338,14 +338,6 @@ MonoBehaviour:
   triggerState: 1
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
-    sentence: Look 'Player'! The Beach is covered in lots of debris from the storm
-      last night!
-    skipDelayTime: 0
-    sentenceSound: {fileID: 0}
-    sentenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
     sentence: Let's go searching and find any harmful items, such as plastics, glass
       and metals that may have blown through.
     skipDelayTime: 0
@@ -385,7 +377,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
         - m_Target: {fileID: 1445370566}
           m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
@@ -3995,6 +3987,18 @@ MonoBehaviour:
     onButtonPressed:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 833367194}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 7605817563137976370}
           m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
           m_MethodName: StartDialogue
@@ -4027,6 +4031,18 @@ MonoBehaviour:
     onButtonPressed:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 833367194}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 1510313909}
           m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
           m_MethodName: StartDialogue
@@ -4060,6 +4076,18 @@ MonoBehaviour:
     onButtonPressed:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 833367194}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 26457504}
           m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
           m_MethodName: StartDialogue
@@ -4092,6 +4120,18 @@ MonoBehaviour:
     onButtonPressed:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 833367194}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 1532437864}
           m_TargetAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager, Assembly-CSharp
           m_MethodName: StartDialogue
@@ -9652,18 +9692,6 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1089727368}
-          m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
-          m_MethodName: LoadSceneByIndex
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
             m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
