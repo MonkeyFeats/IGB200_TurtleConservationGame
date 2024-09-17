@@ -10,8 +10,11 @@ public class BoatLineController : MonoBehaviour
     public float minimumDistance = 0.1f; // Minimum distance between points for smooth line
     public float lineHeight = 2f; // Y position where the line will be drawn (above everything else)
     public float pathStartThreshold = 0.5f; // Minimum distance for the boat to begin following the path
+    public float fadeDuration = 2f; // Duration over which each line segment fades out
 
-    private List<Vector3> waypoints = new List<Vector3>(); // Stores the waypoints
+    private List<Vector3> lineWaypoints = new List<Vector3>(); // Waypoints used for drawing the line
+    private List<Vector3> boatWaypoints = new List<Vector3>(); // Waypoints used for guiding the boat
+    private List<float> segmentTimes = new List<float>(); // List to track fade times for each segment
     private bool isDrawing = false; // True when the player is drawing a path
     private int currentWaypointIndex = 0; // Current waypoint the boat is moving to
 
@@ -21,10 +24,12 @@ public class BoatLineController : MonoBehaviour
     {
         HandleInput(); // Capture player input
 
-        if (!isDrawing && waypoints.Count > 0)
+        if (!isDrawing && boatWaypoints.Count > 0)
         {
-            MoveAlongPath(); // Move the boat along the drawn path
+            MoveAlongPath(); // Move the boat along its waypoints
         }
+
+        UpdateLineFade(); // Update the fading effect of the line
     }
 
     // Handle mouse/touch input for drawing the path
@@ -34,8 +39,10 @@ public class BoatLineController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isDrawing = true;
-            waypoints.Clear(); // Clear any existing waypoints
+            lineWaypoints.Clear(); // Clear any existing waypoints for the line
+            boatWaypoints.Clear(); // Clear the boat's waypoints (if desired)
             lineRenderer.positionCount = 0; // Clear the LineRenderer
+            segmentTimes.Clear(); // Clear segment fade times
         }
 
         // Continue drawing while the input is held
@@ -52,7 +59,7 @@ public class BoatLineController : MonoBehaviour
                 Vector3 mousePosition = ray.GetPoint(distance);
 
                 // Only add waypoints if they are sufficiently far from the last one for a smooth line
-                if (waypoints.Count == 0 || Vector3.Distance(mousePosition, waypoints[waypoints.Count - 1]) > minimumDistance)
+                if (lineWaypoints.Count == 0 || Vector3.Distance(mousePosition, lineWaypoints[lineWaypoints.Count - 1]) > minimumDistance)
                 {
                     AddWaypoint(mousePosition);
                 }
@@ -70,19 +77,21 @@ public class BoatLineController : MonoBehaviour
     // Add a waypoint and update the line renderer
     void AddWaypoint(Vector3 point)
     {
-        waypoints.Add(point);
-        lineRenderer.positionCount = waypoints.Count;
+        lineWaypoints.Add(point);
+        boatWaypoints.Add(point); // Also add the waypoint to the boat's path
+        lineRenderer.positionCount = lineWaypoints.Count;
+        lineRenderer.SetPosition(lineWaypoints.Count - 1, point);
 
-        // Set the position for the LineRenderer
-        lineRenderer.SetPosition(waypoints.Count - 1, point);
+        // Add a new fade time entry for the new segment
+        segmentTimes.Add(Time.time);
     }
 
-    // Move the boat along the drawn path
+    // Move the boat along its waypoints
     void MoveAlongPath()
     {
-        if (currentWaypointIndex < waypoints.Count)
+        if (currentWaypointIndex < boatWaypoints.Count)
         {
-            Vector3 targetPosition = waypoints[currentWaypointIndex];
+            Vector3 targetPosition = boatWaypoints[currentWaypointIndex];
             targetPosition.y = transform.position.y; // Ensure boat stays on the same y-plane
 
             // Check if the boat is far enough from the first waypoint to begin movement
@@ -108,6 +117,44 @@ public class BoatLineController : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPosition) < tolerance)
             {
                 currentWaypointIndex++;
+            }
+        }
+    }
+
+    // Update the fading effect of the line
+    void UpdateLineFade()
+    {
+        if (lineWaypoints.Count > 0)
+        {
+            for (int i = 0; i < segmentTimes.Count; i++)
+            {
+                float elapsed = Time.time - segmentTimes[i];
+                float alpha = Mathf.Clamp01(1 - (elapsed / fadeDuration));
+
+                // Update the color of the line segment
+                if (i < lineRenderer.positionCount)
+                {
+                    Color color = lineRenderer.startColor;
+                    color.a = alpha;
+                    lineRenderer.SetColors(color, color);
+                }
+            }
+
+            // Remove faded segments from the line renderer
+            if (segmentTimes.Count > 0 && Time.time - segmentTimes[0] > fadeDuration)
+            {
+                segmentTimes.RemoveAt(0);
+                List<Vector3> newLinePoints = new List<Vector3>();
+                for (int i = 1; i < lineWaypoints.Count; i++)
+                {
+                    newLinePoints.Add(lineWaypoints[i]);
+                }
+                lineWaypoints = newLinePoints;
+                lineRenderer.positionCount = lineWaypoints.Count;
+                for (int i = 0; i < lineWaypoints.Count; i++)
+                {
+                    lineRenderer.SetPosition(i, lineWaypoints[i]);
+                }
             }
         }
     }

@@ -11,6 +11,8 @@ TagManager:
   - Sun
   - Jellyfish
   - Food
+  - Trash
+  - Net
   layers:
   - Default
   - TransparentFX

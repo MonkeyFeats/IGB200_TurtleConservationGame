@@ -1,19 +1,23 @@
 using UnityEngine;
-using UnityEngine.UI; // For UI components
+using TMPro; // For TextMeshPro components
 
 public class BoatCleanupLevelManager : MonoBehaviour
 {
     // Public variables
-    public int totalRubbish = 10; // Total rubbish in the level
+    public int totalRubbish = 10; // Total rubbish to collect in the level
     public float levelTime = 300f; // Total time in seconds for the level (e.g., 5 minutes)
+    public GameObject rubbishPrefab; // Rubbish prefab to spawn
+    public float spawnInterval = 5f; // Time interval for spawning rubbish
+    public Vector3 spawnArea = new Vector3(50f, 0f, 50f); // Defines the area where rubbish will spawn
 
-    // UI elements (optional)
-    public Text rubbishCollectedText; // UI text for rubbish collected
-    public Text timeLeftText; // UI text for time remaining
+    // UI elements
+    public TMP_Text rubbishCollectedText; // TextMeshPro UI text for rubbish collected
+    public TMP_Text timeLeftText; // TextMeshPro UI text for time remaining
 
     // Private variables
     private int rubbishCollected = 0; // Amount of rubbish collected
     private float timeLeft; // Timer for the level
+    private float timeSinceLastSpawn = 0f; // Timer for rubbish spawning
 
     void Start()
     {
@@ -43,13 +47,36 @@ public class BoatCleanupLevelManager : MonoBehaviour
         {
             EndLevel(true); // Win the game
         }
+
+        // Spawn rubbish at regular intervals
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn >= spawnInterval && rubbishCollected < totalRubbish)
+        {
+            SpawnRubbish();
+            timeSinceLastSpawn = 0f;
+        }
+    }
+
+    // Spawns rubbish in a random position within the defined spawn area
+    private void SpawnRubbish()
+    {
+        // Generate a random position within the spawn area
+        Vector3 randomPosition = new Vector3(
+            Random.Range(-spawnArea.x / 2, spawnArea.x / 2),
+            0f, // Adjust for 2D top-down view, keep Y consistent
+            Random.Range(-spawnArea.z / 2, spawnArea.z / 2)
+        );
+
+        // Instantiate the rubbish prefab at the random position
+        Instantiate(rubbishPrefab, randomPosition, Quaternion.identity);
     }
 
     // Call this method whenever the player collects rubbish
-    public void CollectRubbish()
+    public void CollectRubbish(GameObject rubbish)
     {
         rubbishCollected++;
         UpdateRubbishUI();
+        Destroy(rubbish);
 
         // Check if this is the last piece of rubbish
         if (rubbishCollected >= totalRubbish)
