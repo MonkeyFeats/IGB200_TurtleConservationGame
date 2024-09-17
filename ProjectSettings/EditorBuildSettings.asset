@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: 3e7a8d051646d3b4bb9c2ed798a088a0
   - enabled: 1
-    path: Assets/Scenes/TurtlesVsZombies.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/HiddenObjects.unity
+    guid: b6b176e53a6d20442abb2346dd38ca50
   - enabled: 1
     path: Assets/Scenes/MigrationMinigame.unity
     guid: 50bb6268803078a4db14c8361a2898bf
+  - enabled: 1
+    path: Assets/Scenes/BoatDriverScene.unity
+    guid: c7f9afb7341f9344986a9fce2f22e8d4
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2fb91863541b45e46adbb34bd4016a2e, type: 2}
   m_UseUCBPForAssetBundles: 0
