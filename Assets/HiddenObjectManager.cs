@@ -4,12 +4,12 @@ using TMPro;
 
 public class HiddenObjectGame : MonoBehaviour
 {
+    [SerializeField] private SceneManagerScript _sceneManagerScript;
     [SerializeField] private List<GameObject> objectPrefabs;
     [SerializeField] private List<Transform> spawnLocations;
     [SerializeField] private int numberOfObjectsToSpawn;
 
     [SerializeField] private TextMeshProUGUI remainingItemsText;
-    [SerializeField] private TextMeshProUGUI winText;
     [SerializeField] private TextMeshProUGUI timerText;
 
     [SerializeField] private List<UiObjectSlot> objectSlots;
@@ -25,7 +25,6 @@ public class HiddenObjectGame : MonoBehaviour
 
     void Start()
     {
-        winText.gameObject.SetActive(false);
         objectsFound = 0;
         currentTime = gameTime;
         gameOver = false;
@@ -158,7 +157,8 @@ public class HiddenObjectGame : MonoBehaviour
         gameOver = true;
         if (won)
         {
-            winText.gameObject.SetActive(true);
+            //winText.gameObject.SetActive(true);
+            _sceneManagerScript.EndGame();
         }
         remainingItemsText.gameObject.SetActive(false);
     }
