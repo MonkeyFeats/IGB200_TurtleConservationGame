@@ -3,6 +3,7 @@ using TMPro; // For TextMeshPro components
 
 public class BoatCleanupLevelManager : MonoBehaviour
 {
+    public SceneManagerScript sceneManagerScript;
     // Public variables
     public int totalRubbish = 10; // Total rubbish to collect in the level
     public float levelTime = 300f; // Total time in seconds for the level (e.g., 5 minutes)
@@ -111,16 +112,16 @@ public class BoatCleanupLevelManager : MonoBehaviour
 
         if (hasWon)
         {
-            Debug.Log("You've collected all the rubbish! You win!");
+            sceneManagerScript.EndGame();
         }
         else
         {
-            Debug.Log("Time's up! You lose!");
+            sceneManagerScript.EndGame();
         }
 
         // Here you could load a new scene, display a game over screen, etc.
         // For now, just restart the level
-        RestartLevel();
+        //RestartLevel();
     }
 
     // Restart the level (for simplicity, just reload the current scene)
