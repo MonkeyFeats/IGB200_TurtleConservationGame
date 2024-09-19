@@ -134,7 +134,7 @@ namespace HeneGames.DialogueSystem
             nameText.text = _dialogueCharacter.characterName;
             currentMessage = _message;
 
-            if (animateText)
+            if (animateText && _dialogueCharacter !is null)
             {
                 StartCoroutine(WriteTextToTextmesh(_message, messageText));
             }

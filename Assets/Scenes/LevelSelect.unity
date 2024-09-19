@@ -438,7 +438,7 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+  - dialogueCharacter: {fileID: 0}
     sentence: 
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
@@ -11330,37 +11330,13 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+  - dialogueCharacter: {fileID: 0}
     sentence: 
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 833367194}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1445370566}
-          m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-          m_MethodName: set_alpha
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 1089727368}
           m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
           m_MethodName: LoadSceneByIndex
@@ -11911,7 +11887,7 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+  - dialogueCharacter: {fileID: 0}
     sentence: 
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
@@ -16883,7 +16859,7 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+  - dialogueCharacter: {fileID: 0}
     sentence: 
     skipDelayTime: 0
     sentenceSound: {fileID: 0}
