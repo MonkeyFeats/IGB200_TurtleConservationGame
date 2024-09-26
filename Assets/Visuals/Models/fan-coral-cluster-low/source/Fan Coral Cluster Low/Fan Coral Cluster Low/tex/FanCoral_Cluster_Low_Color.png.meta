@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 44815f17bcef8cd40b52936e737ce429
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5873160099240917962
+    second: FanCoral_Cluster_Low_Color_0
+  - first:
+      213: -3189619743496540644
+    second: FanCoral_Cluster_Low_Color_1
+  - first:
+      213: 4584366126871544818
+    second: FanCoral_Cluster_Low_Color_2
+  - first:
+      213: 1217427879322074639
+    second: FanCoral_Cluster_Low_Color_3
+  - first:
+      213: 1361499900754265267
+    second: FanCoral_Cluster_Low_Color_4
+  - first:
+      213: 4103173658370393672
+    second: FanCoral_Cluster_Low_Color_5
+  - first:
+      213: 7676143667597818984
+    second: FanCoral_Cluster_Low_Color_6
+  - first:
+      213: -6506307436675245894
+    second: FanCoral_Cluster_Low_Color_7
+  - first:
+      213: -6000456830929308077
+    second: FanCoral_Cluster_Low_Color_8
+  - first:
+      213: -3024298476001948595
+    second: FanCoral_Cluster_Low_Color_9
+  - first:
+      213: 7943203710782119431
+    second: FanCoral_Cluster_Low_Color_10
+  - first:
+      213: 5258171085370399731
+    second: FanCoral_Cluster_Low_Color_11
+  - first:
+      213: -7890572233154058704
+    second: FanCoral_Cluster_Low_Color_12
+  - first:
+      213: 2496862454699685421
+    second: FanCoral_Cluster_Low_Color_13
+  - first:
+      213: 5484458963733888529
+    second: FanCoral_Cluster_Low_Color_14
+  - first:
+      213: -968744645982566293
+    second: FanCoral_Cluster_Low_Color_15
+  - first:
+      213: 9023559844551748148
+    second: FanCoral_Cluster_Low_Color_16
+  - first:
+      213: 4898534591938368271
+    second: FanCoral_Cluster_Low_Color_17
+  - first:
+      213: -4965855439673759099
+    second: FanCoral_Cluster_Low_Color_18
+  - first:
+      213: -496261104102557930
+    second: FanCoral_Cluster_Low_Color_19
+  - first:
+      213: 8257349202067583372
+    second: FanCoral_Cluster_Low_Color_20
+  - first:
+      213: 2951225388445367199
+    second: FanCoral_Cluster_Low_Color_21
+  - first:
+      213: 1217560720523946841
+    second: FanCoral_Cluster_Low_Color_22
+  - first:
+      213: 4914957804900323137
+    second: FanCoral_Cluster_Low_Color_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1358
+        width: 640
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acbb0403ef7a18150800000000000000
+      internalID: 5873160099240917962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_1
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 2007
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ee05c1eb13cb3d0800000000000000
+      internalID: -3189619743496540644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_2
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1397
+        width: 561
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3038014b0fe9f30800000000000000
+      internalID: 4584366126871544818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_3
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1961
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e36aeb43c25e010800000000000000
+      internalID: 1217427879322074639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_4
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1465
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b4003a32f405e210800000000000000
+      internalID: 1361499900754265267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_5
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 1358
+        width: 50
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84648e6e3b661f830800000000000000
+      internalID: 4103173658370393672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_6
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 678
+        width: 640
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86c3808eef3278a60800000000000000
+      internalID: 7676143667597818984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_7
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1327
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab85d75bbd3f4b5a0800000000000000
+      internalID: -6506307436675245894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_8
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 717
+        width: 561
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3567466dd481abca0800000000000000
+      internalID: -6000456830929308077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_9
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 1327
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c062b3f888706d0800000000000000
+      internalID: -3024298476001948595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_10
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 717
+        width: 561
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e9bb7a0bdeb3e60800000000000000
+      internalID: 7943203710782119431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_11
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1281
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb9bbf3eb6c8f840800000000000000
+      internalID: 5258171085370399731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_12
+      rect:
+        serializedVersion: 2
+        x: 1821
+        y: 1281
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036aa482c5e0f7290800000000000000
+      internalID: -7890572233154058704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_13
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 785
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2672617c23a6a220800000000000000
+      internalID: 2496862454699685421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_14
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 785
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11eb09e9e56bc1c40800000000000000
+      internalID: 5484458963733888529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_15
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 678
+        width: 63
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68c52a80e35e82f0800000000000000
+      internalID: -968744645982566293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_16
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 678
+        width: 50
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a6cf7aedf1a3d70800000000000000
+      internalID: 9023559844551748148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_17
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 11
+        width: 623
+        height: 647
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03137002471bf340800000000000000
+      internalID: 4898534591938368271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_18
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 0
+        width: 641
+        height: 658
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58aed40b9ccb51bb0800000000000000
+      internalID: -4965855439673759099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_19
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 648
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 617bf16b72dec19f0800000000000000
+      internalID: -496261104102557930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_20
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 38
+        width: 561
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81f797995ff79270800000000000000
+      internalID: 8257349202067583372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_21
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 602
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b7662cadbd4f820800000000000000
+      internalID: 2951225388445367199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_22
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 106
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b6c4f3605a5e010800000000000000
+      internalID: 1217560720523946841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FanCoral_Cluster_Low_Color_23
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 0
+        width: 50
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f0e1f3510753440800000000000000
+      internalID: 4914957804900323137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
