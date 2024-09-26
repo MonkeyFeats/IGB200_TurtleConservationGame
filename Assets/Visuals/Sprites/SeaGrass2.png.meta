@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SeaGrass2_0: -322775235845459565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

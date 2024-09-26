@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Big_coral_Diff_0: 1453361427883561258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FanCoral_Cluster_Low_Normal_0: -7001621234849350176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

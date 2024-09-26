@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FanCoralSkin_White_Normal_0: 3330987641563711999
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

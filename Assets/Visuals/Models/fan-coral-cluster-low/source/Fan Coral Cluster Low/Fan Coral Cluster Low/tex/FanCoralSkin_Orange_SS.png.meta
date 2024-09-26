@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FanCoralSkin_Orange_SS_0: -2291922011934623334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

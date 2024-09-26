@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      coralV1_diff_0: 3419830657403701871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

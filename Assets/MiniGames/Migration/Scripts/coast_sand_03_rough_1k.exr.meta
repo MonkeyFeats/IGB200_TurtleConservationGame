@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      coast_sand_03_rough_1k_0: 6909402688015390799
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

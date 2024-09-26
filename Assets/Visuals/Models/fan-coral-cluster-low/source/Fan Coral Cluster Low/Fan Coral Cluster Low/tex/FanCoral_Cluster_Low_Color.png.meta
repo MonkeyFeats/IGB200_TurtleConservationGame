@@ -708,7 +708,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FanCoral_Cluster_Low_Color_0: 5873160099240917962
+      FanCoral_Cluster_Low_Color_1: -3189619743496540644
+      FanCoral_Cluster_Low_Color_10: 7943203710782119431
+      FanCoral_Cluster_Low_Color_11: 5258171085370399731
+      FanCoral_Cluster_Low_Color_12: -7890572233154058704
+      FanCoral_Cluster_Low_Color_13: 2496862454699685421
+      FanCoral_Cluster_Low_Color_14: 5484458963733888529
+      FanCoral_Cluster_Low_Color_15: -968744645982566293
+      FanCoral_Cluster_Low_Color_16: 9023559844551748148
+      FanCoral_Cluster_Low_Color_17: 4898534591938368271
+      FanCoral_Cluster_Low_Color_18: -4965855439673759099
+      FanCoral_Cluster_Low_Color_19: -496261104102557930
+      FanCoral_Cluster_Low_Color_2: 4584366126871544818
+      FanCoral_Cluster_Low_Color_20: 8257349202067583372
+      FanCoral_Cluster_Low_Color_21: 2951225388445367199
+      FanCoral_Cluster_Low_Color_22: 1217560720523946841
+      FanCoral_Cluster_Low_Color_23: 4914957804900323137
+      FanCoral_Cluster_Low_Color_3: 1217427879322074639
+      FanCoral_Cluster_Low_Color_4: 1361499900754265267
+      FanCoral_Cluster_Low_Color_5: 4103173658370393672
+      FanCoral_Cluster_Low_Color_6: 7676143667597818984
+      FanCoral_Cluster_Low_Color_7: -6506307436675245894
+      FanCoral_Cluster_Low_Color_8: -6000456830929308077
+      FanCoral_Cluster_Low_Color_9: -3024298476001948595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

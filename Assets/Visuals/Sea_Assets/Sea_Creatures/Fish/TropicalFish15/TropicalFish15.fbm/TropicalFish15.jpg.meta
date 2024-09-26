@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TropicalFish15_0: 5323963794829413187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
