@@ -18,6 +18,9 @@ public class TerrainGenerator : MonoBehaviour
     private float[,] originalTerrainHeights;    // Store original terrain heights
     private TerrainData terrainData;
     private int terrainResolution;
+    public float pathYoffset = 40;
+    [Range(1,4000)]
+    public int depthScalar = 256;
 
     [Header("Texture Data")]
     public float textureNoiseScale = 1.0f; 
@@ -25,6 +28,10 @@ public class TerrainGenerator : MonoBehaviour
     public float blendWidth = 5f; // Range around the threshold for blending
     public TerrainLayer baseLayer;              // The base layer texture (e.g., grass)
     public TerrainLayer steepLayer;             // The texture for steep areas (e.g., rock)
+
+    [Header("Foliage Data")]
+    public int foliageCount = 100; // Number of foliage instances to spawn
+    public int detailPrototypeIndex = 0; // Index of the detail prototype to paint
 
 
     void Start()
@@ -36,10 +43,10 @@ public class TerrainGenerator : MonoBehaviour
         GenerateEnhancedTerrain();
         SaveOriginalTerrainHeights();
         // Apply textures and vegetation
-        ApplyTextures();
-        //ApplyVegetation();
 
-        //ShapeTerrain();
+        ShapeTerrain();
+        //ApplyTextures();
+        //PaintFoliage();
 
     }
     private void Update()
@@ -136,7 +143,7 @@ public class TerrainGenerator : MonoBehaviour
             centerY = Mathf.Clamp(centerY, 0, resolution - 1);
 
             // Adjust the terrain around the path point
-            AdjustTerrain(modifiedHeights, centerX, centerY, pathWidth, terrainPosition.y, totalHeight, point.y/1000);
+            AdjustTerrain(modifiedHeights, centerX, centerY, pathWidth, terrainPosition.y, totalHeight, (point.y - pathYoffset) /depthScalar);
         }
 
         terrain.terrainData.SetHeights(0, 0, modifiedHeights);
@@ -273,41 +280,38 @@ public class TerrainGenerator : MonoBehaviour
         terrainData.SetAlphamaps(0, 0, splatmapData);
     }
 
-
-    private void ApplyVegetation()
+    private void PaintFoliage()
     {
         TerrainData terrainData = terrain.terrainData;
         int detailRes = terrainData.detailResolution;
 
-        // Example detail layer (e.g., grass)
+        // Create an array to hold the detail layer values
         int[,] details = new int[detailRes, detailRes];
 
-        for (int y = 0; y < detailRes; y++)
+        for (int i = 0; i < foliageCount; i++)
         {
-            for (int x = 0; x < detailRes; x++)
+            float randomX = Random.Range(0, detailRes);
+            float randomY = Random.Range(0, detailRes);
+
+            // Normalize coordinates
+            float normX = randomX / detailRes;
+            float normY = randomY / detailRes;
+
+            // Get height and steepness at this point
+            float height = terrainData.GetHeight(Mathf.RoundToInt(normX * terrainData.heightmapResolution),
+                                                 Mathf.RoundToInt(normY * terrainData.heightmapResolution));
+            float steepness = terrainData.GetSteepness(normX, normY);
+
+            // Check if the location meets the criteria for foliage placement
+            if (steepness < slopeThreshold)
             {
-                float normX = x / (float)detailRes;
-                float normY = y / (float)detailRes;
-
-                // Get the corresponding terrain height
-                float height = terrainData.GetHeight(Mathf.RoundToInt(normX * terrainData.heightmapResolution),
-                                                     Mathf.RoundToInt(normY * terrainData.heightmapResolution));
-
-                // Example: Only place grass on flat terrain
-                float steepness = terrainData.GetSteepness(normX, normY);
-                if (height > terrainData.size.y * 0.5f && steepness < 20.0f)
-                {
-                    details[x, y] = Random.Range(1, 4); // Random density
-                }
-                else
-                {
-                    details[x, y] = 0; // No grass
-                }
+                // Set foliage amount for this position
+                details[Mathf.RoundToInt(randomY), Mathf.RoundToInt(randomX)] += 1;
             }
         }
 
-        terrainData.SetDetailLayer(0, 0, 0, details); // Apply the details to the first detail layer
+        // Apply the details to the terrain
+        terrainData.SetDetailLayer(0, 0, detailPrototypeIndex, details);
     }
-
 
 }
