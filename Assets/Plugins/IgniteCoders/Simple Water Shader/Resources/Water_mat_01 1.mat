@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_28de85506601443d82b6148f21ccc69c:
-        m_Texture: {fileID: 8400000, guid: 4ae8ae7350b67b44785d874c413a2e03, type: 2}
+        m_Texture: {fileID: 2800000, guid: a9d65c4a9012ab1488c65f54edee7c5d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_6d0f902902b04ba687ee00a51db7ba6d:
@@ -69,17 +69,17 @@ Material:
     m_Floats:
     - Boolean_d3c978b0d14a4f66be175a9b89855be0: 0
     - Vector1_55003dfa023448c3bffa42f3ca4a99a4: 1
-    - Vector1_6269b1025b26473ca8bc61634f34b537: 0.866
+    - Vector1_6269b1025b26473ca8bc61634f34b537: 1
     - Vector1_687f54e8c371429f86b9eaab0e7dfe3e: 0.196
-    - Vector1_6c82dffdd68049bcb019d3a9c64c92a0: 2
-    - Vector1_6f56a0970372485390c6587863c2374e: 0.24
+    - Vector1_6c82dffdd68049bcb019d3a9c64c92a0: 0.21
+    - Vector1_6f56a0970372485390c6587863c2374e: -2.07
     - Vector1_7273530c27a34c9f8ee5723b84f96baa: 0.02
     - Vector1_dada42ebfac44076897b6de67441ba32: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Color_36218622185947c6a5ae36366d8e21d8: {r: 0.023529407, g: 0.23558985, b: 0.25882354, a: 0.9607843}
-    - Color_93e06cd551a5449091bcde90b46765a0: {r: 0, g: 0.26976532, b: 0.3660378, a: 0.50980395}
+    - Color_36218622185947c6a5ae36366d8e21d8: {r: 0.023529407, g: 0.23558977, b: 0.25882348, a: 1}
+    - Color_93e06cd551a5449091bcde90b46765a0: {r: 0.023529414, g: 0.23529413, b: 0.25882354, a: 0.76862746}
     - Vector2_4351ac2be1d74054986ec5378db9d578: {r: 26, g: 26, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
