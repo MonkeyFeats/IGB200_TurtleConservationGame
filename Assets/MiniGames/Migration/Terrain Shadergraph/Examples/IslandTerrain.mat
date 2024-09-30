@@ -221,7 +221,7 @@ Material:
     - _Ground_Smoothness_Detail: 0
     - _Ground_Smoothness_Distance: 0
     - _Ground_Texture_Noise: 66.3
-    - _HeightTransition: 0.015
+    - _HeightTransition: 0.079
     - _Metallic: 0
     - _Metallic0: 0
     - _Metallic1: 0
