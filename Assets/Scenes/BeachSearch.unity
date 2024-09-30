@@ -119,6 +119,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &58939468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0064
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0064
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0064
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 282.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 44.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 43.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7040268
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7101735
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90.49701
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862883894213760122, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238318030160924352, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
+      propertyPath: m_Name
+      value: solid rocket booster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d20331a225f6a264e9eec3808119b32c, type: 3}
 --- !u!1 &174873668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,7 +2240,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -36.600044, y: -12.099998}
-  m_SizeDelta: {x: 138.2, y: 100}
+  m_SizeDelta: {x: 138.2, y: 92.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1883874859
 MonoBehaviour:
@@ -2348,3 +2417,4 @@ SceneRoots:
   - {fileID: 1103001858}
   - {fileID: 1707508380}
   - {fileID: 1032469182}
+  - {fileID: 58939468}

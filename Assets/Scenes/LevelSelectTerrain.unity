@@ -1034,10 +1034,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrain: {fileID: 687722008}
   splatMap: {fileID: 2800000, guid: eea4d17aea3a9204b9b299e7aa6e0059, type: 3}
-  redChannelStrength: 0.06
-  greenChannelStrength: 1.11
+  redChannelStrength: 0.538
+  greenChannelStrength: 0.98
   blueChannelStrength: 2
-  alphaChannelStrength: 0.45
+  alphaChannelStrength: 1.158
   redThreshold: 1
   greenThreshold: 0
   blueThreshold: 1
@@ -4228,6 +4228,8 @@ MonoBehaviour:
   animateText: 1
   textAnimationSpeed: 0.5
   actionInput: 32
+  startsDialogWithScene: 0
+  dialogueThatStartsWithScene: {fileID: 0}
 --- !u!224 &5794203967371141790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4644,7 +4646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 846439721, guid: 156ec492e516ccb4099add479601d65e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be8224f0d39cd3143bdadd3171e8406f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
