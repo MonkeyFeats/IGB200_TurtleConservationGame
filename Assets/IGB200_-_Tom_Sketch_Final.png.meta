@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IGB200_-_Tom_Sketch_Final_0: -202444394363554819
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

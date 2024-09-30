@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
   m_Name: Ranger
   m_EditorClassIdentifier: 
-  characterPhoto: {fileID: 21300000, guid: 816480fb45cf47642b4ee4f78e7bb092, type: 3}
+  characterPhoto: {fileID: 8266785939424640626, guid: cfc6287a7d868754e865e98385c997f4, type: 3}
   characterName: Ranger Katie

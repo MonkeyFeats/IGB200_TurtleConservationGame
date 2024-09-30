@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
   m_Name: Villager
   m_EditorClassIdentifier: 
-  characterPhoto: {fileID: 21300000, guid: 30b889a4f550bc14d9363694ecfba282, type: 3}
+  characterPhoto: {fileID: -202444394363554819, guid: d01d87ef77d814c4898f9df54403bc05, type: 3}
   characterName: Villager

@@ -228,7 +228,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IGB200_-_Katie_Sketch_Final_0: 4517693255951046367
+      IGB200_-_Katie_Sketch_Final_1: 8266785939424640626
+      IGB200_-_Katie_Sketch_Final_2: 1180461821408721025
+      IGB200_-_Katie_Sketch_Final_3: 927012573256481536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

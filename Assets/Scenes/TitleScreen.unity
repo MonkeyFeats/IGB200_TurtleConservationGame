@@ -677,7 +677,7 @@ MonoBehaviour:
   - {fileID: 1063147369}
   fadeDuration: 1
   delayBetweenFades: 0.5
-  sceneToLoad: LevelSelectTerrain
+  sceneToLoad: KDiag
 --- !u!114 &830633145
 MonoBehaviour:
   m_ObjectHideFlags: 0
