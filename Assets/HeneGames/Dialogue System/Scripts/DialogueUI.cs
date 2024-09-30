@@ -25,8 +25,8 @@ namespace HeneGames.DialogueSystem
             }
 
             //Hide dialogue and interaction UI at awake
-            dialogueWindow.SetActive(false);
-            interactionUI.SetActive(false);
+            //dialogueWindow.SetActive(false);
+            //interactionUI.SetActive(false);
         }
 
         #endregion
