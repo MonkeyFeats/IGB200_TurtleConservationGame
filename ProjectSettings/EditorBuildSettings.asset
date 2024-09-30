@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: c68d54fb11d67ae4d81b6e27fa7da991
+<<<<<<< Updated upstream
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectTerrain.unity
+    guid: 4219929e3a3f9c247bc341c87174b8e2
+=======
+  - enabled: 0
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 3e7a8d051646d3b4bb9c2ed798a088a0
+>>>>>>> Stashed changes
   - enabled: 1
     path: Assets/Scenes/LevelSelectTerrain.unity
     guid: 4219929e3a3f9c247bc341c87174b8e2
@@ -21,5 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BoatDriverScene.unity
     guid: c7f9afb7341f9344986a9fce2f22e8d4
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 62efbcb387491b34bbac3b08ec01842e, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1aa248adf7b68a440b8498808fafec72, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2fb91863541b45e46adbb34bd4016a2e, type: 2}
   m_UseUCBPForAssetBundles: 0

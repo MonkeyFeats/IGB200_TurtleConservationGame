@@ -219,17 +219,14 @@ namespace HeneGames.DialogueSystem
 
                 if (dialogueTrigger != null)
                 {
-                    Debug.Log("yo null ");
                     dialogueTrigger.nextSentenceDialogueEvent.Invoke();
                 }
 
-                Debug.Log("yo " + currentSentence);
                 nextSentenceDialogueEvent.Invoke();
 
                 // Check if it's the last sentence
                 if (currentSentence > sentences.Count - 1)
                 {
-                    Debug.Log("yo count bad ");
                     StopDialogue();
                     return;
                 }
