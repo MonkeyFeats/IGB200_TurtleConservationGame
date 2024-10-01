@@ -16,7 +16,7 @@ MonoBehaviour:
   levelDescription: Clean up trash in the ocean with a boat. Be careful not to damage
     any sea life!
   levelImage: {fileID: 0}
-  levelIndex: 2
+  levelIndex: 3
   isUnlocked: 1
   starsEarned: 1
   onButtonPressed:

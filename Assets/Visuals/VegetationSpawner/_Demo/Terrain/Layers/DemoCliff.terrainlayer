@@ -7,8 +7,8 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DemoCliff
-  m_DiffuseTexture: {fileID: 2800000, guid: fc8c1b7b9908cf94299d91cee3811f1a, type: 3}
-  m_NormalMapTexture: {fileID: 0}
+  m_DiffuseTexture: {fileID: 2800000, guid: 7ed17950679a36d46826bf1baa38b271, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 86fee28dea7862e4bae99889b0682a28, type: 3}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 50, y: 50}
   m_TileOffset: {x: 0, y: 0}
@@ -17,7 +17,7 @@ TerrainLayer:
   m_Smoothness: 0
   m_NormalScale: 1
   m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
-  m_DiffuseRemapMax: {x: 0.8584906, y: 0.8584906, z: 0.8584906, w: 1}
+  m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}
   m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
   m_MaskMapRemapMax: {x: 1, y: 1, z: 1.32, w: 1}
   m_SmoothnessSource: 1

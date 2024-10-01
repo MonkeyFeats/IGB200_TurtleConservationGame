@@ -16,7 +16,7 @@ MonoBehaviour:
   levelDescription: Time to see the Turtles off! But don't worry they'll be back
     next year!
   levelImage: {fileID: 0}
-  levelIndex: 3
+  levelIndex: 7
   isUnlocked: 0
   starsEarned: 0
   onButtonPressed:

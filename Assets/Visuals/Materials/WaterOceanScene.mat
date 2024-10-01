@@ -66,7 +66,7 @@ Material:
         m_Scale: {x: 5000, y: 5000}
         m_Offset: {x: 0, y: 0}
     - _Main_Tex:
-        m_Texture: {fileID: 2800000, guid: b3b93417e764a48438369dfd5de14b56, type: 3}
+        m_Texture: {fileID: 2800000, guid: b59372baf03873d4e938791a61a2bfc4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -118,20 +118,20 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TextureVisibility: 0.287
-    - _Transperency: 0.43
+    - _Transperency: 0.87
     - _UVSec: 0
     - _WaterHeight: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.38575858, b: 0.4641509, a: 1}
+    - _Color: {r: 0, g: 0.015669955, b: 0.01886791, a: 1}
     - _Color1: {r: 0.5, g: 0.83448267, b: 1, a: 1}
     - _Color2: {r: 0, g: 0.21568632, b: 1, a: 1}
-    - _ColorShine: {r: 0.26434314, g: 0.48783603, b: 0.5169811, a: 1}
+    - _ColorShine: {r: 0.4783731, g: 0.6916571, b: 0.8113207, a: 1}
     - _DistTiling: {r: 0.05, g: 0.05, b: 0.05, a: 0.05}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MoveDir: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _MoveDirection: {r: 0, g: 0, b: 1.2, a: 0}
-    - _Tiling: {r: 5, g: 5, b: 0, a: 0}
+    - _Tiling: {r: 15, g: 15, b: 0, a: 0}
     - _WaterColor: {r: 0.28034884, g: 0.44849998, b: 0.9433962, a: 0.76862746}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

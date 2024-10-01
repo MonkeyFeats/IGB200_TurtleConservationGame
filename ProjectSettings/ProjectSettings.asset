@@ -147,7 +147,7 @@ PlayerSettings:
   vrSettings:
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
-  enableFrameTimingStats: 0
+  enableFrameTimingStats: 1
   enableOpenGLProfilerGPURecorders: 1
   allowHDRDisplaySupport: 0
   useHDRDisplay: 0
@@ -160,7 +160,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.Unity.Match3
+    Android: com.DefaultCompany.IGB200_TurtleConservation
     Standalone: com.DefaultCompany.IGB200-TurtleConservation
   buildNumber:
     Bratwurst: 0

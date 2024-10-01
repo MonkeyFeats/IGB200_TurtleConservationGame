@@ -16,7 +16,7 @@ MonoBehaviour:
   levelDescription: A Storm has blown debris all over the beach, search it for potentially
     harmful items, and any little critters that may have gotten lost.
   levelImage: {fileID: 0}
-  levelIndex: 1
+  levelIndex: 5
   isUnlocked: 1
   starsEarned: 2
   onButtonPressed:

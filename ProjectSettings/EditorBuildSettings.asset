@@ -6,14 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
-    guid: c68d54fb11d67ae4d81b6e27fa7da991
+    path: Assets/Scenes/LevelSelectTerrain.unity
+    guid: af947d33790e9384e9d3c280df3c885d
   - enabled: 1
     path: Assets/Scenes/KDiag.unity
     guid: a4f5822be828b914fb2261f489ca913b
-  - enabled: 1
-    path: Assets/Scenes/LevelSelectTerrain.unity
-    guid: 4219929e3a3f9c247bc341c87174b8e2
   - enabled: 1
     path: Assets/Scenes/BDiag.unity
     guid: 81a0b6a264e5b3d4fb6797a485e9e0a0
@@ -32,5 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MigrationMinigame.unity
     guid: 50bb6268803078a4db14c8361a2898bf
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 62efbcb387491b34bbac3b08ec01842e, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1aa248adf7b68a440b8498808fafec72, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 5a9cd9bc1f9546344b512b3989e25519, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2fb91863541b45e46adbb34bd4016a2e, type: 2}
   m_UseUCBPForAssetBundles: 0

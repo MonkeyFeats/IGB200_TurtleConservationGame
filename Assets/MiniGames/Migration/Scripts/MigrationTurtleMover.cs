@@ -1,28 +1,31 @@
-// File: TurtleController.cs
+// File: MigrationTurtleController.cs
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
-using Cinemachine;
 
 public class MigrationTurtleController : MonoBehaviour
 {
     // Movement settings
     public CinemachineDollyCart dollyCart; // Cinemachine dolly cart to move the turtle on the spline path
-    public float defaultSpeed = 5f;
-    public float fastSpeed = 10f;
-    public float slowSpeed = 2f;
 
     // Speed control
+    public float defaultSpeed = 5f;
+    public float fastSpeed = 10f;
     private float currentSpeed;
 
     // Movement control
     public float horizontalSpeed = 5f;
     public float verticalSpeed = 3f;
 
-    // Circular boundary
-    public float boundaryRadius = 5f;  // Max radius for the turtle's movement from the center
-    public float lerpSpeed = 5f;       // Speed at which the turtle is lerped back into the boundary
+    // Lerp speed for smoother movement
+    public float lerpSpeed = 3f;
 
-    private Vector3 centerPoint;        // Center of the circular boundary (relative to turtle's local space)
+    // Rolling settings
+    public float rollAmount = 5f;  // The amount the turtle rolls based on input
+    public float rollLerpSpeed = 5f; // Speed at which to lerp back to normal roll
+
+    private Vector3 targetPosition; // Target position based on player input
+    private float currentRoll;       // Current roll angle
 
     void Start()
     {
@@ -30,15 +33,16 @@ public class MigrationTurtleController : MonoBehaviour
         currentSpeed = defaultSpeed;
         dollyCart.m_Speed = currentSpeed;
 
-        // Set the center of the circular boundary as the starting position of the turtle
-        centerPoint = transform.localPosition;
+        // Set the target position to the current position
+        targetPosition = transform.localPosition;
+        currentRoll = 0f; // Initialize current roll
     }
 
     void Update()
     {
-        // Update the turtle's position along the spline path
+        // Handle the turtle movement and apply the result to dolly cart
         HandleMovement();
-        dollyCart.m_Speed = currentSpeed;
+        UpdateRoll(); // Update roll based on input
     }
 
     void HandleMovement()
@@ -47,66 +51,43 @@ public class MigrationTurtleController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        // Update turtle's position based on player input
-        Vector3 newPosition = transform.localPosition;
-        newPosition.x += horizontalInput * horizontalSpeed * Time.deltaTime;
-        newPosition.y += verticalInput * verticalSpeed * Time.deltaTime;
+        // Calculate desired position based on player input
+        Vector3 inputMovement = new Vector3(horizontalInput * horizontalSpeed, verticalInput * verticalSpeed, 0) * Time.deltaTime;
 
-        // Calculate the displacement from the center point
-        Vector3 displacementFromCenter = newPosition - centerPoint;
-        float distanceFromCenter = displacementFromCenter.magnitude;
+        // Apply the input movement to the target position
+        targetPosition += inputMovement;
 
-        // Check if turtle is outside the circular boundary
-        if (distanceFromCenter > boundaryRadius)
+        // Apply the target position with Lerp for smoother motion
+        targetPosition = Vector3.Lerp(transform.localPosition, targetPosition, lerpSpeed * Time.deltaTime);
+
+        // Set the turtle's position in local space, keeping Z fixed to the dolly cart's Z position
+        transform.localPosition = new Vector3(targetPosition.x, targetPosition.y, transform.localPosition.z);
+
+        // Optionally, make the turtle face the direction of movement
+        if (inputMovement != Vector3.zero)
         {
-            // Lerp the turtle back into the boundary
-            Vector3 targetPosition = centerPoint + displacementFromCenter.normalized * boundaryRadius;
-            newPosition = Vector3.Lerp(newPosition, targetPosition, lerpSpeed * Time.deltaTime);
-        }
-
-        // Apply the new position to the turtle
-        transform.localPosition = newPosition;
-
-        // Ensure the turtle's Z position matches the dolly cart's position
-        transform.localPosition = new Vector3(newPosition.x, newPosition.y, centerPoint.z);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        // Handle pickups
-        if (other.CompareTag("SpeedBoost"))
-        {
-            StartCoroutine(SpeedBoost());
-            Destroy(other.gameObject); // Remove the pickup after collection
-        }
-        else if (other.CompareTag("SlowZone"))
-        {
-            StartCoroutine(SlowZone());
+            Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, inputMovement);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, lerpSpeed * Time.deltaTime);
         }
     }
 
-    IEnumerator SpeedBoost()
+    void UpdateRoll()
     {
-        // Temporary speed boost
-        currentSpeed = fastSpeed;
-        yield return new WaitForSeconds(5f); // Boost lasts for 5 seconds
-        currentSpeed = defaultSpeed;
-    }
+        // Capture player input for rolling (only horizontal input affects roll)
+        float horizontalInput = Input.GetAxis("Horizontal");
 
-    IEnumerator SlowZone()
-    {
-        // Temporary slow down
-        currentSpeed = slowSpeed;
-        yield return new WaitForSeconds(5f); // Slow lasts for 5 seconds
-        currentSpeed = defaultSpeed;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        // Reset speed when leaving slow zones
-        if (other.CompareTag("SlowZone"))
+        if (horizontalInput != 0)
         {
-            currentSpeed = defaultSpeed;
+            // Roll a little based on horizontal input only
+            currentRoll = horizontalInput * rollAmount;
         }
+        else
+        {
+            // Lerp back to 0 when no horizontal input is detected
+            currentRoll = Mathf.Lerp(currentRoll, 0f, rollLerpSpeed * Time.deltaTime);
+        }
+
+        // Apply the roll to the turtle's local rotation on the Z axis only
+        transform.localRotation = Quaternion.Euler(0, 0, currentRoll) * Quaternion.Euler(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y, 0);
     }
 }

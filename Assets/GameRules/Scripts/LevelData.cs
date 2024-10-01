@@ -10,5 +10,4 @@ public class LevelData : ScriptableObject
     public int levelIndex;              // The index of the level
     public bool isUnlocked; 
     public int starsEarned;             // Star count, make hidden private for external access
-    public UnityEvent onButtonPressed;  // Action to perform when the button is pressed
 }

@@ -111,8 +111,17 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.adaptiveperformance.samsung.android": {
+      "version": "5.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.adaptiveperformance": "5.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
-      "version": "1.8.17",
+      "version": "1.8.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -394,16 +403,6 @@
         "com.unity.shadergraph": "16.0.5",
         "com.unity.render-pipelines.core": "16.0.5"
       }
-    },
-    "com.unity.visualscripting": {
-      "version": "1.9.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
