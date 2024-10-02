@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 383.5
   m_LinearFogEnd: 1824.51
-  m_AmbientSkyColor: {r: 0.35294116, g: 0.35294116, b: 0.35294116, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.78
-  m_AmbientMode: 0
+  m_AmbientIntensity: 0.96
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 6bfab16f387f95e4bb60f866299be241, type: 2}
   m_HaloStrength: 0.5
@@ -401,6 +401,75 @@ Transform:
   - {fileID: 667797053}
   m_Father: {fileID: 1174758398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &289961932
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1815203512773962, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_Name
+      value: enchantedforest_rock_3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.142567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.142567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.142567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 380.65848
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 39.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 272.34235
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9986874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.051219508
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -5.872
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
 --- !u!43 &342677425
 Mesh:
   m_ObjectHideFlags: 0
@@ -736,6 +805,132 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455165477}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &545059775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1815203512773962, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_Name
+      value: enchantedforest_rock_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.5619
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.5619
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.5619
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 388.1405
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.476
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 272.11322
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9584236
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28534928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.159
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+--- !u!1001 &559868555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1041680708357480, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_Name
+      value: enchantedforest_log
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 385.97125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 293.363
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241040427269830, guid: c108272a27501428cb268a4bd9bee877, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c108272a27501428cb268a4bd9bee877, type: 3}
 --- !u!1 &573513351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2317,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1957765896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1074975503
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1815203512773962, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_Name
+      value: enchantedforest_rock_3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.142567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.142567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.142567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 382.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 279.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.81301755
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5822392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 71.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468419111988058, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9aa4a3148596484c8c90684cad71854, type: 3}
 --- !u!1 &1174758397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,7 +2643,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1392593882}
   - component: {fileID: 1392593884}
-  - component: {fileID: 1392593883}
   m_Layer: 0
   m_Name: TrackCamera
   m_TagString: Untagged
@@ -2403,23 +2666,6 @@ Transform:
   - {fileID: 200326673}
   m_Father: {fileID: 1308930539}
   m_LocalEulerAnglesHint: {x: 3.99, y: -45.569, z: 0.123}
---- !u!114 &1392593883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392593881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FocusTracksTarget: 0
-  m_FocusTracking: 3
-  m_FocusTarget: {fileID: 880976863}
-  m_FocusOffset: 0
-  m_Profile: {fileID: 11400000, guid: d6ecb94bb7e1a4c40a9a52371e2d90d9, type: 2}
 --- !u!114 &1392593884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3303,6 +3549,63 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1001 &1945771899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1294516088734230, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_Name
+      value: enchantedforest_bench
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 391.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 33.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 284.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9226587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38561782
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45.364
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625360298554618, guid: 29abe8816b0bd465185712b07963349d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29abe8816b0bd465185712b07963349d, type: 3}
 --- !u!1 &1957765895
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,3 +6311,8 @@ SceneRoots:
   - {fileID: 812138420}
   - {fileID: 2005031415193001537}
   - {fileID: 1225725136}
+  - {fileID: 1945771899}
+  - {fileID: 559868555}
+  - {fileID: 545059775}
+  - {fileID: 1074975503}
+  - {fileID: 289961932}

@@ -7,7 +7,7 @@ public class SceneManagerScript : MonoBehaviour
     public GameObject endGameCanvas;
     private void DisablePlayerControls()
     {
-        Time.timeScale = 0f; // Pauses the game
+        //Time.timeScale = 0f; // Pauses the game
         // Disable your player control script here, e.g.,
         // player.GetComponent<PlayerControlScript>().enabled = false;
     }
