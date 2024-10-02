@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LevelSelectTerrain.unity
+    path: Assets/Scenes/LevelSelect.unity
     guid: af947d33790e9384e9d3c280df3c885d
   - enabled: 1
     path: Assets/Scenes/KDiag.unity

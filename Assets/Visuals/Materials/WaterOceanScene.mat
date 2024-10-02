@@ -131,7 +131,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MoveDir: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _MoveDirection: {r: 0, g: 0, b: 1.2, a: 0}
-    - _Tiling: {r: 15, g: 15, b: 0, a: 0}
+    - _Tiling: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _WaterColor: {r: 0.28034884, g: 0.44849998, b: 0.9433962, a: 0.76862746}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
