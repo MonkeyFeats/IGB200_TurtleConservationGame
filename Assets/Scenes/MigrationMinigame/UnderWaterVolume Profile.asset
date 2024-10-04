@@ -18,10 +18,10 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.69
+    m_Value: 0.75
   intensity:
     m_OverrideState: 1
-    m_Value: 1.19
+    m_Value: 1.08
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -65,10 +65,10 @@ MonoBehaviour:
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 38.8
+    m_Value: 15.4
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 62.65
+    m_Value: 38.5
   gaussianMaxRadius:
     m_OverrideState: 0
     m_Value: 1.082
@@ -114,13 +114,13 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.322
+    m_Value: 0.558
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.621
+    m_Value: 0.342
   rounded:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.046
+    m_Value: 0
 --- !u!114 &1739700125026768311
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -171,11 +171,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   postExposure:
-    m_OverrideState: 1
-    m_Value: 0.4
-  contrast:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 0.03
+  contrast:
+    m_OverrideState: 1
+    m_Value: 22
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb60a22f311433c4c962b888d1393f88, type: 3}
   m_Name: PaniniProjection
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   distance:
     m_OverrideState: 1
     m_Value: 0.425
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06437c1ff663d574d9447842ba0a72e4, type: 3}
   m_Name: ScreenSpaceLensFlare
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
     m_Value: 1.95
