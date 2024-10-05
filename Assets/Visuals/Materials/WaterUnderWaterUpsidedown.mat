@@ -162,7 +162,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MoveDir: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _MoveDirection: {r: 0, g: 0, b: 1.2, a: 0}
-    - _Tiling: {r: 55.5, g: 59.27, b: 0, a: 0}
+    - _Tiling: {r: 300, g: 300, b: 0, a: 0}
     - _WaterColor: {r: 0.28034884, g: 0.44849998, b: 0.9433962, a: 0.76862746}
     - _horizonColor: {r: 0.17199996, g: 0.46299994, b: 0.43499997, a: 0}
   m_BuildTextureStacks: []

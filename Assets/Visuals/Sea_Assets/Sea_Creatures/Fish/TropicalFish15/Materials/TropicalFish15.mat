@@ -79,6 +79,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _AdditionalSway: 7.72
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -89,16 +90,16 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EmissionLM: 0
-    - _Frequency: 0.94
+    - _Frequency: 0.53
     - _GlossinessSource: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Rotation: 25.55
-    - _Scalar: 0.1
+    - _Scalar: 0.02
     - _Shininess: 1
-    - _Smoothness: 0.77
+    - _Smoothness: 0.9
     - _SmoothnessSource: 0
     - _SpecSource: 0
     - _SpecularHighlights: 1

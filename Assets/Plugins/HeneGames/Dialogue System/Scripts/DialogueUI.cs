@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Rendering;
 
 namespace HeneGames.DialogueSystem
 {
@@ -145,9 +146,9 @@ namespace HeneGames.DialogueSystem
             nameText.text = _dialogueCharacter.characterName;
             currentMessage = _message;
 
-            if (animateText && _dialogueCharacter !is null)
+            if (animateText)
             {
-                StartCoroutine(WriteTextToTextmesh(_message, messageText));
+                StartCoroutine(ScrollText(_message, messageText));
             }
             else
             {
@@ -190,6 +191,7 @@ namespace HeneGames.DialogueSystem
 
         IEnumerator WriteTextToTextmesh(string _text, TextMeshProUGUI _textMeshObject)
         {
+            Debug.Log("Typing");
             typing = true;
 
             _textMeshObject.text = "";
@@ -208,6 +210,21 @@ namespace HeneGames.DialogueSystem
 
                 yield return new WaitForSeconds(0.1f * _speed);
             }
+        }
+
+        private IEnumerator ScrollText(string _text, TextMeshProUGUI _textMeshObject)
+        {
+            typing = true;
+            _textMeshObject.text = ""; // Clear the text
+            float _speed = 1f - textAnimationSpeed;
+
+            foreach (char letter in _text.ToCharArray())
+            {
+                _textMeshObject.text += letter;
+                yield return new WaitForSeconds(0.05f);
+            }
+
+            typing = false;
         }
     }
 }
