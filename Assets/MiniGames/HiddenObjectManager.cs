@@ -1,33 +1,66 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
-public class HiddenObjectGame : MonoBehaviour
+public class HiddenObjectGameManager : MonoBehaviour
 {
-    [SerializeField] private SceneManagerScript _sceneManagerScript;
+    // UI References
+    public GameObject starPopup;
+    public Animator starsAnimator;
+    public ScreenTransitionScript transitioner;
+
+    public UnityEvent OnEndGameEvent;
+
     [SerializeField] private List<GameObject> objectPrefabs;
     [SerializeField] private List<Transform> spawnLocations;
     [SerializeField] private int numberOfObjectsToSpawn;
-
     [SerializeField] private TextMeshProUGUI remainingItemsText;
     [SerializeField] private TextMeshProUGUI timerText;
-
     [SerializeField] private List<UiObjectSlot> objectSlots;
-
     [SerializeField] private float gameTime = 120f;
+
+    private enum GameState { Intermission, Playing, EndGame }
+    private GameState currentState;
 
     private List<GameObject> activeObjects = new List<GameObject>();
     private Dictionary<string, int> objectCounters = new Dictionary<string, int>();
     private float currentTime;
     private int totalObjects;
     private int objectsFound;
-    private bool gameOver;
 
     void Start()
     {
+        StartIntermission(); 
+    }
+
+    void Update()
+    {
+        if (currentState == GameState.Playing)
+        {
+            currentTime -= Time.deltaTime;
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+                EndGame(false); // Lose condition
+            }
+
+            UpdateTimerUI();
+        }
+    }
+
+    public void StartIntermission()
+    {
+        currentState = GameState.Intermission;
+        // Optional: Disable player controls during intermission if necessary
+    }
+
+    public void EndIntermission()
+    {
+        currentState = GameState.Playing;
         objectsFound = 0;
         currentTime = gameTime;
-        gameOver = false;
 
         SpawnObjects();
         totalObjects = activeObjects.Count;
@@ -35,19 +68,48 @@ public class HiddenObjectGame : MonoBehaviour
         UpdateUI();
     }
 
-    void Update()
+
+    public void EndGame(bool won)
     {
-        if (gameOver) return;
+        currentState = GameState.EndGame;
+        remainingItemsText.gameObject.SetActive(false);
+        OnEndGameEvent?.Invoke();
+    }
 
-        currentTime -= Time.deltaTime;
-        if (currentTime <= 0)
-        {
-            currentTime = 0;
-            EndGame(false);
-        }
+    public void GiveStarRating()
+    {
+        int starsEarned = CalculateStarReward();
+        starPopup.SetActive(true);
+        if (starsAnimator != null)
+            starsAnimator.SetInteger("StarsEarned", starsEarned);
 
-        UpdateTimerUI();
+        remainingItemsText.gameObject.SetActive(false);
+    }
 
+    int CalculateStarReward()
+    {
+        float percentageFound = (float)objectsFound / totalObjects;
+        float timePercentage = currentTime / gameTime;
+
+        // Full completion bonus (3 stars) if all objects are found and time is still left
+        if (percentageFound == 1f && timePercentage > 0)
+            return 3;
+
+        // 2 stars for completing 60% or more of objects
+        if (percentageFound >= 0.6f)
+            return 2;
+
+        // 1 stars for completing 30-65%
+        if (percentageFound >= 0.3f)
+            return 1;
+
+        // 0 stars for less than 30% found
+        return 0;
+    }
+
+    public void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 
     void SpawnObjects()
@@ -64,29 +126,28 @@ public class HiddenObjectGame : MonoBehaviour
         }
     }
 
-
     public void FindObject(GameObject foundObject, string objectName)
     {
-        foundObject.SetActive(false);  // Disable the object
-        objectsFound++;                // Increment the found objects count
-        activeObjects.Remove(foundObject); // Remove from active objects list
+        foundObject.SetActive(false); // Disable the object
+        objectsFound++; // Increment found objects count
+        activeObjects.Remove(foundObject); // Remove from active objects
 
-        objectCounters[objectName]--;   // Decrease object counter
+        objectCounters[objectName]--; // Decrease object counter
 
         if (objectCounters[objectName] == 0)
         {
-            RemoveObjectFromUI(objectName); // Remove from UI if no more of that object type
+            RemoveObjectFromUI(objectName); // Remove from UI if no more objects
         }
         else
         {
-            UpdateObjectSlotUI(objectName); // Update counter in UI
+            UpdateObjectSlotUI(objectName); // Update UI
         }
 
         UpdateUI();
 
         if (objectsFound == totalObjects)
         {
-            EndGame(true); // End game when all objects are found
+            EndGame(true); // Win condition when all objects are found
         }
     }
 
@@ -96,7 +157,7 @@ public class HiddenObjectGame : MonoBehaviour
         {
             if (objectPrefabs[i].name == objectName)
             {
-                objectSlots[i].gameObject.SetActive(false); // Remove the slot from UI
+                objectSlots[i].gameObject.SetActive(false); // Remove slot from UI
                 break;
             }
         }
@@ -150,17 +211,6 @@ public class HiddenObjectGame : MonoBehaviour
                 break;
             }
         }
-    }
-
-    void EndGame(bool won)
-    {
-        gameOver = true;
-        if (won)
-        {
-            //winText.gameObject.SetActive(true);
-            _sceneManagerScript.EndGame();
-        }
-        remainingItemsText.gameObject.SetActive(false);
     }
 
     private void ShuffleList<T>(List<T> list)

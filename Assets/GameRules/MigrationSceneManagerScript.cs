@@ -2,11 +2,12 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using HeneGames.DialogueSystem;
 public class MigrationSceneManagerScript : MonoBehaviour
 {
     // UI References
-    public GameObject intermissionCanvas;
-    public GameObject endGameCanvas;
+    public GameObject starPopup;
+    public Animator starsAnimator;
     public ScreenTransitionScript transitioner;
     public MigrationPlayerMovement playerController;
     public CinemachineDollyCart cart;
@@ -29,23 +30,13 @@ public class MigrationSceneManagerScript : MonoBehaviour
         if (playerController != null)
         playerController.enabled = false;
         cart.m_Speed = 0f;
-
-        if (intermissionCanvas != null)
-        {
-            intermissionCanvas.SetActive(true);
-        }
     }
 
     public void EndIntermission()
     {
         currentState = GameState.Playing;
         playerController.enabled = true;
-        cart.m_Speed = 3f;
-
-        if (intermissionCanvas != null)
-        {
-            intermissionCanvas.SetActive(false);
-        }
+        cart.m_Speed = 3f;        
     }
 
     public void EndGame()
@@ -53,58 +44,26 @@ public class MigrationSceneManagerScript : MonoBehaviour
         currentState = GameState.EndGame;
         cart.m_Speed = 0f;
 
-        if (endGameCanvas != null)
+        int starsEarned = CalculateStarReward();
+
+        starPopup.SetActive(true);
+        if (starsAnimator != null)
+            starsAnimator.SetInteger("StarsEarned", starsEarned);
+        else
         {
-            endGameCanvas.SetActive(true);
+            Debug.Log("No Animator");
         }
     }
-
-    public void LoadNextScene()
+    
+    int CalculateStarReward() 
     {
-        StartCoroutine(TransitionAndLoadNextScene());
+        return 2;
     }
+    
     public void LoadScene(int sceneIndex)
     {
-        StartCoroutine(TransitionAndLoadSceneByIndex(sceneIndex));
+            SceneManager.LoadScene(sceneIndex);
     }
 
 
-    private IEnumerator TransitionAndLoadSceneByIndex(int sceneNum)
-    {
-        // Start fade-out and wait for it to finish
-        transitioner.FadeOutOfScene();
-
-        // Wait until the fade-out is complete
-        yield return new WaitUntil(() => transitioner.finishedFadeOut);
-
-        // Load the next scene after the fade-out completes
-        if (sceneNum < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(sceneNum);
-        }
-        else
-        {
-            Debug.LogWarning("Scene index does not exist!");
-        }
-    }
-
-    private IEnumerator TransitionAndLoadNextScene()
-    {
-        // Start fade-out and wait for it to finish
-        transitioner.FadeOutOfScene();
-
-        // Wait until the fade-out is complete
-        yield return new WaitUntil(() => transitioner.finishedFadeOut);
-
-        // Load the next scene after the fade-out completes
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        else
-        {
-            Debug.LogWarning("No more scenes to load.");
-        }
-    }
 }

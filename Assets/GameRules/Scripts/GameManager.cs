@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 
     // List of LevelData Scriptable Objects
     public List<LevelData> levels; // Assign in the Inspector
-
     private HashSet<string> unlockedLevels = new HashSet<string>();
 
     // Keys for PlayerPrefs
@@ -18,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public string CurrentLevel { get; private set; }
     public int TotalStars { get; private set; }
+
+    private int lastPlayedLevel = 0; // Used for Making the camera go back to where it was and prevent Title Screen Popup
 
     private void Awake()
     {
@@ -84,35 +85,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void LoadCurrentLevel()
+    public void SetLastPlayedLevel(int index)
     {
-        if (!string.IsNullOrEmpty(CurrentLevel))
-        {
-            SceneManager.LoadScene(CurrentLevel);
-        }
-        else
-        {
-            Debug.LogWarning("No current level saved.");
-        }
+        lastPlayedLevel = index;
     }
 
-    public void LoadNextLevel(string nextLevelName)
-    {
-        SaveCurrentLevel(nextLevelName);
-        SceneManager.LoadScene(nextLevelName);
-    }
-
-    public void ReloadCurrentLevel()
-    {
-        if (!string.IsNullOrEmpty(CurrentLevel))
-        {
-            SceneManager.LoadScene(CurrentLevel);
-        }
-        else
-        {
-            Debug.LogWarning("No current level saved.");
-        }
-    }
 
     public void UnlockLevel(string levelName)
     {

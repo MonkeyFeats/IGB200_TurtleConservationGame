@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class HiddenObject : MonoBehaviour
 {
-    private HiddenObjectGame gameController;
+    private HiddenObjectGameManager gameController;
     private string objectName;
 
     void Start()
     {
         // Find the game controller in the scene
-        gameController = FindObjectOfType<HiddenObjectGame>();
+        gameController = FindObjectOfType<HiddenObjectGameManager>();
         objectName = gameObject.name.Replace("(Clone)", "").Trim(); // Clean name for prefab
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScreenTransitionScript : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class ScreenTransitionScript : MonoBehaviour
     private Coroutine fadeCoroutine;   // To track the current fade coroutine
     public float lowerRange = -1;
     public float upperRange = 1;
-    public bool finishedFadeOut = false;
 
-    private void Start() // always start the fadein on scene start
+    // UnityEvents for fade in and fade out completion
+    public UnityEvent OnFadeInComplete;
+    public UnityEvent OnFadeOutComplete;
+
+    private void Start() // always start the fade in on scene start
     {
         FadeIntoScene();
     }
@@ -24,7 +28,7 @@ public class ScreenTransitionScript : MonoBehaviour
         imageObject.SetActive(true);
         // Stop any running fade coroutine and start the fade in, into the Game
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-        fadeCoroutine = StartCoroutine(FadeToValue(lowerRange));
+        fadeCoroutine = StartCoroutine(FadeToValue(lowerRange, true));
     }
 
     // Call this to start fading out
@@ -33,32 +37,35 @@ public class ScreenTransitionScript : MonoBehaviour
         imageObject.SetActive(true);
         // Stop any running fade coroutine and start the fade out
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-        fadeCoroutine = StartCoroutine(FadeToValue(upperRange));
+        fadeCoroutine = StartCoroutine(FadeToValue(upperRange, false));
     }
 
     // Coroutine to animate the `currentAmount` property over time
-    private IEnumerator FadeToValue(float targetValue)
+    private IEnumerator FadeToValue(float targetValue, bool isFadingIn)
     {
         float currentAmount = oceanWaveMaterial.GetFloat("_CurrentAmount");
-        
+
         while (!Mathf.Approximately(currentAmount, targetValue))
-        {   
+        {
             // While the value hasn't reached the target, continue the fade
             // Interpolate the `currentAmount` value towards the target value
             currentAmount = Mathf.MoveTowards(currentAmount, targetValue, fadeSpeed * Time.deltaTime);
             oceanWaveMaterial.SetFloat("_CurrentAmount", currentAmount);
 
             yield return null;
-
         }
 
         oceanWaveMaterial.SetFloat("_CurrentAmount", targetValue);
 
-        if (currentAmount <= lowerRange)
+        // Invoke the appropriate UnityEvent when fade finishes
+        if (isFadingIn)
+        {
             imageObject.SetActive(false);
-
-        if (currentAmount >= lowerRange)
-            finishedFadeOut = true;
-
+            OnFadeInComplete?.Invoke();
+        }
+        else
+        {
+            OnFadeOutComplete?.Invoke();
+        }
     }
 }
