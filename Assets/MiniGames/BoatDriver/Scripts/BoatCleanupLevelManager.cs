@@ -3,14 +3,18 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.Events;
 
 public class BoatCleanupLevelManager : MonoBehaviour
 {
-    public GameObject starPopupCanvas; // Star popup UI
+    public GameObject starPopup; // Star popup UI
+    public GameObject gameplayHUD;
     public Animator starsAnimator;
     public ScreenTransitionEffect transitioner;
 
     public BoatLineController boatController;
+
+    public UnityEvent OnEndGameEvent;
 
     // Public variables
     public int totalRubbish = 10; // Total rubbish to collect in the level
@@ -134,43 +138,47 @@ public class BoatCleanupLevelManager : MonoBehaviour
         }
     }
 
-    // Ends the level and shows results (win or lose)
-    private void EndLevel(bool hasWon)
+    // Ends the level send an event to open dialogue
+    public void EndLevel(bool won)
     {
         currentState = GameState.EndGame;
         boatController.enabled = false;
+        gameplayHUD.gameObject.SetActive(false);               
+        OnEndGameEvent?.Invoke();
+    }
 
-        if (hasWon)
-        {
-            int starsEarned = CalculateStarReward();
-            ShowEndGamePopup(starsEarned);
-        }
-        else
-        {
-            ShowEndGamePopup(0); // No stars for losing
-        }
+    public void GiveStarRating()
+    {
+        int starsEarned = CalculateStarReward();
+        starPopup.SetActive(true);
+        if (starsAnimator != null)
+            starsAnimator.SetInteger("StarsEarned", starsEarned);
+
     }
 
     // Calculates the star reward based on performance
     int CalculateStarReward()
     {
-        // Placeholder logic to calculate stars based on rubbish collected or time left
-        return 2; // Example reward, change this to fit your game logic
+        float percentageFound = 0.55f;//(float)objectsFound / totalObjects;
+        //float timePercentage = currentTime / gameTime;
+
+        // Full completion bonus (3 stars) if all objects are found and time is still left
+        if (percentageFound >= 1f)// && timePercentage > 0)
+            return 3;
+
+        // 2 stars for completing 60% or more of objects
+        else if (percentageFound >= 0.6f)
+            return 2;
+
+        // 1 stars for completing 30-65%
+        else if (percentageFound >= 0.3f)
+            return 1;
+
+        // 0 stars for less than 30% found
+        return 0;
     }
 
     // Shows the end game popup with stars earned
-    void ShowEndGamePopup(int starsEarned)
-    {
-        starPopupCanvas.SetActive(true);
-        if (starsAnimator != null)
-        {
-            starsAnimator.SetInteger("StarsEarned", starsEarned);
-        }
-        else
-        {
-            Debug.Log("No Animator found.");
-        }
-    }
 
     public void LoadScene(int sceneIndex)
     {

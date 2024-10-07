@@ -43,18 +43,17 @@ public class MigrationSceneManagerScript : MonoBehaviour
     {
         currentState = GameState.EndGame;
         cart.m_Speed = 0f;
+        playerController.enabled = false;
+    }
 
+    public void GiveStarRating()
+    {
         int starsEarned = CalculateStarReward();
-
         starPopup.SetActive(true);
         if (starsAnimator != null)
             starsAnimator.SetInteger("StarsEarned", starsEarned);
-        else
-        {
-            Debug.Log("No Animator");
-        }
     }
-    
+
     int CalculateStarReward() 
     {
         return 2;
@@ -62,7 +61,7 @@ public class MigrationSceneManagerScript : MonoBehaviour
     
     public void LoadScene(int sceneIndex)
     {
-            SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
 
 
