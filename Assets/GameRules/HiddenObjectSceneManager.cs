@@ -7,7 +7,7 @@ public class HiddenObjectSceneManager : MonoBehaviour
     // UI References
     public GameObject starPopup;
     public Animator starsAnimator;
-    public ScreenTransitionScript transitioner;
+    public ScreenTransitionEffect transitioner;
 
     // Enum for game states
     private enum GameState { Intermission, Playing, EndGame };

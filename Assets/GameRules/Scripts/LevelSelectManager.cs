@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement; // Import for scene management
 public class LevelSelectManager : MonoBehaviour
 {
     public GameObject infoPanel;
+    public GameObject starsGroup;
     public TextMeshProUGUI levelTitle;
     public TextMeshProUGUI levelDescription;
     public Image levelImage;
@@ -87,14 +88,15 @@ public class LevelSelectManager : MonoBehaviour
         }
 
         // Update star UI based on stars earned for the current level
-        UpdateStarDisplay(selectedLevel.starsEarned);
+        UpdateStarDisplay(selectedLevel.starsEarned, selectedLevel.isDialogueScene);
 
         levelActionButton.onClick.RemoveAllListeners(); // Clear previous listeners
         levelActionButton.onClick.AddListener(LoadLevel); // Add new listener for loading the scene
     }
 
-    void UpdateStarDisplay(int starsEarned)
+    void UpdateStarDisplay(int starsEarned, bool isDialogue)
     {
+        starsGroup.SetActive(!isDialogue);
         for (int i = 0; i < starImages.Length; i++)
         {
             starImages[i].gameObject.SetActive(i < starsEarned); // Show/hide stars based on earned count
@@ -147,7 +149,9 @@ public class LevelSelectManager : MonoBehaviour
         if (currentLevelIndex >= 0 && currentLevelIndex < levels.Count)
         {
             // Load the scene using the level index
-            SceneManager.LoadScene(levels[currentLevelIndex].levelIndex); // Make sure this matches your scene index
+            //SceneManager.LoadScene(levels[currentLevelIndex].levelIndex); // Make sure this matches your scene index
+            GetComponent<SceneManagerScript>().LoadSceneByIndex(levels[currentLevelIndex].levelIndex);
+
         }
     }
 }

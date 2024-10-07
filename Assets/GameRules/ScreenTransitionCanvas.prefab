@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &2981745521137725793
 MonoBehaviour:
@@ -116,11 +116,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageObject: {fileID: 8194566390333734302}
-  oceanWaveMaterial: {fileID: 2100000, guid: cb89fd7a352e6d44ea77b6e7f4c5c927, type: 2}
+  oceanWaveMaterial: {fileID: 2100000, guid: e37a97d9817f6f74c9ed4ab8fb2def29, type: 2}
   fadeSpeed: 1
   lowerRange: -1
   upperRange: 1
-  finishedFadeOut: 0
+  OnFadeInComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFadeOutComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  transitionState: 0
 --- !u!1 &8194566390333734302
 GameObject:
   m_ObjectHideFlags: 0

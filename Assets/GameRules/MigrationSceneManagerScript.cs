@@ -8,7 +8,7 @@ public class MigrationSceneManagerScript : MonoBehaviour
     // UI References
     public GameObject starPopup;
     public Animator starsAnimator;
-    public ScreenTransitionScript transitioner;
+    public ScreenTransitionEffect transitioner;
     public MigrationPlayerMovement playerController;
     public CinemachineDollyCart cart;
 

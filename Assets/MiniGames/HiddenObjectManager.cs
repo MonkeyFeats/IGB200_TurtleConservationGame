@@ -9,7 +9,7 @@ public class HiddenObjectGameManager : MonoBehaviour
     // UI References
     public GameObject starPopup;
     public Animator starsAnimator;
-    public ScreenTransitionScript transitioner;
+    public ScreenTransitionEffect transitioner;
 
     public UnityEvent OnEndGameEvent;
 

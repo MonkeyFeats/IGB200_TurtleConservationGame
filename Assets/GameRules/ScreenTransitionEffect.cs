@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ScreenTransitionScript : MonoBehaviour
+public class ScreenTransitionEffect : MonoBehaviour
 {
     public GameObject imageObject;
     public Material oceanWaveMaterial; // Assign your ocean wave shader material here
@@ -17,6 +17,8 @@ public class ScreenTransitionScript : MonoBehaviour
     public UnityEvent OnFadeInComplete;
     public UnityEvent OnFadeOutComplete;
 
+    public int transitionState = 0;
+
     private void Start() // always start the fade in on scene start
     {
         FadeIntoScene();
@@ -24,6 +26,7 @@ public class ScreenTransitionScript : MonoBehaviour
 
     public void FadeIntoScene()
     {
+        transitionState = 0;
         oceanWaveMaterial.SetFloat("_CurrentAmount", upperRange);
         imageObject.SetActive(true);
         // Stop any running fade coroutine and start the fade in, into the Game
@@ -31,9 +34,10 @@ public class ScreenTransitionScript : MonoBehaviour
         fadeCoroutine = StartCoroutine(FadeToValue(lowerRange, true));
     }
 
-    // Call this to start fading out
+    // Call this to start fading out of scene into new one
     public void FadeOutOfScene()
     {
+        transitionState = 2;
         imageObject.SetActive(true);
         // Stop any running fade coroutine and start the fade out
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
@@ -62,10 +66,12 @@ public class ScreenTransitionScript : MonoBehaviour
         {
             imageObject.SetActive(false);
             OnFadeInComplete?.Invoke();
+            transitionState = 1; // load into this scene done
         }
         else
         {
             OnFadeOutComplete?.Invoke();
+            transitionState = 3; // load new scene ready
         }
     }
 }

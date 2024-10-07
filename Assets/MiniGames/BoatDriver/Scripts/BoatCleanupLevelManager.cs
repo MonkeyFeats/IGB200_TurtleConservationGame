@@ -8,7 +8,7 @@ public class BoatCleanupLevelManager : MonoBehaviour
 {
     public GameObject starPopupCanvas; // Star popup UI
     public Animator starsAnimator;
-    public ScreenTransitionScript transitioner;
+    public ScreenTransitionEffect transitioner;
 
     public BoatLineController boatController;
 

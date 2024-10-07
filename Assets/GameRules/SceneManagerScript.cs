@@ -3,12 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-
+    public GameObject transitionObject;
     public GameObject endGameCanvas;
+    int sceneWantedToLoad = 0;
     private void DisablePlayerControls()
     {
-        //Time.timeScale = 0f; // Pauses the game
-        // Disable your player control script here, e.g.,
         // player.GetComponent<PlayerControlScript>().enabled = false;
     }
 
@@ -29,7 +28,20 @@ public class SceneManagerScript : MonoBehaviour
         GameManager gm = FindAnyObjectByType<GameManager>();
         if (gm != null) { gm.SetLastPlayedLevel(sceneIndex); }
 
-        SceneManager.LoadScene(sceneIndex);
+        transitionObject.SetActive(true);
+
+        ScreenTransitionEffect transitionEffect = transitionObject.GetComponent<ScreenTransitionEffect>();
+        if (transitionEffect != null) 
+        {
+            Debug.Log("Made it here");
+            sceneWantedToLoad = sceneIndex;
+            transitionObject.GetComponent<ScreenTransitionEffect>().FadeOutOfScene();
+        }
+    }
+
+    public void ActuallyLoadNewScene()
+    {
+        SceneManager.LoadScene(sceneWantedToLoad);
     }
 
     // Reloads the current active scene

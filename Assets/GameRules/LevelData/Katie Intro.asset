@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Meet Katie
   levelDescription: Ranger katie is waiting to meet you.
+  isDialogueScene: 1
   levelImage: {fileID: 0}
   levelIndex: 1
   isUnlocked: 1
-  starsEarned: 3
-  onButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
+  starsEarned: 0
