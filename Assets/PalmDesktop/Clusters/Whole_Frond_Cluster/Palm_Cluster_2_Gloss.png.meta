@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Palm_Cluster_2_Gloss_0: 1671242589885970220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

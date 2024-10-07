@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bark_1_Color_0: 1319229197041098527
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

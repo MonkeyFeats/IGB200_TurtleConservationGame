@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Palmetto_bark_2_Gloss_0: -2572001484968915324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

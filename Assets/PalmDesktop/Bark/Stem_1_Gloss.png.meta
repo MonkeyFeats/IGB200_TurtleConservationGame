@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stem_1_Gloss_0: 4878678491991731615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

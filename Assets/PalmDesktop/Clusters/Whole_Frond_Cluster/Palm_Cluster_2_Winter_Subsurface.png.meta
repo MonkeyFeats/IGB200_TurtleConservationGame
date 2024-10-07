@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Palm_Cluster_2_Winter_Subsurface_0: 7111778804112350592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

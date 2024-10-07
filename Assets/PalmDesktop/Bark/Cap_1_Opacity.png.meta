@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cap_1_Opacity_0: 8258566337244467798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

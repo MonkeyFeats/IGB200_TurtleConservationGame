@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Twig_Color_0: -8829203938022791949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

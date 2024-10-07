@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Palmetto_Leaves_Desktop_6_Normal_0: 3841124925102561778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
