@@ -44,6 +44,11 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene(sceneWantedToLoad);
     }
 
+    public void ActuallyLoadNewSceneByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+
     // Reloads the current active scene
     public void ReloadCurrentScene()
     {
