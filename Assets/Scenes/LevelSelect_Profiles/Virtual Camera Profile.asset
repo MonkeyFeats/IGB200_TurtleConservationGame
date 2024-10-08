@@ -21,7 +21,11 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.022116425, g: 0.4150999, b: 0.6698113, a: 1}
+    value:
+      r: 0.022116425
+      g: 0.4150999
+      b: 0.6698113
+      a: 1
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
@@ -103,7 +107,11 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
   hueShift:
     overrideState: 0
     value: 0
@@ -159,10 +167,8 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -170,8 +176,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -185,6 +190,12 @@ MonoBehaviour:
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0
       - 0.0078125
@@ -318,10 +329,8 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -329,8 +338,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -344,6 +352,12 @@ MonoBehaviour:
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0
       - 0.0078125
@@ -477,10 +491,8 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -488,8 +500,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -503,6 +514,12 @@ MonoBehaviour:
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0
       - 0.0078125
@@ -636,10 +653,8 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -647,8 +662,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -662,6 +676,12 @@ MonoBehaviour:
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0
       - 0.0078125
@@ -795,7 +815,6 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -803,6 +822,12 @@ MonoBehaviour:
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0.5
       - 0.5
@@ -936,7 +961,6 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -944,6 +968,12 @@ MonoBehaviour:
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0.5
       - 0.5
@@ -1077,7 +1107,6 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1085,6 +1114,12 @@ MonoBehaviour:
       m_Loop: 0
       m_ZeroValue: 0.5
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0.5
       - 0.5
@@ -1218,7 +1253,6 @@ MonoBehaviour:
     overrideState: 0
     value:
       curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1226,6 +1260,12 @@ MonoBehaviour:
       m_Loop: 0
       m_ZeroValue: 0.5
       m_Range: 1
+      m_InternalLoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      frameCount: 18
       cachedData:
       - 0.5
       - 0.5
@@ -1369,7 +1409,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -4518872457768499364}
-  - {fileID: 9013254220086280090}
   - {fileID: 5775536780462461358}
   - {fileID: -7516411759223711504}
 --- !u!114 &5775536780462461358
@@ -1390,7 +1429,7 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 152
+    value: 7.48
   aperture:
     overrideState: 1
     value: 0.1
@@ -1400,50 +1439,3 @@ MonoBehaviour:
   kernelSize:
     overrideState: 1
     value: 3
---- !u!114 &9013254220086280090
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 2
-  threshold:
-    overrideState: 1
-    value: 0.8
-  softKnee:
-    overrideState: 0
-    value: 0.5
-  clamp:
-    overrideState: 0
-    value: 65472
-  diffusion:
-    overrideState: 0
-    value: 7
-  anamorphicRatio:
-    overrideState: 0
-    value: 0
-  color:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
-  fastMode:
-    overrideState: 0
-    value: 0
-  dirtTexture:
-    overrideState: 0
-    value: {fileID: 0}
-    defaultState: 1
-  dirtIntensity:
-    overrideState: 0
-    value: 0

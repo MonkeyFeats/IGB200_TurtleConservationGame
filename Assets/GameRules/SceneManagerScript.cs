@@ -25,9 +25,6 @@ public class SceneManagerScript : MonoBehaviour
     // Loads a scene by its index in the build settings
     public void LoadSceneByIndex(int sceneIndex)
     {
-        GameManager gm = FindAnyObjectByType<GameManager>();
-        if (gm != null) { gm.SetLastPlayedLevel(sceneIndex); }
-
         transitionObject.SetActive(true);
 
         ScreenTransitionEffect transitionEffect = transitionObject.GetComponent<ScreenTransitionEffect>();

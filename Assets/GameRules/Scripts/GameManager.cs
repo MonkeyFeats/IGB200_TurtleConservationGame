@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public string CurrentLevel { get; private set; }
     public int TotalStars { get; private set; }
 
-    private int lastPlayedLevel = 0; // Used for Making the camera go back to where it was and prevent Title Screen Popup
+    public int lastPlayedLevel = -1; // Used for Making the camera go back to where it was and prevent Title Screen Popup
 
     private void Awake()
     {
@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     public void SetLastPlayedLevel(int index)
     {
         lastPlayedLevel = index;
+        //PlayerPrefs.SetInt("LastPlayedLevel", index); // Saves even after game closed
     }
 
 
