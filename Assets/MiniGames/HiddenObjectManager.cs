@@ -124,7 +124,15 @@ public class HiddenObjectGameManager : MonoBehaviour
             GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
             activeObjects.Add(spawnedObject);
         }
-     }
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject randomObject = objectPrefabs[0];
+            Transform spawnPoint = shuffledLocations[i];
+            GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
+            activeObjects.Add(spawnedObject);
+
+        }
+        }
 
 
     public void FindObject(GameObject foundObject, string objectName)
