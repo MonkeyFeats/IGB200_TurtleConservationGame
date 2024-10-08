@@ -81,7 +81,7 @@ public class LevelSelectManager : MonoBehaviour
         {
             int nextWaypoint = (currentLevelIndex + 1) % levels.Count;
             StartCoroutine(ShrinkInfoPanel());
-            StartCoroutine(SmoothTransition(nextWaypoint));
+            StartCoroutine(SmoothTransition(nextWaypoint, 1));
         }
     }
 
@@ -91,16 +91,16 @@ public class LevelSelectManager : MonoBehaviour
         {
             int previousWaypoint = (currentLevelIndex - 1 + levels.Count) % levels.Count;
             StartCoroutine(ShrinkInfoPanel());
-            StartCoroutine(SmoothTransition(previousWaypoint));
+            StartCoroutine(SmoothTransition(previousWaypoint, -1));
         }
     }
 
-    private IEnumerator SmoothTransition(int targetLevelIndex)
+    private IEnumerator SmoothTransition(int targetLevelIndex, int direction)
     {
         isTransitioning = true;
 
         // Set the speed to a constant value to start the movement
-        dollyCart.m_Speed = 0.8f;
+        dollyCart.m_Speed = 0.8f * direction;
 
         float targetPosition = dollyPath.FromPathNativeUnits(targetLevelIndex, CinemachinePathBase.PositionUnits.PathUnits);
 
@@ -118,9 +118,7 @@ public class LevelSelectManager : MonoBehaviour
         isTransitioning = false;
 
         UpdateInfoPanel(targetLevelIndex);
-        StartCoroutine(ExpandInfoPanel());
     }
-
 
     void UpdateInfoPanel(int levelIndex = 0)
     {
@@ -138,6 +136,7 @@ public class LevelSelectManager : MonoBehaviour
 
         levelActionButton.onClick.RemoveAllListeners(); // Clear previous listeners
         levelActionButton.onClick.AddListener(LoadLevel); // Add new listener for loading the scene
+        StartCoroutine(ExpandInfoPanel());
     }
 
     void UpdateStarDisplay(int starsEarned, bool isDialogue)
@@ -151,7 +150,7 @@ public class LevelSelectManager : MonoBehaviour
 
     IEnumerator ExpandInfoPanel()
     {
-        if (GameManager.Instance.lastPlayedLevel != 0)
+        if (GameManager.Instance.lastPlayedLevel != -1)
         {
             yield return new WaitUntil(() => transitionEffect.transitionState == 1);
             infoFadeGroup.alpha = 1f;
