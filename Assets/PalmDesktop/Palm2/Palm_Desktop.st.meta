@@ -10,6 +10,11 @@ SpeedTreeImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Frond_Spring
+    second: {fileID: 2100000, guid: 3d96822f978ccab459d8e38b14e99443, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Palm_Desktop
     second: {fileID: 2100000, guid: 3d96822f978ccab459d8e38b14e99443, type: 2}
   serializedVersion: 7

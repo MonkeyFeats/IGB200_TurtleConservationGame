@@ -22,6 +22,9 @@ public class MigrationPlayerMovement : MonoBehaviour
     public float zDistanceStrength = 10f;     // How strongly the turtle matches the dolly cart's Z position
     public float alignmentStrength = 2f;      // How strongly the turtle aligns with the dolly cart's orientation
     public float animatorSpeedScalar = 1.5f;    // Scales how fast the animation plays relative to the magnitude of the velocity
+    public Vector3 offsetPos ;
+    //public CinemachineVirtualCamera turtleCam;
+    private float wantedCartSpeed = 3f; 
 
     [Space]
 
@@ -70,7 +73,7 @@ public class MigrationPlayerMovement : MonoBehaviour
     // Clamp the turtle's position to stay within an ellipse around the dolly cart
     void ClampToEllipse()
     {
-        Vector3 offset = transform.position - dolly.transform.position;
+        Vector3 offset = transform.position - (dolly.transform.position + offsetPos);
 
         // Handle clamping for X (horizontal) and Y (vertical) distances
         float horizontalDistance = Mathf.Abs(offset.x) / maxHorizontalDistance;
@@ -121,6 +124,7 @@ public class MigrationPlayerMovement : MonoBehaviour
         // Apply the blended rotation back to the turtle, but don't affect pitch and roll
         Quaternion targetRotation = Quaternion.LookRotation(blendedDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * alignmentStrength);
+        //turtleCam.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * alignmentStrength);
     }
 
     // Update the turtle's rotation based on a blend between the cart's orientation and the velocity direction
@@ -133,7 +137,7 @@ public class MigrationPlayerMovement : MonoBehaviour
         Vector3 blendedDirection = Vector3.Slerp(cartForward, velocityDirection, Mathf.Clamp01(velocity.magnitude / movementSpeed));
 
         float targetRoll = Mathf.Clamp(-velocity.x * maxRoll / movementSpeed, -maxRoll, maxRoll);
-        float targetPitch = Mathf.Clamp(velocity.y * maxPitch / movementSpeed, -maxPitch, maxPitch);
+        float targetPitch = Mathf.Clamp(-velocity.y * maxPitch / movementSpeed, -maxPitch, maxPitch);
 
         // Create a target rotation based on blended direction, but with custom roll and pitch
         Quaternion targetRotation = Quaternion.LookRotation(blendedDirection);
@@ -148,7 +152,7 @@ public class MigrationPlayerMovement : MonoBehaviour
     }
 
     // Function to set the speed of the dolly cart
-    void SetSpeed(float x)
+    public void SetCartSpeed(float x)
     {
         dolly.m_Speed = x;
     }

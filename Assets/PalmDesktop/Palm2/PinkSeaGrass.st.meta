@@ -1,0 +1,67 @@
+fileFormatVersion: 2
+guid: 462493611ca6564458d11f1b9a2b86ef
+SpeedTreeImporter:
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PinkSeaGrass
+    second: {fileID: 2100000, guid: f4b95e7313a78e74182f8ceb66c5bd9c, type: 2}
+  serializedVersion: 7
+  mainColor: {r: 1, g: 1, b: 1, a: 1}
+  hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
+  alphaTestRef: 0.33
+  enableHueVariation: 0
+  enableBumpMapping: 0
+  enableSubsurfaceScattering: 0
+  bestWindQuality: 4
+  selectedWindQuality: 4
+  enableShadowCasting: 0
+  enableShadowReceiving: 1
+  enableLightProbes: 0
+  reflectionProbeEnumValue: 1
+  hasBillboard: 0
+  lODSettings:
+  - enableSettingOverride: 0
+    height: 0.5
+    castShadows: 1
+    receiveShadows: 1
+    useLightProbes: 1
+    reflectionProbeUsage: 1
+    enableBump: 1
+    enableHue: 0
+    enableSubsurface: 1
+    windQuality: 4
+  - enableSettingOverride: 0
+    height: 0.25
+    castShadows: 1
+    receiveShadows: 1
+    useLightProbes: 1
+    reflectionProbeUsage: 1
+    enableBump: 1
+    enableHue: 0
+    enableSubsurface: 1
+    windQuality: 4
+  - enableSettingOverride: 0
+    height: 0.01
+    castShadows: 1
+    receiveShadows: 1
+    useLightProbes: 1
+    reflectionProbeUsage: 1
+    enableBump: 1
+    enableHue: 0
+    enableSubsurface: 1
+    windQuality: 4
+  enableSmoothLODTransition: 1
+  animateCrossFading: 1
+  billboardTransitionCrossFadeWidth: 0.25
+  fadeOutWidth: 0.25
+  scaleFactor: 2.5
+  unitConversionEnumValue: 4
+  motionVectorModeEnumValue: 1
+  materialVersion: 3
+  materialLocation: 1
+  fileIDType: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

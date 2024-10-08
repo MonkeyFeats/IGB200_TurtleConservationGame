@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c7b9ba2ea5b5a0441abc63246999b5cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8169933c5c8d3914296de0e733dfd65a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SubsurfaceTex:
@@ -85,7 +85,7 @@ Material:
     - _WindQuality: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _HueVariationColor: {r: 0, g: 1, b: 0.14186478, a: 0.24705882}
+    - _HueVariationColor: {r: 0.9137255, g: 1, b: 0, a: 0.49411765}
     - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

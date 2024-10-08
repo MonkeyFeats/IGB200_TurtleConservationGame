@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor.Rendering;
+using UnityEngine.Audio;
 
 namespace HeneGames.DialogueSystem
 {
@@ -56,8 +57,12 @@ namespace HeneGames.DialogueSystem
         public bool startsDialogWithScene = false;
         public DialogueManager dialogueThatStartsWithScene;
 
+        public AudioClip[] gibberishSounds;
+        private AudioSource audioSource;
+
         private void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             if (startsDialogWithScene)
             {
                 StartDialogue(dialogueThatStartsWithScene);
@@ -216,15 +221,29 @@ namespace HeneGames.DialogueSystem
         {
             typing = true;
             _textMeshObject.text = ""; // Clear the text
-            float _speed = 1f - textAnimationSpeed;
 
-            foreach (char letter in _text.ToCharArray())
+            // Split the text into words
+            string[] words = _text.Split(' ');
+
+            foreach (string word in words)
             {
-                _textMeshObject.text += letter;
-                yield return new WaitForSeconds(0.05f);
+                // Append each word and a space
+                _textMeshObject.text += word + " ";
+
+                // Play a random gibberish sound for each word
+                if (gibberishSounds.Length > 0)
+                {
+                    AudioClip randomGibberish = gibberishSounds[Random.Range(0, gibberishSounds.Length)];
+                    audioSource.PlayOneShot(randomGibberish);
+                }
+
+                // Delay before showing the next word (adjust as needed)
+                yield return new WaitForSeconds(1f - textAnimationSpeed);
             }
 
             typing = false;
         }
+
+
     }
 }
