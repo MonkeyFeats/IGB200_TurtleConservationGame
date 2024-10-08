@@ -2193,12 +2193,58 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[0].sentence
+      value: Welcome to our Boat 'Player'
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[1].sentence
+      value: Use you finger to guide it through the reef to avoid hitting coral while
+        picking up all the nasty trash!
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[2].sentence
+      value: Circle around the trash to pick it up!
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[3].sentence
+      value: It's really important we don't hit Coral as it's an important fixture
+        of our Turtle Friends eco system.
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[4].sentence
+      value: Plus, if you hit too many our boat will sink!
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[2].dialogueCharacter
+      value: 
+      objectReference: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[3].dialogueCharacter
+      value: 
+      objectReference: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[4].dialogueCharacter
+      value: 
+      objectReference: {fileID: 11400000, guid: 997683be5394b5f44bd219ef2e7bcffa, type: 2}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
       propertyPath: endDialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2069101270}
     - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[1].sentenceEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
       propertyPath: endDialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BoatCleanupLevelManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 515378751282451477, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
+      propertyPath: sentences.Array.data[1].sentenceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 933672065274351190, guid: b521287920bf5e343bef0d4b1d1247ac, type: 3}
       propertyPath: m_IsActive
@@ -2849,14 +2895,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b49d712230b90469cd0043bcceed8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 25
   rotationSpeed: 9.38
   maxTurnAngle: 34
   lineRenderer: {fileID: 541326055}
   tolerance: 1.35
   minimumDistance: 1.62
   lineHeight: 6.82
-  fadeDuration: 1
+  fadeDuration: 1.2
   waypointProximityThreshold: 5.2
   overshootThreshold: 1
   mainCamera: {fileID: 55134513}
@@ -4271,8 +4317,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  totalRubbish: 2
-  levelTime: 300
+  totalRubbish: 15
+  levelTime: 120
   rubbishPrefab: {fileID: 6627544005263217633, guid: 8dc0a5a55d6676e45aa84c2a2bd64a6f, type: 3}
   spawnInterval: 4
   spawnArea: {x: 50, y: -8.5, z: 50}

@@ -124,21 +124,13 @@ public class HiddenObjectGameManager : MonoBehaviour
             GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
             activeObjects.Add(spawnedObject);
         }
-        for (int i = 1; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             GameObject randomObject = objectPrefabs[0];
             Transform spawnPoint = shuffledLocations[i];
             GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
             activeObjects.Add(spawnedObject);
-            bool isHitting(Collider other)
-{
-            if (other.CompareTag("Trash"))
-            {      
-                randomObject.transform.position.x + 10;
-                randomObject.transform.position.y + 10;
-            }
-            return;
-}
+
         }
         }
 
