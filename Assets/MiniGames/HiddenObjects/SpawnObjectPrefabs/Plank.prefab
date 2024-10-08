@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7083410722132654053}
   m_Layer: 0
   m_Name: Plank
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,15 +77,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: ede2e413c4b4f814292f2875e92e2030, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 315c599b384d24c43a043b3487a78435, type: 3}
   m_Color: {r: 0.81886786, g: 0.50973237, b: 0.2889213, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7655572045457025368

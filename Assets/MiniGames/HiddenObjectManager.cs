@@ -75,7 +75,6 @@ public class HiddenObjectGameManager : MonoBehaviour
         remainingItemsText.gameObject.SetActive(false);
         OnEndGameEvent?.Invoke();
     }
-
     public void GiveStarRating()
     {
         int starsEarned = CalculateStarReward();
@@ -84,11 +83,12 @@ public class HiddenObjectGameManager : MonoBehaviour
             starsAnimator.SetInteger("StarsEarned", starsEarned);
 
         remainingItemsText.gameObject.SetActive(false);
+
     }
 
     int CalculateStarReward()
     {
-        float percentageFound = (float)objectsFound / totalObjects;
+        float percentageFound = (float)objectsFound / (totalObjects -3);
         float timePercentage = currentTime / gameTime;
 
         // Full completion bonus (3 stars) if all objects are found and time is still left
@@ -117,14 +117,31 @@ public class HiddenObjectGameManager : MonoBehaviour
         List<Transform> shuffledLocations = new List<Transform>(spawnLocations);
         ShuffleList(shuffledLocations);
 
-        for (int i = 0; i < numberOfObjectsToSpawn; i++)
+        for (int i = 1; i < numberOfObjectsToSpawn; i++)
         {
-            GameObject randomObject = objectPrefabs[Random.Range(0, objectPrefabs.Count)];
+            GameObject randomObject = objectPrefabs[Random.Range(1, objectPrefabs.Count)];
             Transform spawnPoint = shuffledLocations[i];
             GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
             activeObjects.Add(spawnedObject);
         }
-    }
+        for (int i = 1; i < 3; i++)
+        {
+            GameObject randomObject = objectPrefabs[0];
+            Transform spawnPoint = shuffledLocations[i];
+            GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
+            activeObjects.Add(spawnedObject);
+            bool isHitting(Collider other)
+{
+            if (other.CompareTag("Trash"))
+            {      
+                randomObject.transform.position.x + 10;
+                randomObject.transform.position.y + 10;
+            }
+            return;
+}
+        }
+        }
+
 
     public void FindObject(GameObject foundObject, string objectName)
     {
@@ -145,7 +162,32 @@ public class HiddenObjectGameManager : MonoBehaviour
 
         UpdateUI();
 
-        if (objectsFound == totalObjects)
+        if (objectsFound == (totalObjects - 3))
+        {
+            EndGame(true); // Win condition when all objects are found
+        }
+    }
+
+    public void FindBadObject(GameObject foundObject, string objectName)
+    {
+        foundObject.SetActive(false); // Disable the object
+        objectsFound++; // Increment found objects count
+        activeObjects.Remove(foundObject); // Remove from active objects
+
+        objectCounters[objectName]--; // Decrease object counter
+
+        if (objectCounters[objectName] == 0)
+        {
+            RemoveObjectFromUI(objectName); // Remove from UI if no more objects
+        }
+        else
+        {
+            UpdateObjectSlotUI(objectName); // Update UI
+        }
+
+        UpdateUI();
+
+        if (objectsFound == 3)
         {
             EndGame(true); // Win condition when all objects are found
         }
