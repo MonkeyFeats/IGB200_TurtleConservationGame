@@ -15,6 +15,8 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> objectPrefabs;
     [SerializeField] private List<Transform> spawnLocations;
+    [SerializeField] private List<Transform> JellyLocations;
+    [SerializeField] private List<Transform> DebrisLocations;
     [SerializeField] private int numberOfObjectsToSpawn;
     [SerializeField] private TextMeshProUGUI remainingItemsText;
     [SerializeField] private TextMeshProUGUI timerText;
@@ -88,7 +90,7 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     int CalculateStarReward()
     {
-        float percentageFound = (float)objectsFound / (totalObjects -3);
+        float percentageFound = (float)objectsFound / (totalObjects - 17);
         float timePercentage = currentTime / gameTime;
 
         // Full completion bonus (3 stars) if all objects are found and time is still left
@@ -117,17 +119,29 @@ public class HiddenObjectGameManager : MonoBehaviour
         List<Transform> shuffledLocations = new List<Transform>(spawnLocations);
         ShuffleList(shuffledLocations);
 
-        for (int i = 1; i < numberOfObjectsToSpawn; i++)
+        for (int i = 2; i < 14; i++)
         {
-            GameObject randomObject = objectPrefabs[Random.Range(1, objectPrefabs.Count)];
+            GameObject randomObject = objectPrefabs[Random.Range(1, 5)];
             Transform spawnPoint = shuffledLocations[i];
             GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
             activeObjects.Add(spawnedObject);
         }
+        List<Transform> shuffledJellyLocations = new List<Transform>(JellyLocations);
+        ShuffleList(shuffledJellyLocations);
         for (int i = 0; i < 3; i++)
         {
             GameObject randomObject = objectPrefabs[0];
-            Transform spawnPoint = shuffledLocations[i];
+            Transform spawnPoint = shuffledJellyLocations[i];
+            GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
+            activeObjects.Add(spawnedObject);
+
+        }
+        List<Transform> shuffledDebrisLocations = new List<Transform>(DebrisLocations);
+        ShuffleList(shuffledDebrisLocations);
+        for (int i = 0; i < 14; i++)
+        {
+            GameObject randomObject = objectPrefabs[Random.Range(5, objectPrefabs.Count)];
+            Transform spawnPoint = shuffledDebrisLocations[i];
             GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
             activeObjects.Add(spawnedObject);
 
@@ -154,7 +168,7 @@ public class HiddenObjectGameManager : MonoBehaviour
 
         UpdateUI();
 
-        if (objectsFound == (totalObjects - 3))
+        if (objectsFound == (totalObjects - 17))
         {
             EndGame(true); // Win condition when all objects are found
         }

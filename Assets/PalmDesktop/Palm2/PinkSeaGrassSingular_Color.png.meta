@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PinkSeaGrassSingular_Color_0: 276949656248012641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
