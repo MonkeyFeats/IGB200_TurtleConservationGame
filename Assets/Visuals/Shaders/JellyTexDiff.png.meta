@@ -1,0 +1,640 @@
+fileFormatVersion: 2
+guid: 0cb279ad8fb730c47a7b12b6e88f675a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6792544650383789202
+    second: JellyTexDiff_0
+  - first:
+      213: 4357082475606900442
+    second: JellyTexDiff_1
+  - first:
+      213: 1372201972466181593
+    second: JellyTexDiff_2
+  - first:
+      213: -7304174646636273730
+    second: JellyTexDiff_3
+  - first:
+      213: 8867314936121653446
+    second: JellyTexDiff_4
+  - first:
+      213: 9034084381635867838
+    second: JellyTexDiff_5
+  - first:
+      213: -7207314461529960794
+    second: JellyTexDiff_6
+  - first:
+      213: -1852263204156279384
+    second: JellyTexDiff_7
+  - first:
+      213: 5000901952876735853
+    second: JellyTexDiff_8
+  - first:
+      213: -2919715385907398233
+    second: JellyTexDiff_9
+  - first:
+      213: 3192085057955396817
+    second: JellyTexDiff_10
+  - first:
+      213: 6624412746071205896
+    second: JellyTexDiff_11
+  - first:
+      213: 2591964509931017477
+    second: JellyTexDiff_12
+  - first:
+      213: 5166061912665557131
+    second: JellyTexDiff_13
+  - first:
+      213: 704298505089359542
+    second: JellyTexDiff_14
+  - first:
+      213: 3749349342065646642
+    second: JellyTexDiff_15
+  - first:
+      213: 2967940489730504504
+    second: JellyTexDiff_16
+  - first:
+      213: -2075892817952817744
+    second: JellyTexDiff_17
+  - first:
+      213: 7507175913714325629
+    second: JellyTexDiff_18
+  - first:
+      213: 684114765145848533
+    second: JellyTexDiff_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JellyTexDiff_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 612
+        width: 417
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63f4e001a80cb1a0800000000000000
+      internalID: -6792544650383789202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_1
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 824
+        width: 250
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adef0af3d67777c30800000000000000
+      internalID: 4357082475606900442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_2
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 798
+        width: 162
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5efe87c6a0b0310800000000000000
+      internalID: 1372201972466181593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 684
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf94d9abdb52aa90800000000000000
+      internalID: -7304174646636273730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_4
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 689
+        width: 242
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8fb0f04f70f0b70800000000000000
+      internalID: 8867314936121653446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_5
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 663
+        width: 165
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb47f4661e38f5d70800000000000000
+      internalID: 9034084381635867838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 229
+        width: 305
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae88f7eea97afb90800000000000000
+      internalID: -7207314461529960794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_7
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 524
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5fcb5fd607b46e0800000000000000
+      internalID: -1852263204156279384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_8
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 533
+        width: 229
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6d66c984d5c66540800000000000000
+      internalID: 5000901952876735853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_9
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 469
+        width: 263
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a93fb963561b77d0800000000000000
+      internalID: -2919715385907398233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_10
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 423
+        width: 236
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc7344a2709c4c20800000000000000
+      internalID: 3192085057955396817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_11
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 398
+        width: 190
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 808e42f7b44aeeb50800000000000000
+      internalID: 6624412746071205896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_12
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 347
+        width: 241
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5059bdc2df188f320800000000000000
+      internalID: 2591964509931017477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_13
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 225
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b880b1840f981b740800000000000000
+      internalID: 5166061912665557131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_14
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 234
+        width: 265
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be90b342cb26c900800000000000000
+      internalID: 704298505089359542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_15
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 188
+        width: 224
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23cdaa89c5d580430800000000000000
+      internalID: 3749349342065646642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 307
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837b2ec862e303920800000000000000
+      internalID: 2967940489730504504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 222
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd332a0b72f033e0800000000000000
+      internalID: -2075892817952817744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_18
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 163
+        width: 182
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d789f4308b8de2860800000000000000
+      internalID: 7507175913714325629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyTexDiff_19
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da3e1a11c67e7900800000000000000
+      internalID: 684114765145848533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      JellyTexDiff_0: -6792544650383789202
+      JellyTexDiff_1: 4357082475606900442
+      JellyTexDiff_10: 3192085057955396817
+      JellyTexDiff_11: 6624412746071205896
+      JellyTexDiff_12: 2591964509931017477
+      JellyTexDiff_13: 5166061912665557131
+      JellyTexDiff_14: 704298505089359542
+      JellyTexDiff_15: 3749349342065646642
+      JellyTexDiff_16: 2967940489730504504
+      JellyTexDiff_17: -2075892817952817744
+      JellyTexDiff_18: 7507175913714325629
+      JellyTexDiff_19: 684114765145848533
+      JellyTexDiff_2: 1372201972466181593
+      JellyTexDiff_3: -7304174646636273730
+      JellyTexDiff_4: 8867314936121653446
+      JellyTexDiff_5: 9034084381635867838
+      JellyTexDiff_6: -7207314461529960794
+      JellyTexDiff_7: -1852263204156279384
+      JellyTexDiff_8: 5000901952876735853
+      JellyTexDiff_9: -2919715385907398233
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

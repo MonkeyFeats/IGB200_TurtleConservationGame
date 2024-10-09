@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4541498646111806466}
   - component: {fileID: -8965773374632606498}
   - component: {fileID: 4421661867725889321}
+  - component: {fileID: -7023346453435069256}
   m_Layer: 0
   m_Name: Seaweed
   m_TagString: Trash
@@ -29,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.2, y: 0.46, z: 0}
-  m_LocalScale: {x: 0.07389571, y: 0.07389571, z: 0.07389571}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: dfc9ecb3c67becf43a0b446a85465365, type: 3}
+  m_Sprite: {fileID: 1234922425809793738, guid: 1c3ed14218bdc1d4c868d963a9d3ca22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,3 +122,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.6399999
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7023346453435069256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267922094787529468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebaf00113e1d3924a8515a599eb9bbf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullRotation: 0
