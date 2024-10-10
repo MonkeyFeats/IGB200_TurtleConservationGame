@@ -36,7 +36,7 @@ public class MigrationSceneManagerScript : MonoBehaviour
     {
         currentState = GameState.Playing;
         playerController.enabled = true;
-        cart.m_Speed = 3f;        
+        cart.m_Speed = 10f;        
     }
 
     public void EndGame()

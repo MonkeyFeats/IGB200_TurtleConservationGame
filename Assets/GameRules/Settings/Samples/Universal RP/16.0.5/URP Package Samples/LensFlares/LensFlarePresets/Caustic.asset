@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: Caustic
   m_EditorClassIdentifier: 
   elements:
-  - position: 1
+  - visible: 1
+    position: 1
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
     translationScale: {x: 1, y: 1}
-    localIntensity: 1
+    m_LocalIntensity: 1
     lensFlareTexture: {fileID: 0}
     uniformScale: 0.2
     sizeXY: {x: 0.5, y: 0.5}
     allowMultipleElement: 0
-    count: 5
+    m_Count: 5
     preserveAspectRatio: 0
     rotation: 0
     tint: {r: 0.3820755, g: 1, b: 0.5298769, a: 0.5}
@@ -109,9 +110,10 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    intensityVariation: 0
+    m_IntensityVariation: 0
     positionVariation: {x: 0, y: 0}
     scaleVariation: 0
     rotationVariation: 0
@@ -142,21 +144,47 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     distortionRelativeToCenter: 1
-    fallOff: 1
-    edgeOffset: 0.448
-    sideCount: 6
-    sdfRoundness: 0
+    m_FallOff: 1
+    m_EdgeOffset: 0.448
+    m_SideCount: 6
+    m_SdfRoundness: 0
     inverseSDF: 0
-  - position: 1.01
+    uniformAngle: 0
+    uniformAngleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - visible: 1
+    position: 1.01
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
     translationScale: {x: 1, y: 1}
-    localIntensity: 0.1
+    m_LocalIntensity: 0.1
     lensFlareTexture: {fileID: 0}
     uniformScale: 1.31
     sizeXY: {x: 0.5, y: 0.5}
     allowMultipleElement: 0
-    count: 5
+    m_Count: 5
     preserveAspectRatio: 0
     rotation: 0
     tint: {r: 0.3820755, g: 1, b: 0.5298769, a: 0.5}
@@ -243,9 +271,10 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    intensityVariation: 0
+    m_IntensityVariation: 0
     positionVariation: {x: 0, y: 0}
     scaleVariation: 0
     rotationVariation: 0
@@ -276,8 +305,33 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     distortionRelativeToCenter: 1
-    fallOff: 1
-    edgeOffset: 1
-    sideCount: 6
-    sdfRoundness: 0
+    m_FallOff: 1
+    m_EdgeOffset: 1
+    m_SideCount: 6
+    m_SdfRoundness: 0
     inverseSDF: 0
+    uniformAngle: 0
+    uniformAngleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
