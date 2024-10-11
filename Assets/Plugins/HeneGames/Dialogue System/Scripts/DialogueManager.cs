@@ -360,6 +360,8 @@ namespace HeneGames.DialogueSystem
         [TextArea(3, 10)]
         public string sentence;
 
+        public Sprite eyeExprssions;
+
         public float skipDelayTime = 0.5f;
 
         public AudioClip sentenceSound;
