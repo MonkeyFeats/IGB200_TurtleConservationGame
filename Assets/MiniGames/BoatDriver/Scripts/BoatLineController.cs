@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,16 +24,21 @@ public class BoatLineController : MonoBehaviour
 
     public Camera mainCamera; // Reference to the camera
 
+    public float detectionDistance = 1.0f; // Adjust this based on how high your boat is
+    public LayerMask reefLayer; // Assign the layer of the terrain
+    public BoatCleanupLevelManager levelManager;
+
     void Update()
     {
-        HandleInput(); // Capture player input
+        HandleInput();
 
         if (!isDrawing && boatWaypoints.Count > 0)
         {
-            MoveAlongPath(); // Move the boat along its waypoints
+            MoveAlongPath();
         }
+        UpdateLineFade();
 
-        UpdateLineFade(); // Update the fading effect of the line
+        DetectReefCollision();
     }
 
     // Handle mouse/touch input for drawing the path
@@ -131,6 +137,30 @@ public class BoatLineController : MonoBehaviour
                 return;
             }
         }
+    }
+
+    void DetectReefCollision()
+    {
+        RaycastHit hit;
+        Vector3 rayOrigin = transform.position;
+        Vector3 rayDirection = Vector3.down;
+
+        // Draw the ray in the Scene view (not visible in Game view)
+        Debug.DrawRay(rayOrigin, rayDirection * detectionDistance, Color.red);
+
+        // Cast the ray downward
+        if (Physics.Raycast(rayOrigin, rayDirection, out hit, detectionDistance))
+        {
+            if (hit.collider != null)
+            {
+                OnHitReef(hit);
+            }
+        }
+    }
+
+    void OnHitReef(RaycastHit hit)
+    {
+        levelManager.DamageReef(0.05f);
     }
 
     // Check if the boat has passed the current waypoint

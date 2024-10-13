@@ -204,7 +204,7 @@ TextureImporter:
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 45, y: 45, z: 45, w: 45}
+      border: {x: 49, y: 29, z: 48, w: 29}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -300,7 +300,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TurtleGameIcons_3
+      name: TurtleGameIcons_Lock
       rect:
         serializedVersion: 2
         x: 0
@@ -321,7 +321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TurtleGameIcons_4
+      name: TurtleGameIcons_Unlock
       rect:
         serializedVersion: 2
         x: 128
@@ -342,7 +342,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TurtleGameIcons_5
+      name: TurtleGameIcons_Music
       rect:
         serializedVersion: 2
         x: 256
@@ -371,7 +371,7 @@ TextureImporter:
         width: 141
         height: 133
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -379,6 +379,48 @@ TextureImporter:
       bones: []
       spriteID: 50ef5d9e89e3d3d459a8e04d89026e40
       internalID: -1451815224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurtleGameIcons_Squiggle
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 170
+        width: 126
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 0, z: 8, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07578da3ebd0c85429b59ef3a1af457b
+      internalID: -81307442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurtleGameIcons_0
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e238a55a987f16345b134c98dea661de
+      internalID: -1105171517
       vertices: []
       indices: 
       edges: []
@@ -394,18 +436,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TurtleGameIcons_3: 675122206
-      TurtleGameIcons_4: 2008938491
-      TurtleGameIcons_5: 451344352
+      TurtleGameIcons_0: -1105171517
       TurtleGameIcons_Left: 1230956516
+      TurtleGameIcons_Lock: 675122206
+      TurtleGameIcons_Music: 451344352
       TurtleGameIcons_Options: 2054382535
       TurtleGameIcons_Panel: -493904246
       TurtleGameIcons_Play: -378242017
       TurtleGameIcons_ReturnButton: 1557361538
       TurtleGameIcons_Right: -1611781994
+      TurtleGameIcons_Squiggle: -81307442
       TurtleGameIcons_StarEmpty: 1085539142
       TurtleGameIcons_StarFull: -747695824
       TurtleGameIcons_StarGlow: -1451815224
+      TurtleGameIcons_Unlock: 2008938491
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -34,12 +34,24 @@ public class BoatCleanupLevelManager : MonoBehaviour
     private enum GameState { Intermission, Playing, EndGame }; // Game states
     private GameState currentState;
 
+
+    // Reef Health Variables
+    public float maxReefHealth = 100f;
+    private float currentReefHealth = 100f;
+    public TextMeshProUGUI reefHealthText;
+
     void Start()
     {
         boatController.enabled = false;
         timeLeft = levelTime;
         rubbishCollected = 0;
+        currentReefHealth = maxReefHealth;
         StartIntermission();
+
+        for (int i = 0; i < 50; i++)
+        {
+            SpawnRubbish();
+        }
     }
 
     void Update()
@@ -61,12 +73,12 @@ public class BoatCleanupLevelManager : MonoBehaviour
             }
 
             // Spawn rubbish at regular intervals
-            timeSinceLastSpawn += Time.deltaTime;
-            if (timeSinceLastSpawn >= spawnInterval && rubbishCollected < totalRubbish)
-            {
-                SpawnRubbish();
-                timeSinceLastSpawn = 0f;
-            }
+           //timeSinceLastSpawn += Time.deltaTime;
+           //if (timeSinceLastSpawn >= spawnInterval && rubbishCollected < totalRubbish)
+           //{
+           //    SpawnRubbish();
+           //    timeSinceLastSpawn = 0f;
+           //}
         }
     }
 
@@ -93,7 +105,40 @@ public class BoatCleanupLevelManager : MonoBehaviour
         //SpawnRubbish();
         UpdateRubbishUI();
         UpdateTimeUI();
+        UpdateReefHealthUI();
         boatController.enabled = true;
+
+    }
+
+    public void DamageReef(float damageAmount)
+    {
+        // Reduce reef health
+        currentReefHealth -= damageAmount;
+
+        // Clamp the health to not go below 0
+        currentReefHealth = Mathf.Clamp(currentReefHealth, 0, maxReefHealth);
+
+        // Update the UI
+        UpdateReefHealthUI();
+
+        // Optionally: check if the reef is fully damaged
+        if (currentReefHealth <= 0)
+        {
+            ReefDestroyed();
+        }
+    }
+
+    void UpdateReefHealthUI()
+    {
+        // Set the text to display the current reef health
+        reefHealthText.text = "Reef Health: " + currentReefHealth.ToString("F0") + "/" + maxReefHealth.ToString("F0");
+    }
+
+    // Optional: Handle what happens when the reef is fully destroyed
+    void ReefDestroyed()
+    {
+        Debug.Log("The reef has been fully destroyed!");
+        // Trigger any destruction effects or game over logic here
     }
 
     // Spawns rubbish in random positions within the defined spawn area
