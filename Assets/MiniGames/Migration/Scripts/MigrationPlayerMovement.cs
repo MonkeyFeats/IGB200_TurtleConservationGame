@@ -18,13 +18,13 @@ public class MigrationPlayerMovement : MonoBehaviour
     public float maxVerticalDistance = 3f;    // Maximum distance on the Y axis (ellipse)
     public float maxRoll = 30f;               // Maximum roll angle for the turtle
     public float maxPitch = 20f;              // Maximum pitch angle for the turtle
+    public float maxYaw = 20f;                // Maximum yaw angle for the turtle
     public float rotationSpeed = 5f;          // How fast the turtle rotates towards its velocity direction
     public float zDistanceStrength = 10f;     // How strongly the turtle matches the dolly cart's Z position
     public float alignmentStrength = 2f;      // How strongly the turtle aligns with the dolly cart's orientation
     public float animatorSpeedScalar = 1.5f;    // Scales how fast the animation plays relative to the magnitude of the velocity
-    public Vector3 offsetPos ;
-    //public CinemachineVirtualCamera turtleCam;
-    private float wantedCartSpeed = 3f; 
+    public Vector3 offsetPos;
+    private float wantedCartSpeed = 3f;
 
     [Space]
 
@@ -54,13 +54,14 @@ public class MigrationPlayerMovement : MonoBehaviour
         animator.SetFloat("MovementSpeed", rb.velocity.magnitude * animatorSpeedScalar);
     }
 
-    // Movement relative to the dolly cart's local 2D plane
+    // Movement relative to the dolly cart's local XY plane
     void MoveOnPlane(float horizontalInput, float verticalInput)
     {
+        // Calculate the local right (X-axis) and up (Y-axis) relative to the dolly cart's rotation
         Vector3 localRight = dolly.transform.right;
         Vector3 localUp = dolly.transform.up;
 
-        // Calculate the movement force based on player input and local directions
+        // Calculate the movement force based on player input and the dolly cart's local directions
         Vector3 movementForce = (localRight * horizontalInput + localUp * verticalInput) * movementSpeed;
 
         // Apply the movement force to the Rigidbody
@@ -91,7 +92,7 @@ public class MigrationPlayerMovement : MonoBehaviour
                 0
             ).normalized * returnForce;
 
-            // Apply the return force to the rigidbody
+            // Apply the return force to the Rigidbody
             rb.AddForce(returnDirection);
         }
     }
@@ -102,10 +103,10 @@ public class MigrationPlayerMovement : MonoBehaviour
         // Calculate the difference in Z positions between the turtle and the dolly cart
         float zDifference = dolly.transform.position.z - transform.position.z;
 
-        // Apply a force to the rigidbody to move the turtle's Z position towards the dolly's Z position
+        // Apply a force to the Rigidbody to move the turtle's Z position towards the dolly's Z position
         Vector3 zCorrectionForce = new Vector3(0, 0, zDifference * zDistanceStrength);
 
-        // Apply the force to the rigidbody to gradually match the dolly's Z position
+        // Apply the force to the Rigidbody to gradually match the dolly's Z position
         rb.AddForce(zCorrectionForce);
     }
 
@@ -124,9 +125,9 @@ public class MigrationPlayerMovement : MonoBehaviour
         // Apply the blended rotation back to the turtle, but don't affect pitch and roll
         Quaternion targetRotation = Quaternion.LookRotation(blendedDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * alignmentStrength);
-        //turtleCam.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * alignmentStrength);
     }
 
+    // Update the turtle's rotation based on a blend between the cart's orientation and the velocity direction
     // Update the turtle's rotation based on a blend between the cart's orientation and the velocity direction
     void UpdateRotation(Vector3 velocity)
     {

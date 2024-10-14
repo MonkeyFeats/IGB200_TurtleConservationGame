@@ -9,6 +9,7 @@ TagManager:
   - Trash
   - Net
   - Ground
+  - Obstacle
   layers:
   - Default
   - TransparentFX

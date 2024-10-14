@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using HeneGames.DialogueSystem;
+
 public class MigrationSceneManagerScript : MonoBehaviour
 {
     // UI References
@@ -19,6 +20,9 @@ public class MigrationSceneManagerScript : MonoBehaviour
     private enum GameState { Intermission, Playing, EndGame };
     private GameState currentState;
 
+    private float targetSpeed = 0f;
+    private float speedChangeDuration = 2f; // Time taken to reach target speed
+
     void Start()
     {
         StartIntermission();
@@ -28,22 +32,42 @@ public class MigrationSceneManagerScript : MonoBehaviour
     {
         currentState = GameState.Intermission;
         if (playerController != null)
-        playerController.enabled = false;
-        cart.m_Speed = 0f;
+            playerController.enabled = false;
+        StartCoroutine(ChangeCartSpeed(0f));
     }
 
     public void EndIntermission()
     {
         currentState = GameState.Playing;
         playerController.enabled = true;
-        cart.m_Speed = 10f;        
+        StartCoroutine(ChangeCartSpeed(3f)); // Set to desired speed
     }
 
     public void EndGame()
     {
         currentState = GameState.EndGame;
-        cart.m_Speed = 0f;
         playerController.enabled = false;
+        StartCoroutine(ChangeCartSpeed(0f)); // Gradually stop
+    }
+
+    public void ChangeSpeed(float speed)
+    {
+        StartCoroutine(ChangeCartSpeed(speed)); // Gradually stop
+    }
+
+    IEnumerator ChangeCartSpeed(float desiredSpeed)
+    {
+        float initialSpeed = cart.m_Speed;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < speedChangeDuration)
+        {
+            cart.m_Speed = Mathf.Lerp(initialSpeed, desiredSpeed, elapsedTime / speedChangeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        cart.m_Speed = desiredSpeed; // Ensure exact target speed at the end
     }
 
     public void GiveStarRating()
@@ -54,15 +78,13 @@ public class MigrationSceneManagerScript : MonoBehaviour
             starsAnimator.SetInteger("StarsEarned", starsEarned);
     }
 
-    int CalculateStarReward() 
+    int CalculateStarReward()
     {
         return 2;
     }
-    
+
     public void LoadScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
-
-
 }
