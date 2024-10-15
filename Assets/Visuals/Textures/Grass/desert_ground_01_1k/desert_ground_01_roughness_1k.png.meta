@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      desert_ground_01_roughness_1k_0: 7890528612148637370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
