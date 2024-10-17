@@ -1904,13 +1904,13 @@ MonoBehaviour:
   startsDialogWithScene: 0
   dialogueThatStartsWithScene: {fileID: 515378751282451477}
   gibberishSounds:
-  - {fileID: 8300000, guid: 285dcb4f2342bc548940090db3adf2dc, type: 3}
-  - {fileID: 8300000, guid: 7b803ac538d2d944688e218a664550c6, type: 3}
-  - {fileID: 8300000, guid: d31e078f58fcaf642bbac013029e9235, type: 3}
-  - {fileID: 8300000, guid: 70a61b8ff017cb94581a02a5e4a01fbb, type: 3}
-  - {fileID: 8300000, guid: bf1b25e22f880b64a990ec228b7d83e0, type: 3}
-  - {fileID: 8300000, guid: 2c6520f57e281ce4bb176c4cd5c4d24c, type: 3}
-  - {fileID: 8300000, guid: 0a83960e9a227e84696afa720bc3247d, type: 3}
+  - {fileID: 8300000, guid: 14113554af44e14428134bb3064fd1a6, type: 3}
+  - {fileID: 8300000, guid: 001a1d45f19c9ae46a1461c00812dbb9, type: 3}
+  - {fileID: 8300000, guid: b264ba1425d86084595638390b8b0bc9, type: 3}
+  - {fileID: 8300000, guid: 45763b82a378b0641a298c615aa77847, type: 3}
+  - {fileID: 8300000, guid: c3b9321212141344086ae2f4470bbe59, type: 3}
+  - {fileID: 8300000, guid: f776532b60052de40a7c7c526f73486d, type: 3}
+  - {fileID: 8300000, guid: f0a1dab86c4e9bc4e86201bb746d019b, type: 3}
 --- !u!223 &4537781699051936351
 Canvas:
   m_ObjectHideFlags: 0

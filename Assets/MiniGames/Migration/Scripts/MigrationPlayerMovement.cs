@@ -12,18 +12,18 @@ public class MigrationPlayerMovement : MonoBehaviour
     Animator animator;
 
     [Header("Parameters")]
-    public float movementSpeed = 18;
-    public float returnForceMultiplier = 5f;  // Multiplier for the return force based on distance
-    public float maxHorizontalDistance = 5f;  // Maximum distance on the X axis (ellipse)
-    public float maxVerticalDistance = 3f;    // Maximum distance on the Y axis (ellipse)
-    public float maxRoll = 30f;               // Maximum roll angle for the turtle
-    public float maxPitch = 20f;              // Maximum pitch angle for the turtle
-    public float maxYaw = 20f;                // Maximum yaw angle for the turtle
-    public float rotationSpeed = 5f;          // How fast the turtle rotates towards its velocity direction
-    public float zDistanceStrength = 10f;     // How strongly the turtle matches the dolly cart's Z position
-    public float alignmentStrength = 2f;      // How strongly the turtle aligns with the dolly cart's orientation
-    public float animatorSpeedScalar = 1.5f;    // Scales how fast the animation plays relative to the magnitude of the velocity
-    public Vector3 offsetPos;
+    public float movementSpeed = 18;               // Maximum movement speed
+    public float returnForceMultiplier = 5f;       // Multiplier for the return force based on distance
+    public float maxHorizontalDistance = 5f;       // Maximum distance on the X axis (ellipse)
+    public float maxVerticalDistance = 3f;         // Maximum distance on the Y axis (ellipse)
+    public float maxRoll = 30f;                    // Maximum roll angle for the turtle
+    public float maxPitch = 20f;                   // Maximum pitch angle for the turtle
+    public float maxYaw = 20f;                     // Maximum yaw angle for the turtle
+    public float rotationSpeed = 5f;               // How fast the turtle rotates towards its velocity direction
+    public float zDistanceStrength = 10f;          // How strongly the turtle matches the dolly cart's Z position
+    public float alignmentStrength = 2f;           // How strongly the turtle aligns with the dolly cart's orientation
+    public float animatorSpeedScalar = 1.5f;       // Scales how fast the animation plays relative to the magnitude of the velocity
+    public Vector3 offsetPos;                      // Offset from the dolly cart
     private float wantedCartSpeed = 3f;
 
     [Space]
@@ -32,21 +32,35 @@ public class MigrationPlayerMovement : MonoBehaviour
     public CinemachineDollyCart dolly;      // Dolly cart to follow
     public Transform cameraParent;
 
+    private Vector2 screenCenter;            // The center of the screen for touch input
+
     void Start()
     {
         playerModel = transform.GetChild(0);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         rb.useGravity = false;  // Disable gravity for the turtle
+
+        // Calculate the screen center in screen space (for touch input)
+        screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
     }
 
     void FixedUpdate()
     {
-        // Handle movement input (joystick or keyboard)
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        if (Input.touchCount > 0)
+        {
+            // Handle mobile touch movement
+            HandleTouchMovement();
+        }
+        else
+        {
+            // Handle keyboard or joystick movement (e.g., for editor testing)
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
 
-        MoveOnPlane(horizontalInput, verticalInput);
+            MoveOnPlane(horizontalInput, verticalInput);
+        }
+
         MatchDollyZPosition();
         AlignWithDolly();
         UpdateRotation(rb.velocity);
@@ -54,7 +68,36 @@ public class MigrationPlayerMovement : MonoBehaviour
         animator.SetFloat("MovementSpeed", rb.velocity.magnitude * animatorSpeedScalar);
     }
 
-    // Movement relative to the dolly cart's local XY plane
+    // Handle touch input for movement
+    void HandleTouchMovement()
+    {
+        Touch touch = Input.GetTouch(0);  // Get the first touch
+
+        // Calculate the direction from the screen center to the touch position
+        Vector2 touchPosition = touch.position;
+        Vector2 direction = (touchPosition - screenCenter).normalized;
+
+        // Calculate how far the touch is from the center (to control movement magnitude)
+        float distanceFromCenter = (touchPosition - screenCenter).magnitude;
+
+        // Scale the movement force based on how far the touch is from the center
+        float movementForceMagnitude = Mathf.Clamp(distanceFromCenter / (Screen.width / 2f), 0, 1) * movementSpeed;
+
+        // Convert the direction into local space (relative to the dolly cart)
+        Vector3 localRight = dolly.transform.right;
+        Vector3 localUp = dolly.transform.up;
+
+        // Apply movement based on the direction and force magnitude
+        Vector3 movementForce = (localRight * direction.x + localUp * direction.y) * movementForceMagnitude;
+
+        // Apply the movement force to the Rigidbody
+        rb.AddForce(movementForce);
+
+        // Clamp the turtle's position to stay within the ellipse defined by maxHorizontalDistance and maxVerticalDistance
+        ClampToEllipse();
+    }
+
+    // Movement relative to the dolly cart's local XY plane (keyboard/joystick input)
     void MoveOnPlane(float horizontalInput, float verticalInput)
     {
         // Calculate the local right (X-axis) and up (Y-axis) relative to the dolly cart's rotation
@@ -128,7 +171,6 @@ public class MigrationPlayerMovement : MonoBehaviour
     }
 
     // Update the turtle's rotation based on a blend between the cart's orientation and the velocity direction
-    // Update the turtle's rotation based on a blend between the cart's orientation and the velocity direction
     void UpdateRotation(Vector3 velocity)
     {
         Vector3 cartForward = dolly.transform.forward;
@@ -145,29 +187,5 @@ public class MigrationPlayerMovement : MonoBehaviour
         targetRotation *= Quaternion.Euler(targetPitch, 0, targetRoll); // Add pitch and roll
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-    }
-
-    public void QuickSpin(int dir)
-    {
-        playerModel.DOLocalRotate(new Vector3(playerModel.localEulerAngles.x, playerModel.localEulerAngles.y, 360 * -dir), .4f, RotateMode.LocalAxisAdd).SetEase(Ease.OutSine);
-    }
-
-    // Function to set the speed of the dolly cart
-    public void SetCartSpeed(float x)
-    {
-        dolly.m_Speed = x;
-    }
-
-    // Function to adjust the camera zoom with a smooth transition
-    void SetCameraZoom(float zoom, float duration)
-    {
-        cameraParent.DOLocalMove(new Vector3(0, 0, zoom), duration);
-    }
-
-    // OnDrawGizmos is used to visualize elements in the Unity Editor
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, Mathf.Max(maxHorizontalDistance, maxVerticalDistance));  // Visualize the max radius around the dolly cart
     }
 }
