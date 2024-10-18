@@ -1,0 +1,25 @@
+.Button {
+    background-image: url("project://database/Assets/GUI/WoodBackPanel.png?fileID=2800000&guid=887a0485a870b62439df25b020683d3f&type=3#WoodBackPanel");
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.Label {
+    -unity-font-definition: url("project://database/Assets/GUI/Aloevera-OVoWO.ttf?fileID=12800000&guid=fbe9f1725270c7647a4d48d815488b79&type=3#Aloevera-OVoWO");
+    font-size: 24px;
+}
+
+.Slider {
+}
+
+.BackgroundPanel {
+    background-image: url("project://database/Assets/GUI/WoodBackPanel.png?fileID=2800000&guid=887a0485a870b62439df25b020683d3f&type=3#WoodBackPanel");
+    -unity-slice-left: 432;
+    -unity-slice-top: 432;
+    -unity-slice-right: 432;
+    -unity-slice-bottom: 432;
+    -unity-slice-scale: 1px;
+    border-left-width: 28px;
+}

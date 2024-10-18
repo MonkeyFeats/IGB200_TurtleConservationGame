@@ -75,6 +75,7 @@ public class TitleScreenFadeIn : MonoBehaviour
         }
 
         group.alpha = 1f; // Ensure the group is fully visible at the end
+
     }
 
     private IEnumerator FadeOut(CanvasGroup group)
