@@ -12,8 +12,7 @@ public class BoatCleanupLevelManager : MonoBehaviour
     public Animator starsAnimator;
     public ScreenTransitionEffect transitioner;
 
-    public BoatLineController boatController;
-
+    public UnityEvent OnStartGameEvent;
     public UnityEvent OnEndGameEvent;
 
     // Public variables
@@ -42,7 +41,6 @@ public class BoatCleanupLevelManager : MonoBehaviour
 
     void Start()
     {
-        boatController.enabled = false;
         timeLeft = levelTime;
         rubbishCollected = 0;
         currentReefHealth = maxReefHealth;
@@ -106,7 +104,7 @@ public class BoatCleanupLevelManager : MonoBehaviour
         UpdateRubbishUI();
         UpdateTimeUI();
         UpdateReefHealthUI();
-        boatController.enabled = true;
+        OnStartGameEvent?.Invoke();
 
     }
 
@@ -187,7 +185,6 @@ public class BoatCleanupLevelManager : MonoBehaviour
     public void EndLevel(bool won)
     {
         currentState = GameState.EndGame;
-        boatController.enabled = false;
         gameplayHUD.gameObject.SetActive(false);               
         OnEndGameEvent?.Invoke();
     }
