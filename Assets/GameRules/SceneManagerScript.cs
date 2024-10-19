@@ -30,7 +30,6 @@ public class SceneManagerScript : MonoBehaviour
         ScreenTransitionEffect transitionEffect = transitionObject.GetComponent<ScreenTransitionEffect>();
         if (transitionEffect != null) 
         {
-            Debug.Log("Made it here");
             sceneWantedToLoad = sceneIndex;
             transitionObject.GetComponent<ScreenTransitionEffect>().FadeOutOfScene();
         }

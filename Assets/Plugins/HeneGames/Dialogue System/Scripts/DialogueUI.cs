@@ -54,19 +54,12 @@ namespace HeneGames.DialogueSystem
         [Header("Next sentence input")]
         public KeyCode actionInput = KeyCode.Space;
 
-        public bool startsDialogWithScene = false;
-        public DialogueManager dialogueThatStartsWithScene;
-
         public AudioClip[] gibberishSounds;
         private AudioSource audioSource;
 
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
-            if (startsDialogWithScene)
-            {
-                StartDialogue(dialogueThatStartsWithScene);
-            }
         }
 
         private void Update()
