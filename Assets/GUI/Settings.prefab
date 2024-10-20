@@ -2987,6 +2987,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSettings: {fileID: 11400000, guid: 73b198104893a7b419451353c9718553, type: 2}
   masterMixer: {fileID: 24100000, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
+  mutedSnapshot: {fileID: 7462536024158405222, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
+  normalSnapshot: {fileID: -6336953931622665465, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
   musicPlayer: {fileID: 0}
   lowQualityToggle: {fileID: 4840490045629288032}
   mediumQualityToggle: {fileID: 6621633261254672465}
@@ -2999,7 +3001,6 @@ MonoBehaviour:
   musicVolume: 1
   sfxVolume: 1
   ambientVolume: 1
-  fadeVolume: 1
 --- !u!1 &4962287160182094454
 GameObject:
   m_ObjectHideFlags: 0

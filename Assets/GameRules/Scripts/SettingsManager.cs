@@ -6,8 +6,10 @@ using UnityEngine.Rendering;
 
 public class SettingsManager : MonoBehaviour
 {
-    public GameSettings gameSettings; // Reference to the ScriptableObject
+    public GameSettings gameSettings;
     public AudioMixer masterMixer;
+    public AudioMixerSnapshot mutedSnapshot;
+    public AudioMixerSnapshot normalSnapshot;
     public AudioSource musicPlayer;
 
     public Toggle lowQualityToggle;
@@ -25,9 +27,6 @@ public class SettingsManager : MonoBehaviour
     [Range(0f, 1f)] public float sfxVolume = 1f;
     [Range(0f, 1f)] public float ambientVolume = 1f;
 
-    [Header("Fade Settings")]
-    [Range(0f, 1f)] public float fadeVolume = 0f;
-
     private Coroutine fadeCoroutine;
 
     private void OnEnable()
@@ -38,7 +37,10 @@ public class SettingsManager : MonoBehaviour
         LoadUI();
         StartWithFadeIn();
     }
-
+    private void Awake()
+    {
+        StartWithFadeIn();
+    }
     private void LoadUI()
     {
         // Load quality settings
@@ -55,10 +57,8 @@ public class SettingsManager : MonoBehaviour
 
     private void StartWithFadeIn()
     {
-        // Start with Fade volume at a lower level (fadeToVolume) and then fade in
-        fadeVolume = 0f; //Start Quiet
-        masterMixer.SetFloat("FadeAmount", -80); // Ensure it's exactly at the target
-        FadeInVolume(1.3f);
+        // Start fade in at scene start
+        FadeInAudio(0.7f);
     }
 
     public void SetMasterVolumeFromSlider()
@@ -83,7 +83,7 @@ public class SettingsManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateAllVolumes();
+        //UpdateAllVolumes();
     }
 
     public void UpdateAllVolumes()
@@ -132,57 +132,28 @@ public class SettingsManager : MonoBehaviour
         gameSettings.ambientVolume = ambientVolume;
     }
 
-    public void FadeInVolume(float time = 0.3f)
+    public void FadeInAudio(float fadeDuration = 0.3f)
     {
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-        fadeCoroutine = StartCoroutine(FadeInAudio(time));
-    }
-    public void FadeOutVolume(float time = 0.3f)
-    {
-        if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-        fadeCoroutine = StartCoroutine(FadeOutAudio(time));
+        fadeCoroutine = StartCoroutine(FadeToSnapshot(normalSnapshot, fadeDuration));
     }
 
-    // Coroutine to handle fade over time
-    public IEnumerator FadeInAudio(float fadeDuration)
+    public void FadeOutAudio(float fadeDuration = 0.3f)
     {
-        if (musicPlayer != null)
+        if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
+        fadeCoroutine = StartCoroutine(FadeToSnapshot(mutedSnapshot, fadeDuration));
+    }
+
+    // Coroutine to handle snapshot transitions
+    private IEnumerator FadeToSnapshot(AudioMixerSnapshot targetSnapshot, float duration)
+    {
+        if (targetSnapshot == normalSnapshot && musicPlayer != null)
             musicPlayer.UnPause();
 
-        float currentTime = 0f;
-        float startVolume = Mathf.Pow(10f, fadeVolume / 20f); // Convert current dB volume to linear scale
-        float targetVolume = 1f; // Target volume (1 is full volume in linear scale)
+        targetSnapshot.TransitionTo(duration); // Transition to the target snapshot over 'duration' seconds
+        yield return new WaitForSeconds(duration); // Wait for the transition to complete
 
-        while (currentTime < fadeDuration)
-        {
-            currentTime += Time.deltaTime;
-            fadeVolume = Mathf.Lerp(startVolume, targetVolume, currentTime / fadeDuration);
-            fadeVolume = Mathf.Clamp(fadeVolume, 0f, 1f); // Clamp the value to prevent going above full volume
-            masterMixer.SetFloat("FadeAmount", Mathf.Log10(fadeVolume) * 20); // Convert back to dB
-            yield return null;
-        }
-
-        masterMixer.SetFloat("FadeAmount", Mathf.Log10(targetVolume) * 20); // Ensure it's exactly at the target
+        if (targetSnapshot == mutedSnapshot && musicPlayer != null)
+            musicPlayer.Pause(); // Pause music if fading out
     }
-
-    public IEnumerator FadeOutAudio(float fadeDuration)
-    {
-        float currentTime = 0f;
-        float startVolume = Mathf.Pow(10f, fadeVolume / 20f); // Convert current dB volume to linear scale
-        float targetVolume = 0f; // Mute
-
-        while (currentTime < fadeDuration)
-        {
-            currentTime += Time.deltaTime;
-            fadeVolume = Mathf.Lerp(startVolume, targetVolume, currentTime / fadeDuration);
-            fadeVolume = Mathf.Clamp(fadeVolume, 0.0001f, 1f); // Clamp to avoid logarithmic issues (no negative infinity)
-            masterMixer.SetFloat("FadeAmount", Mathf.Log10(fadeVolume) * 20); // Convert back to dB
-            yield return null;
-        }
-
-        masterMixer.SetFloat("FadeAmount", Mathf.Log10(0.0001f) * 20); // Set to a very low value at the end
-        if (musicPlayer != null)
-            musicPlayer.Pause();
-    }
-
 }
