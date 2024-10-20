@@ -13,7 +13,9 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     public UnityEvent OnEndGameEvent;
 
-    [SerializeField] private List<GameObject> objectPrefabs;
+    [SerializeField] private List<GameObject> trashPrefabs; // For trash items
+    [SerializeField] private List<GameObject> jellyfishPrefabs; // For jellyfish
+    [SerializeField] private List<GameObject> debrisPrefabs; // For debris
     [SerializeField] private List<Transform> spawnLocations;
     [SerializeField] private List<Transform> JellyLocations;
     [SerializeField] private List<Transform> DebrisLocations;
@@ -34,7 +36,7 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     void Start()
     {
-        StartIntermission(); 
+        StartIntermission();
     }
 
     void Update()
@@ -70,13 +72,13 @@ public class HiddenObjectGameManager : MonoBehaviour
         UpdateUI();
     }
 
-
     public void EndGame(bool won)
     {
         currentState = GameState.EndGame;
         remainingItemsText.gameObject.SetActive(false);
         OnEndGameEvent?.Invoke();
     }
+
     public void GiveStarRating()
     {
         int starsEarned = CalculateStarReward();
@@ -85,7 +87,6 @@ public class HiddenObjectGameManager : MonoBehaviour
             starsAnimator.SetInteger("StarsEarned", starsEarned);
 
         remainingItemsText.gameObject.SetActive(false);
-
     }
 
     int CalculateStarReward()
@@ -101,7 +102,7 @@ public class HiddenObjectGameManager : MonoBehaviour
         if (percentageFound >= 0.6f)
             return 2;
 
-        // 1 stars for completing 30-65%
+        // 1 star for completing 30-65%
         if (percentageFound >= 0.3f)
             return 1;
 
@@ -119,35 +120,37 @@ public class HiddenObjectGameManager : MonoBehaviour
         List<Transform> shuffledLocations = new List<Transform>(spawnLocations);
         ShuffleList(shuffledLocations);
 
+        // Spawn trash objects
         for (int i = 2; i < 14; i++)
         {
-            GameObject randomObject = objectPrefabs[Random.Range(1, 5)];
+            GameObject randomTrash = trashPrefabs[Random.Range(0, trashPrefabs.Count)]; // Trash items
             Transform spawnPoint = shuffledLocations[i];
-            GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
-            activeObjects.Add(spawnedObject);
+            GameObject spawnedTrash = Instantiate(randomTrash, spawnPoint.position, spawnPoint.rotation);
+            activeObjects.Add(spawnedTrash);
         }
+
+        // Spawn jellyfish
         List<Transform> shuffledJellyLocations = new List<Transform>(JellyLocations);
         ShuffleList(shuffledJellyLocations);
         for (int i = 0; i < 3; i++)
         {
-            GameObject randomObject = objectPrefabs[0];
+            GameObject randomJellyfish = jellyfishPrefabs[0]; // Assuming there's only one jellyfish prefab
             Transform spawnPoint = shuffledJellyLocations[i];
-            GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
-            activeObjects.Add(spawnedObject);
-
+            GameObject spawnedJellyfish = Instantiate(randomJellyfish, spawnPoint.position, spawnPoint.rotation);
+            activeObjects.Add(spawnedJellyfish);
         }
+
+        // Spawn debris without tracking them in the object counters
         List<Transform> shuffledDebrisLocations = new List<Transform>(DebrisLocations);
         ShuffleList(shuffledDebrisLocations);
         for (int i = 0; i < 14; i++)
         {
-            GameObject randomObject = objectPrefabs[Random.Range(5, objectPrefabs.Count)];
+            GameObject randomDebris = debrisPrefabs[Random.Range(0, debrisPrefabs.Count)]; // Debris
             Transform spawnPoint = shuffledDebrisLocations[i];
-            GameObject spawnedObject = Instantiate(randomObject, spawnPoint.position, spawnPoint.rotation);
-            activeObjects.Add(spawnedObject);
-
+            GameObject spawnedDebris = Instantiate(randomDebris, spawnPoint.position, spawnPoint.rotation);
+            // No need to track debris in activeObjects
         }
-        }
-
+    }
 
     public void FindObject(GameObject foundObject, string objectName)
     {
@@ -174,38 +177,22 @@ public class HiddenObjectGameManager : MonoBehaviour
         }
     }
 
-    public void FindBadObject(GameObject foundObject, string objectName)
-    {
-        foundObject.SetActive(false); // Disable the object
-        objectsFound++; // Increment found objects count
-        activeObjects.Remove(foundObject); // Remove from active objects
-
-        objectCounters[objectName]--; // Decrease object counter
-
-        if (objectCounters[objectName] == 0)
-        {
-            RemoveObjectFromUI(objectName); // Remove from UI if no more objects
-        }
-        else
-        {
-            UpdateObjectSlotUI(objectName); // Update UI
-        }
-
-        UpdateUI();
-
-        if (objectsFound == 3)
-        {
-            EndGame(true); // Win condition when all objects are found
-        }
-    }
-
     void RemoveObjectFromUI(string objectName)
     {
-        for (int i = 0; i < objectPrefabs.Count; i++)
+        for (int i = 0; i < trashPrefabs.Count; i++)
         {
-            if (objectPrefabs[i].name == objectName)
+            if (trashPrefabs[i].name == objectName)
             {
                 objectSlots[i].gameObject.SetActive(false); // Remove slot from UI
+                break;
+            }
+        }
+
+        for (int i = 0; i < jellyfishPrefabs.Count; i++)
+        {
+            if (jellyfishPrefabs[i].name == objectName)
+            {
+                objectSlots[trashPrefabs.Count + i].gameObject.SetActive(false); // Remove slot from UI
                 break;
             }
         }
@@ -223,7 +210,15 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     void InitializeObjectCounters()
     {
-        foreach (GameObject obj in objectPrefabs)
+        // Initialize counters for trash items
+        foreach (GameObject obj in trashPrefabs)
+        {
+            string objectName = obj.name;
+            objectCounters[objectName] = 0;
+        }
+
+        // Initialize counters for jellyfish
+        foreach (GameObject obj in jellyfishPrefabs)
         {
             string objectName = obj.name;
             objectCounters[objectName] = 0;
@@ -235,12 +230,18 @@ public class HiddenObjectGameManager : MonoBehaviour
             objectCounters[objectName]++;
         }
 
+        // Set UI slots for trash and jellyfish
         for (int i = 0; i < objectSlots.Count; i++)
         {
-            if (i < objectPrefabs.Count)
+            if (i < trashPrefabs.Count)
             {
-                string objectName = objectPrefabs[i].name;
-                objectSlots[i].SetSlot(objectPrefabs[i].GetComponent<SpriteRenderer>().sprite, objectCounters[objectName]);
+                string objectName = trashPrefabs[i].name;
+                objectSlots[i].SetSlot(trashPrefabs[i].GetComponent<SpriteRenderer>().sprite, objectCounters[objectName]);
+            }
+            else if (i < trashPrefabs.Count + jellyfishPrefabs.Count)
+            {
+                string objectName = jellyfishPrefabs[i - trashPrefabs.Count].name;
+                objectSlots[i].SetSlot(jellyfishPrefabs[i - trashPrefabs.Count].GetComponent<SpriteRenderer>().sprite, objectCounters[objectName]);
             }
             else
             {
@@ -251,17 +252,26 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     void UpdateObjectSlotUI(string objectName)
     {
-        for (int i = 0; i < objectPrefabs.Count; i++)
+        for (int i = 0; i < jellyfishPrefabs.Count; i++)
         {
-            if (objectPrefabs[i].name == objectName)
+            if (jellyfishPrefabs[i].name == objectName)
+            {
+                objectSlots[trashPrefabs.Count + i].UpdateCounter(objectCounters[objectName]);
+                break;
+            }
+        }
+
+        for (int i = 0; i < trashPrefabs.Count; i++)
+        {
+            if (trashPrefabs[i].name == objectName)
             {
                 objectSlots[i].UpdateCounter(objectCounters[objectName]);
                 break;
             }
-        }
+        }        
     }
 
-    private void ShuffleList<T>(List<T> list)
+    void ShuffleList<T>(List<T> list)
     {
         for (int i = list.Count - 1; i > 0; i--)
         {

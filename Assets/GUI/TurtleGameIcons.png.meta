@@ -425,6 +425,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TurtleGameIcons_panel2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 130
+        width: 123
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 19, y: 20, z: 20, w: 20}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497282c0f819e0048a54847313c819ec
+      internalID: 1197809098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -450,6 +471,7 @@ TextureImporter:
       TurtleGameIcons_StarFull: -747695824
       TurtleGameIcons_StarGlow: -1451815224
       TurtleGameIcons_Unlock: 2008938491
+      TurtleGameIcons_panel2: 1197809098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

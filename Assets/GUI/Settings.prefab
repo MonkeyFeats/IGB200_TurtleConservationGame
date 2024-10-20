@@ -2847,8 +2847,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7702151970784068559}
-  - component: {fileID: 4866411545893872404}
   - component: {fileID: 3460489315387128279}
+  - component: {fileID: 4866411545893872404}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -2876,6 +2876,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &3460489315387128279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638710441296148164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338b994613c4bcc449a84e1d5ee5a32c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSettings: {fileID: 11400000, guid: 73b198104893a7b419451353c9718553, type: 2}
+  masterMixer: {fileID: 24100000, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
+  mutedSnapshot: {fileID: 7462536024158405222, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
+  normalSnapshot: {fileID: -6336953931622665465, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
+  musicPlayer: {fileID: 0}
+  lowQualityToggle: {fileID: 4840490045629288032}
+  mediumQualityToggle: {fileID: 6621633261254672465}
+  highQualityToggle: {fileID: 2599914095335711533}
+  masterSlider: {fileID: 6764805789490269860}
+  sfxSlider: {fileID: 7956196791212641396}
+  musicSlider: {fileID: 7019509226632096437}
+  ambienceSlider: {fileID: 499728587309780507}
+  masterVolume: 1
+  musicVolume: 1
+  sfxVolume: 1
+  ambientVolume: 1
 --- !u!82 &4866411545893872404
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2973,34 +3001,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3460489315387128279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4638710441296148164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 338b994613c4bcc449a84e1d5ee5a32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameSettings: {fileID: 11400000, guid: 73b198104893a7b419451353c9718553, type: 2}
-  masterMixer: {fileID: 24100000, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
-  mutedSnapshot: {fileID: 7462536024158405222, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
-  normalSnapshot: {fileID: -6336953931622665465, guid: ca45c0659f7eff642be00bd4646dde07, type: 2}
-  musicPlayer: {fileID: 0}
-  lowQualityToggle: {fileID: 4840490045629288032}
-  mediumQualityToggle: {fileID: 6621633261254672465}
-  highQualityToggle: {fileID: 2599914095335711533}
-  masterSlider: {fileID: 6764805789490269860}
-  sfxSlider: {fileID: 7956196791212641396}
-  musicSlider: {fileID: 7019509226632096437}
-  ambienceSlider: {fileID: 499728587309780507}
-  masterVolume: 1
-  musicVolume: 1
-  sfxVolume: 1
-  ambientVolume: 1
 --- !u!1 &4962287160182094454
 GameObject:
   m_ObjectHideFlags: 0
