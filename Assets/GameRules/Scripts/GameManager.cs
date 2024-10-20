@@ -21,9 +21,6 @@ public class GameManager : MonoBehaviour
 
     public int lastPlayedLevel = -1; // Used for Making the camera go back to where it was and prevent Title Screen Popup
 
-    public GameSettings gameSettings; // Reference to the ScriptableObject
-    public AudioMixer masterMixer;
-
     private void Awake()
     {
         if (Instance == null)
@@ -32,35 +29,10 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             lastPlayedLevel = -1;
             LoadUnlockedLevels();
-            LoadSettings();
         }
         else
         {
             Destroy(gameObject);
-        }
-    }
-
-    private void LoadSettings()
-    {
-        // Apply saved quality settings
-        QualitySettings.SetQualityLevel(gameSettings.qualityLevel);
-
-        // Apply saved audio settings
-        SetMixerVolume("MasterVolume", gameSettings.masterVolume);
-        SetMixerVolume("MusicVolume", gameSettings.musicVolume);
-        SetMixerVolume("SFXVolume", gameSettings.sfxVolume);
-        SetMixerVolume("AmbientVolume", gameSettings.ambientVolume);
-    }
-
-    private void SetMixerVolume(string parameterName, float volume)
-    {
-        if (volume == 0)
-        {
-            masterMixer.SetFloat(parameterName, -80); // Mute volume
-        }
-        else
-        {
-            masterMixer.SetFloat(parameterName, Mathf.Log10(volume) * 20);
         }
     }
 

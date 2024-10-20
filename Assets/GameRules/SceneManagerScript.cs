@@ -5,7 +5,6 @@ public class SceneManagerScript : MonoBehaviour
 {
     public GameObject transitionObject;
     public GameObject endGameCanvas;
-    int sceneWantedToLoad = 0;
     private void DisablePlayerControls()
     {
         // player.GetComponent<PlayerControlScript>().enabled = false;
@@ -30,19 +29,8 @@ public class SceneManagerScript : MonoBehaviour
         ScreenTransitionEffect transitionEffect = transitionObject.GetComponent<ScreenTransitionEffect>();
         if (transitionEffect != null) 
         {
-            sceneWantedToLoad = sceneIndex;
-            transitionObject.GetComponent<ScreenTransitionEffect>().FadeOutOfScene();
+            transitionObject.GetComponent<ScreenTransitionEffect>().FadeOutOfScene(sceneIndex);
         }
-    }
-
-    public void ActuallyLoadNewScene()
-    {
-        SceneManager.LoadScene(sceneWantedToLoad);
-    }
-
-    public void ActuallyLoadNewSceneByIndex(int sceneIndex)
-    {
-        SceneManager.LoadScene(sceneIndex);
     }
 
     // Reloads the current active scene

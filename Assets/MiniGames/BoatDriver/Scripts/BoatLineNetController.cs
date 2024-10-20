@@ -1,13 +1,14 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NetController3D : MonoBehaviour
 {
     public GameObject boat;                  // Reference to the boat
-    public LayerMask objectLayer;            // Layer for objects that can be collected
     public float segmentDistance = 1.0f;     // Distance between net segments
     public float maxNetLength = 50.0f;       // Max allowed net length
-    public float flashDuration = 1.0f;       // Duration for net flash when closing
+    public Material netMaterial; // Reference to the net material
+    public float flashDuration = 5.0f;       // Duration for net flash when closing
     public LineRenderer lineRenderer;        // Reference to the LineRenderer component
     public float closeDistance = 1.0f;       // Distance to check for closing the net
     public int segmentThreshold = 8;         // Number of segments to skip for checking
@@ -19,18 +20,14 @@ public class NetController3D : MonoBehaviour
 
     void Start()
     {
+        flashDuration = 5.0f;
         // Make sure the LineRenderer is attached to the same object
         lineRenderer.positionCount = 0; // Initialize with no points
     }
 
     void Update()
     {
-        if (netClosed)
-        {
-            // Flashing and resetting logic
-            FlashNet();
-        }
-        else
+        if (!netClosed)
         {
             // Update net position based on boat movement
             UpdateNetPath();
@@ -57,11 +54,13 @@ public class NetController3D : MonoBehaviour
             UpdateLineRenderer();
 
             // Check if the net has looped back (the boat is close to any previous point)
-            if (IsBoatCloseToAnyPoint())
+            int closePoint;
+            if (IsBoatCloseToAnyPoint(out closePoint))
             {
                 netClosed = true;
-                TrimNetSegments();
+                TrimNetSegments(closePoint);
                 CollectObjectsInsideNet();
+                StartCoroutine(FlashNetCoroutine()); // Start the flashing coroutine
             }
         }
     }
@@ -85,13 +84,15 @@ public class NetController3D : MonoBehaviour
     }
 
     // Checks if the boat is close to any previous point in the net
-    bool IsBoatCloseToAnyPoint()
+    bool IsBoatCloseToAnyPoint(out int pointIndex)
     {
+        pointIndex = -1;
         Vector3 boatPosition = boat.transform.position;
         for (int i = segmentThreshold; i < netSegments.Count; i++)
         {
             if (Vector3.Distance(boatPosition, netSegments[i]) < closeDistance)
             {
+                pointIndex = i;
                 return true;
             }
         }
@@ -99,38 +100,42 @@ public class NetController3D : MonoBehaviour
     }
 
     // Trims the net segments to only include the closed shape
-    void TrimNetSegments()
+    void TrimNetSegments(int closepoint)
     {
-        Vector3 boatPosition = boat.transform.position;
-        for (int i = segmentThreshold; i < netSegments.Count; i++)
-        {
-            if (Vector3.Distance(boatPosition, netSegments[i]) < closeDistance)
-            {
-                netSegments = netSegments.GetRange(0, i + 1);
-                break;
-            }
-        }
+        netSegments = netSegments.GetRange(0, closepoint + 1);
+        UpdateLineRenderer(); // Ensure LineRenderer reflects the trimmed net
     }
 
-    // Flash the net when closed
-    void FlashNet()
+    // Coroutine for flashing the net
+    private IEnumerator FlashNetCoroutine()
     {
-        // Flashing logic here (e.g., change material or mesh visibility)
-        flashDuration -= Time.deltaTime;
-        if (flashDuration <= 0)
+        netClosed = true;
+        float flashDuration = 1.0f; // Set the total duration for flashing
+        float timer = 0.0f;
+
+        // Flashing effect
+        while (timer < flashDuration)
         {
-            ResetNet();
+            float t = Mathf.PingPong(timer * 2.0f, 1.0f); // Create a pulsing effect
+            netMaterial.SetInt("_isFlashing", 1); // Enable flashing
+
+            // Update the flash timer
+            timer += Time.deltaTime;
+            yield return null; // Wait for the next frame
         }
+
+        // Reset the net after flashing
+        ResetNet();
     }
 
-    // Resets the net segments and prepares for the next path
     void ResetNet()
     {
         netSegments.Clear();
         netClosed = false;
-        flashDuration = 1.0f; // Reset flash duration
-        UpdateLineRenderer();
+        netMaterial.SetInt("_isFlashing", 0); // Stop flashing
+        UpdateLineRenderer(); // Update LineRenderer to clear the visual
     }
+
 
     // Check and collect objects inside the net once the loop is closed
     void CollectObjectsInsideNet()
@@ -160,8 +165,8 @@ public class NetController3D : MonoBehaviour
            // }
         }
 
-        // Reset the net after collecting objects
-        ResetNet();
+        // Destroy the net collider object and its mesh immediately after checking for collisions
+        Destroy(netColliderObject);
     }
 
     Mesh CreateMeshFromPoints(List<Vector3> points)

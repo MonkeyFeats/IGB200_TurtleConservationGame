@@ -32,7 +32,6 @@ public class LevelSelectManager : MonoBehaviour
 
     public Image[] starImages; // Array of star Image components in the UI
 
-
     void Start()
     {
         int lastLevelIndex = GameManager.Instance.lastPlayedLevel;

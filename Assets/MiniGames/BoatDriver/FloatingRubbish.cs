@@ -1,24 +1,35 @@
 using UnityEngine;
+using System.Collections;
 
 public class FloatingRubbish : MonoBehaviour
 {
-    public Texture2D flowMap; // The flow map texture for movement
-    public float flowStrength = 2f; // Speed at which the rubbish moves with the flow
+    public float currentStrength = 2f; // Speed at which the rubbish moves with the current
     public float floatSpeed = 0.5f; // Speed of the bobbing effect
     public float floatRange = 0.5f; // Vertical range of bobbing
     public Sprite[] trashSprites; // Array of different trash sprites
+    public GameObject collectionEffectPrefab; // The prefab with AudioSource and ParticleSystem
+    public float flashDuration = 0.1f; // Duration for each flash
+    public int flashCount = 3; // Number of flashes
+    public float currentChangeInterval = 10f; // Time interval for changing current direction
 
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
     private Vector3 initialPosition;
     private bool collected = false;
+    private Vector3 currentDirection; // Direction of the current
+    private float currentChangeTimer = 0f; // Timer for current change
 
     void Start()
     {
         initialPosition = transform.position;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         // Randomly assign a sprite from the array of trash sprites
         AssignRandomSprite();
+
+        // Set initial current direction
+        ChangeCurrentDirection();
     }
 
     void Update()
@@ -26,13 +37,19 @@ public class FloatingRubbish : MonoBehaviour
         if (!collected)
         {
             // Bobbing effect
-            //float newY = Mathf.Sin(Time.time * floatSpeed) * floatRange;
-            //transform.position = new Vector3(transform.position.x, initialPosition.y + newY, transform.position.z);
+            float newY = Mathf.Sin(Time.time * floatSpeed) * floatRange;
+            transform.position = new Vector3(transform.position.x, initialPosition.y + newY, transform.position.z);
 
-            // Get flow direction from the flow map
-            Vector3 flowDirection = SampleFlowMap(transform.position);
-            // Move rubbish along the flow direction
-            transform.Translate(flowDirection * flowStrength * Time.deltaTime);
+            // Move rubbish along the current direction
+            transform.Translate(currentDirection * currentStrength * Time.deltaTime);
+
+            // Update the timer and change current direction if needed
+            currentChangeTimer += Time.deltaTime;
+            if (currentChangeTimer >= currentChangeInterval)
+            {
+                ChangeCurrentDirection();
+                currentChangeTimer = 0f;
+            }
         }
     }
 
@@ -46,25 +63,39 @@ public class FloatingRubbish : MonoBehaviour
         }
     }
 
-    private Vector3 SampleFlowMap(Vector3 worldPosition)
+    private void ChangeCurrentDirection()
     {
-        // Convert world position to UV coordinates based on the flow map
-        float u = Mathf.InverseLerp(0, 100, worldPosition.x); // Adjust 100 to your world size
-        float v = Mathf.InverseLerp(0, 100, worldPosition.z); // Adjust 100 to your world size
-
-        // Sample the texture using UV coordinates
-        Color flowColor = flowMap.GetPixelBilinear(u, v);
-
-        // Convert the red and green channels to directional vectors (X, Z axes)
-        Vector3 flowDirection = new Vector3(flowColor.r * 2 - 1, 0, flowColor.g * 2 - 1); // R & G channels to [-1, 1] range
-
-        return flowDirection.normalized; // Return a normalized vector to get only the direction
+        // Randomly change the current direction (X, Z axes only)
+        currentDirection = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
     }
 
-
-    private void CollectRubbish()
+    public void CollectRubbish()
     {
-        collected = true;
-        Destroy(gameObject); // Replace with collection logic if needed
+        if (!collected)
+        {
+            collected = true;
+
+            // Start flashing, particle effect, and sound before destruction
+            StartCoroutine(FlashSprite());
+        }
+    }
+
+    private IEnumerator FlashSprite()
+    {
+        for (int i = 0; i < flashCount; i++)
+        {
+            spriteRenderer.enabled = false; // Turn off the sprite
+            yield return new WaitForSeconds(flashDuration);
+            spriteRenderer.enabled = true; // Turn the sprite back on
+            yield return new WaitForSeconds(flashDuration);
+        }
+
+        // Instantiate the prefab with sound and particle effect
+        if (collectionEffectPrefab != null)
+        {
+            Instantiate(collectionEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject); // Destroy the rubbish object after the effect starts
     }
 }

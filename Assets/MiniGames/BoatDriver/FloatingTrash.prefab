@@ -147,6 +147,9 @@ MonoBehaviour:
   - {fileID: 1118360359, guid: 386497a58be427d48891158df7c4ab38, type: 3}
   - {fileID: -1508694480, guid: 386497a58be427d48891158df7c4ab38, type: 3}
   - {fileID: 757859602, guid: 386497a58be427d48891158df7c4ab38, type: 3}
+  collectionEffectPrefab: {fileID: 2025880488429494924, guid: 11d1b72e27a284c469f899cc23ed656e, type: 3}
+  flashDuration: 0.05
+  flashCount: 3
 --- !u!135 &363906106913176163
 SphereCollider:
   m_ObjectHideFlags: 0

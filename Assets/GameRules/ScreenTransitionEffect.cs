@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class ScreenTransitionEffect : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class ScreenTransitionEffect : MonoBehaviour
 
     // UnityEvents for fade in and fade out completion
     public UnityEvent OnFadeInComplete;
-    public UnityEvent OnFadeOutComplete;
+    public UnityEvent OnFadeOutStarted;
+
+    private int sceneToLoad; // Scene name or index to load after fade out
 
     public int transitionState = 0;
 
@@ -35,8 +38,11 @@ public class ScreenTransitionEffect : MonoBehaviour
     }
 
     // Call this to start fading out of scene into new one
-    public void FadeOutOfScene()
+    public void FadeOutOfScene(int sceneIndex = 0)
     {
+        OnFadeOutStarted?.Invoke();
+
+        sceneToLoad = sceneIndex; // Store the scene name/index for loading later
         transitionState = 2;
         imageObject.SetActive(true);
         // Stop any running fade coroutine and start the fade out
@@ -70,8 +76,13 @@ public class ScreenTransitionEffect : MonoBehaviour
         }
         else
         {
-            OnFadeOutComplete?.Invoke();
+            LoadScene(sceneToLoad);
             transitionState = 3; // load new scene ready
         }
+    }
+
+    public void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }

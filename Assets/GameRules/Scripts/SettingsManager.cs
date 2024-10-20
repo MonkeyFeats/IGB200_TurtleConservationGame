@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using System.Collections;
+using UnityEngine.Rendering;
 
 public class SettingsManager : MonoBehaviour
 {
     public GameSettings gameSettings; // Reference to the ScriptableObject
     public AudioMixer masterMixer;
+    public AudioSource musicPlayer;
 
     public Toggle lowQualityToggle;
     public Toggle mediumQualityToggle;
@@ -16,17 +19,24 @@ public class SettingsManager : MonoBehaviour
     public Slider musicSlider;
     public Slider ambienceSlider;
 
-
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float masterVolume = 1f;
     [Range(0f, 1f)] public float musicVolume = 1f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
     [Range(0f, 1f)] public float ambientVolume = 1f;
 
+    [Header("Fade Settings")]
+    [Range(0f, 1f)] public float fadeVolume = 0f;
+
+    private Coroutine fadeCoroutine;
+
     private void OnEnable()
     {
+    }
+    private void Start()
+    {
         LoadUI();
-        UpdateAllVolumes();
+        StartWithFadeIn();
     }
 
     private void LoadUI()
@@ -43,9 +53,17 @@ public class SettingsManager : MonoBehaviour
         ambienceSlider.value = gameSettings.ambientVolume;
     }
 
+    private void StartWithFadeIn()
+    {
+        // Start with Fade volume at a lower level (fadeToVolume) and then fade in
+        fadeVolume = 0f; //Start Quiet
+        masterMixer.SetFloat("FadeAmount", -80); // Ensure it's exactly at the target
+        FadeInVolume(1.3f);
+    }
+
     public void SetMasterVolumeFromSlider()
     {
-        SetMasterVolume(masterSlider.value); // Scale from 0-100 to 0-1
+        SetMasterVolume(masterSlider.value);
     }
 
     public void SetMusicVolumeFromSlider()
@@ -63,13 +81,11 @@ public class SettingsManager : MonoBehaviour
         SetAmbientVolume(ambienceSlider.value);
     }
 
-
     private void Update()
     {
         UpdateAllVolumes();
     }
 
-    // Update the mixer volumes for all categories
     public void UpdateAllVolumes()
     {
         SetMasterVolume(masterVolume);
@@ -89,57 +105,84 @@ public class SettingsManager : MonoBehaviour
     }
 
     public void SetMasterVolume(float volume)
-    {      
+    {
         masterVolume = Mathf.Clamp01(volume);
-        if (masterVolume == 0)
-            masterMixer.SetFloat("MasterVolume", -80); // Mute volume
-        else
-            masterMixer.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20);
-
-        gameSettings.masterVolume = masterVolume;  
+        masterMixer.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20);
+        gameSettings.masterVolume = masterVolume;
     }
 
     public void SetMusicVolume(float volume)
     {
         musicVolume = Mathf.Clamp01(volume);
-        if (musicVolume == 0)
-        {
-            masterMixer.SetFloat("MusicVolume", -80);  // Mute volume
-        }
-        else
-        {
-            masterMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
-        }
+        masterMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
         gameSettings.musicVolume = musicVolume;
     }
-
 
     public void SetSFXVolume(float volume)
     {
         sfxVolume = Mathf.Clamp01(volume);
-        if (sfxVolume == 0)
-        {
-            masterMixer.SetFloat("SFXVolume", -80);  // Mute volume
-        }
-        else
-        {
-            masterMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
-        }
-        gameSettings.musicVolume = sfxVolume;
+        masterMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
+        gameSettings.sfxVolume = sfxVolume;
     }
 
     public void SetAmbientVolume(float volume)
     {
         ambientVolume = Mathf.Clamp01(volume);
-        if (ambientVolume == 0)
-        {
-            masterMixer.SetFloat("AmbientVolume", -80);  // Mute volume
-        }
-        else
-        {
-            masterMixer.SetFloat("AmbientVolume", Mathf.Log10(ambientVolume) * 20);
-        }
-        gameSettings.musicVolume = ambientVolume;
+        masterMixer.SetFloat("AmbientVolume", Mathf.Log10(ambientVolume) * 20);
+        gameSettings.ambientVolume = ambientVolume;
     }
-    
+
+    public void FadeInVolume(float time = 0.3f)
+    {
+        if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
+        fadeCoroutine = StartCoroutine(FadeInAudio(time));
+    }
+    public void FadeOutVolume(float time = 0.3f)
+    {
+        if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
+        fadeCoroutine = StartCoroutine(FadeOutAudio(time));
+    }
+
+    // Coroutine to handle fade over time
+    public IEnumerator FadeInAudio(float fadeDuration)
+    {
+        if (musicPlayer != null)
+            musicPlayer.UnPause();
+
+        float currentTime = 0f;
+        float startVolume = Mathf.Pow(10f, fadeVolume / 20f); // Convert current dB volume to linear scale
+        float targetVolume = 1f; // Target volume (1 is full volume in linear scale)
+
+        while (currentTime < fadeDuration)
+        {
+            currentTime += Time.deltaTime;
+            fadeVolume = Mathf.Lerp(startVolume, targetVolume, currentTime / fadeDuration);
+            fadeVolume = Mathf.Clamp(fadeVolume, 0f, 1f); // Clamp the value to prevent going above full volume
+            masterMixer.SetFloat("FadeAmount", Mathf.Log10(fadeVolume) * 20); // Convert back to dB
+            yield return null;
+        }
+
+        masterMixer.SetFloat("FadeAmount", Mathf.Log10(targetVolume) * 20); // Ensure it's exactly at the target
+    }
+
+    public IEnumerator FadeOutAudio(float fadeDuration)
+    {
+        float currentTime = 0f;
+        float startVolume = Mathf.Pow(10f, fadeVolume / 20f); // Convert current dB volume to linear scale
+        float targetVolume = 0f; // Mute
+
+        while (currentTime < fadeDuration)
+        {
+            currentTime += Time.deltaTime;
+            fadeVolume = Mathf.Lerp(startVolume, targetVolume, currentTime / fadeDuration);
+            fadeVolume = Mathf.Clamp(fadeVolume, 0.0001f, 1f); // Clamp to avoid logarithmic issues (no negative infinity)
+            masterMixer.SetFloat("FadeAmount", Mathf.Log10(fadeVolume) * 20); // Convert back to dB
+            yield return null;
+        }
+
+        masterMixer.SetFloat("FadeAmount", Mathf.Log10(0.0001f) * 20); // Set to a very low value at the end
+        if (musicPlayer != null)
+            musicPlayer.Pause();
+    }
+
 }

@@ -80,6 +80,7 @@ public class BoatCleanupLevelManager : MonoBehaviour
         }
     }
 
+
     // Starts the intermission state
     public void StartIntermission()
     {
@@ -87,6 +88,18 @@ public class BoatCleanupLevelManager : MonoBehaviour
         // Optionally disable player controls here
         // if (playerController != null) playerController.enabled = false;
         // Trigger transition animations, etc.
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Stop the game by setting time scale to 0
+        //isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f; // Resume the game by setting time scale to 1
+        //isPaused = false;
     }
 
     // Ends the intermission and starts gameplay
@@ -173,7 +186,7 @@ public class BoatCleanupLevelManager : MonoBehaviour
     {
         rubbishCollected++;
         UpdateRubbishUI();
-        Destroy(rubbish);
+        rubbish.GetComponent<FloatingRubbish>().CollectRubbish();
 
         if (rubbishCollected >= totalRubbish)
         {
