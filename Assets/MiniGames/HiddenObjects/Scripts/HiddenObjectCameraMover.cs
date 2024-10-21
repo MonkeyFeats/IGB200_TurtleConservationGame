@@ -33,7 +33,7 @@ public class HiddenObjectCameraMover : MonoBehaviour
         float input = 0f;
 
         // Handle keyboard input
-        input = Input.GetAxis("Horizontal");
+        input = Input.GetAxis("Horizontal")*0.25f;
 
         // Handle touch swipe input
         if (Input.touchCount > 0)

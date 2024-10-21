@@ -92,7 +92,7 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     int CalculateStarReward()
     {
-        float percentageFound = (float)objectsFound / (totalObjects - 17);
+        float percentageFound = (float)objectsFound / (totalObjects - 3);
         float timePercentage = currentTime / gameTime;
 
         // Full completion bonus (3 stars) if all objects are found and time is still left
@@ -172,7 +172,7 @@ public class HiddenObjectGameManager : MonoBehaviour
 
         UpdateUI();
 
-        if (objectsFound == (totalObjects - 17))
+        if (objectsFound == (totalObjects - 3))
         {
             EndGame(true); // Win condition when all objects are found
         }
@@ -227,7 +227,7 @@ public class HiddenObjectGameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        remainingItemsText.text = "Remaining Items: " + (totalObjects - objectsFound).ToString();
+        remainingItemsText.text = "Remaining Items: " + (totalObjects - 3 - objectsFound).ToString() ;
     }
 
     void UpdateTimerUI()
