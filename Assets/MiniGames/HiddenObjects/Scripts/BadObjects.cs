@@ -4,6 +4,7 @@ public class BadObjects : MonoBehaviour
 {
     private HiddenObjectGameManager gameController;
     private string objectName;
+    public GameObject deathObject;
 
     void Start()
     {
@@ -15,6 +16,8 @@ public class BadObjects : MonoBehaviour
     void OnMouseDown()
     {
         // Call the game controller to handle object removal
+        Instantiate(deathObject, transform.position, Quaternion.identity);
         gameController.FindBadObject(gameObject, objectName);
+        Destroy(gameObject);
     }
 }

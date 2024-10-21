@@ -4,6 +4,7 @@ public class HiddenObject : MonoBehaviour
 {
     private HiddenObjectGameManager gameController;
     private string objectName;
+    public GameObject deathObject;
 
     void Start()
     {
@@ -15,6 +16,9 @@ public class HiddenObject : MonoBehaviour
     void OnMouseDown()
     {
         // Call the game controller to handle object removal
+        Instantiate(deathObject, transform.position, Quaternion.identity);
         gameController.FindObject(gameObject, objectName);
+        Destroy(gameObject);
     }
+
 }
