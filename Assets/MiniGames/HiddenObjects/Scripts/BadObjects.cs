@@ -15,6 +15,6 @@ public class BadObjects : MonoBehaviour
     void OnMouseDown()
     {
         // Call the game controller to handle object removal
-        //gameController.FindBadObject(gameObject, objectName);
+        gameController.FindBadObject(gameObject, objectName);
     }
 }

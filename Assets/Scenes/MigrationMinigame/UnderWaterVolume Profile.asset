@@ -18,10 +18,10 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 0.8
   intensity:
     m_OverrideState: 1
-    m_Value: 1.08
+    m_Value: 1.1
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -62,31 +62,31 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
-    m_OverrideState: 1
-    m_Value: 15.4
+    m_OverrideState: 0
+    m_Value: 10
   gaussianEnd:
-    m_OverrideState: 1
-    m_Value: 38.5
+    m_OverrideState: 0
+    m_Value: 30
   gaussianMaxRadius:
     m_OverrideState: 0
-    m_Value: 1.082
+    m_Value: 1
   highQualitySampling:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 5.45
   aperture:
     m_OverrideState: 0
     m_Value: 5.6
   focalLength:
-    m_OverrideState: 0
-    m_Value: 50
+    m_OverrideState: 1
+    m_Value: 89
   bladeCount:
-    m_OverrideState: 0
-    m_Value: 5
+    m_OverrideState: 1
+    m_Value: 4
   bladeCurvature:
     m_OverrideState: 0
     m_Value: 1
@@ -105,10 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.15
+    m_Value: 0.37
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -142,10 +142,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.468
+    m_Value: 0.264
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.286
+    m_Value: 0.479
   rounded:
     m_OverrideState: 0
     m_Value: 1
@@ -180,10 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.077
 --- !u!114 &1739700125026768311
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -202,13 +202,13 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 14
+    m_Value: 5
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
-    m_OverrideState: 1
-    m_Value: 5
+    m_OverrideState: 0
+    m_Value: 3
   saturation:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 10

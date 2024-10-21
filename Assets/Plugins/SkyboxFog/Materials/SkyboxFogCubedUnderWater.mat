@@ -29,9 +29,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blend: 255.9
+    - _Blend: 40.8
     - _Exposure: 1
-    - _Height: 506
+    - _Height: 532.8
     - _Opacity: 1
     - _Rotation: 183
     m_Colors:

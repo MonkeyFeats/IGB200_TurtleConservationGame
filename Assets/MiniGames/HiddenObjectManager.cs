@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System.Linq;
 
 public class HiddenObjectGameManager : MonoBehaviour
 {
@@ -177,25 +178,51 @@ public class HiddenObjectGameManager : MonoBehaviour
         }
     }
 
-    void RemoveObjectFromUI(string objectName)
+    public void FindBadObject(GameObject foundObject, string objectName)
     {
-        for (int i = 0; i < trashPrefabs.Count; i++)
+        foundObject.SetActive(false); // Disable the object
+        objectsFound++; // Increment found objects count
+        activeObjects.Remove(foundObject); // Remove from active objects
+
+        objectCounters[objectName]--; // Decrease object counter
+
+        if (objectCounters[objectName] == 0)
         {
-            if (trashPrefabs[i].name == objectName)
+            RemoveObjectFromUI(objectName); // Remove from UI if no more objects
+        }
+        else
+        {
+            UpdateObjectSlotUI(objectName); // Update UI
+        }
+
+        UpdateUI();
+
+        if (objectsFound == 3)
+        {
+            EndGame(false); // Win condition when all objects are found
+        }
+    }
+
+    void RemoveObjectFromUI(string objectName)
+    {       
+        for (int i = 0; i < jellyfishPrefabs.Count; i++)
+        {
+            if (jellyfishPrefabs[i].name == objectName)
             {
                 objectSlots[i].gameObject.SetActive(false); // Remove slot from UI
                 break;
             }
         }
 
-        for (int i = 0; i < jellyfishPrefabs.Count; i++)
+        for (int i = 0; i < trashPrefabs.Count; i++)
         {
-            if (jellyfishPrefabs[i].name == objectName)
+            if (trashPrefabs[i].name == objectName)
             {
-                objectSlots[trashPrefabs.Count + i].gameObject.SetActive(false); // Remove slot from UI
+                objectSlots[jellyfishPrefabs.Count + i].gameObject.SetActive(false); // Remove slot from UI
                 break;
             }
         }
+
     }
 
     void UpdateUI()
@@ -233,16 +260,17 @@ public class HiddenObjectGameManager : MonoBehaviour
         // Set UI slots for trash and jellyfish
         for (int i = 0; i < objectSlots.Count; i++)
         {
-            if (i < trashPrefabs.Count)
+            if (i < jellyfishPrefabs.Count)
             {
-                string objectName = trashPrefabs[i].name;
-                objectSlots[i].SetSlot(trashPrefabs[i].GetComponent<SpriteRenderer>().sprite, objectCounters[objectName]);
+                string objectName = jellyfishPrefabs[i].name;
+                objectSlots[i].SetSlot(jellyfishPrefabs[i].GetComponent<SpriteRenderer>().sprite, objectCounters[objectName]);
             }
-            else if (i < trashPrefabs.Count + jellyfishPrefabs.Count)
+            else if (i <  jellyfishPrefabs.Count + trashPrefabs.Count)
             {
-                string objectName = jellyfishPrefabs[i - trashPrefabs.Count].name;
-                objectSlots[i].SetSlot(jellyfishPrefabs[i - trashPrefabs.Count].GetComponent<SpriteRenderer>().sprite, objectCounters[objectName]);
+                string objectName = trashPrefabs[i - jellyfishPrefabs.Count].name;
+                objectSlots[i].SetSlot(trashPrefabs[i - jellyfishPrefabs.Count].GetComponent<SpriteRenderer>().sprite, objectCounters[objectName]);
             }
+            
             else
             {
                 objectSlots[i].gameObject.SetActive(false);
@@ -256,7 +284,7 @@ public class HiddenObjectGameManager : MonoBehaviour
         {
             if (jellyfishPrefabs[i].name == objectName)
             {
-                objectSlots[trashPrefabs.Count + i].UpdateCounter(objectCounters[objectName]);
+                objectSlots[i].UpdateCounter(objectCounters[objectName]);
                 break;
             }
         }
@@ -265,7 +293,7 @@ public class HiddenObjectGameManager : MonoBehaviour
         {
             if (trashPrefabs[i].name == objectName)
             {
-                objectSlots[i].UpdateCounter(objectCounters[objectName]);
+                objectSlots[jellyfishPrefabs.Count + i].UpdateCounter(objectCounters[objectName]);
                 break;
             }
         }        
