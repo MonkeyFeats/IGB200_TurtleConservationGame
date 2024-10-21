@@ -29,11 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blend: 40.8
+    - _Blend: 193.6
     - _Exposure: 1
-    - _Height: 532.8
+    - _Height: 724.5
     - _Opacity: 1
-    - _Rotation: 183
+    - _Rotation: 222
     m_Colors:
     - _ColorB: {r: 0, g: 0.50196075, b: 1, a: 1}
     - _Tint: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}

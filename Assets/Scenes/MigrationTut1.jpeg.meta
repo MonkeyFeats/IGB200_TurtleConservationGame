@@ -1,0 +1,2563 @@
+fileFormatVersion: 2
+guid: bd0304e7ad0bb8547b901e798de43429
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7440030231666314111
+    second: MigrationTut1_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MigrationTut1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184bc5b5ce3bfb890800000000000000
+      internalID: -7440030231666314111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6370c351e57c246a1b8784c7447566
+      internalID: 1129803662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c059e8ae94161e44a2d173b78f1e310
+      internalID: -1255030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab94ad60324cea48be0df2bae8a98d7
+      internalID: -933991825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bf005cb496d7e4fbcf6c2969710fe1
+      internalID: 2039592359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbdb23720de47944ea9fad2cf95161a0
+      internalID: 1192475200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbc8ae6e94ea6f4c82fbbe8986541bb
+      internalID: -1125809582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7ba763ebbca844bab5ecb2597030b5
+      internalID: -875731954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efbfc97766ed5e438aa94d1c480bd9c
+      internalID: -1521811537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_9
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 2030
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54948f3088050244ae753bc99fb73e6
+      internalID: 985794670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bd7b28f6b853047bd6311d06ef8b10
+      internalID: -306684724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96cc802ac166574e87690f7c810b0fc
+      internalID: -2066354657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54abefb7f079c7049a815c53dc909608
+      internalID: -1714996514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eeca4b969bb601479bd67c9287afc23
+      internalID: -978754620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e864b98922cde384580f9ecb6094ada5
+      internalID: -1251190773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_15
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4fd678889be59d4ab2cd6d11c84ce82
+      internalID: 690179529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_16
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e6f95443c09bb4f8d790aaf5888a8a
+      internalID: -538803131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_17
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea40b78b8e8d9c4584c9190f4b4b8ac
+      internalID: -2052038560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_18
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c402e2ba894fd2488bedbc08a15c5a4
+      internalID: 1058710309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_19
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1827
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34979d1aaf36f44181a1106757b6cd8
+      internalID: 1091489582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a86e249b0955eb4ea70715899eda54a
+      internalID: -117994450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2021b3224d3924fbab8ea64f867a65
+      internalID: -1232418597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d902c4174532c504298246915f7805b0
+      internalID: -2100297238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae9be2d94f7f134c95121e0f3dd267b
+      internalID: 332119792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_24
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265830fc60ea71247b939450f2c909a5
+      internalID: -2081141872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_25
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047ebe3fd3a15484cb2419f17b3d6902
+      internalID: 1088893974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_26
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b383e233f04edc4d87fdf0ed92f8499
+      internalID: -1589635734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_27
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6467b5b3ba02194cb458da198364e3c
+      internalID: 1051863076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_28
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ae3a5f9d2a571409f80deddadda312
+      internalID: -1651363398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_29
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1624
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f52c25562d97641954c27ef19eb488
+      internalID: -235986467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f6fe54dac2e6a4d8458d5919be1ab5
+      internalID: -1307089593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf539c5a9f2a59459c85d0c327601c5
+      internalID: 704720081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66d861eb83b19a478de737171293c70
+      internalID: 1206140654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_33
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59c0541d98c6a0478a265a9be8d9614
+      internalID: -316776874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_34
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f4e554379af5944288e42961570b55a
+      internalID: -1006473799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_35
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498882efd258a334d8086011c53c0a10
+      internalID: -2084076828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_36
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a27a6df8bd45c14a97cb0be20701c29
+      internalID: 993927639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_37
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e9ec3d204cc8d4080bdf53e8cb1985
+      internalID: -2036703475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_38
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f817da84498934fb5be23bb87f829d
+      internalID: 743904677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_39
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1421
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b45bc19ae2adc44a86eceff5bdcd1b
+      internalID: 732060880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377b2b5b406b2af478b02276f54df3ca
+      internalID: 862808623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc789e80948abd34abac753fd8d58902
+      internalID: -1348176545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_42
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94bff3e1bab79364881be080917c1e6f
+      internalID: -903509457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_43
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226c85c479760d54eb1093e1926c732a
+      internalID: -832080478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_44
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e37b4f8d8a69c48a5590e4b46b4006
+      internalID: 106691869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_45
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43f834fbda7f964a9de45300779bcf7
+      internalID: 1125599431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_46
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf4dd6983462474a9756fdfb073f42c
+      internalID: 885261511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_47
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125c39000f5fdec45a1f445fc44dbcad
+      internalID: 1338442016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_48
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63287b63b4ef6c54a83c2a1941027f86
+      internalID: -86402133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_49
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1218
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4990c0e40039b6640a3f13babe813771
+      internalID: -924945937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ea30f9e6eb11f4d9320a9395d45d27
+      internalID: -376737485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_51
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760db27e0ed2e254299b491643603b4f
+      internalID: 664626845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf62c7640bc60f14b96f31fd8bfc2158
+      internalID: -1036379712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_53
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaaa3bdceeff3144ab0ea78bd3f54a7
+      internalID: 305746607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_54
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe4c9592f95a7c4dbc9fc8130949d37
+      internalID: -2004586032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_55
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5aa85cdb68e514facf3e869bf91b5b
+      internalID: -411608469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_56
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b099e4655790a4fa4bc4e7fe2f4a8a
+      internalID: 1779230795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_57
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3844c2787444a9941b3ef2e23307bc1e
+      internalID: 309206446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_58
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816516030ae73544b9f2b771b9344af3
+      internalID: -307534116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_59
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1015
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afdde56905c0bc8438757fb2d20860bd
+      internalID: 1104889608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc195a362a0db44189588e59a9d2b55
+      internalID: 1453454411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a128132e27574c4482184bd65d99605
+      internalID: 1701141462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_62
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a20edf94d0b0714b92ec224c363e7aa
+      internalID: 2122479130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_63
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee45766072283b04a9ac87b436d9845a
+      internalID: -1441409320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_64
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fea00399e4e991438ef51648afedfaa
+      internalID: 1562754080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_65
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a7f46b36e742541bab3076ab71c630
+      internalID: 1962600387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_66
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109302ec403e1c3498590ff7dc06eabb
+      internalID: 554853889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_67
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d58d2e2a0f763d459b99c677f63b3bd
+      internalID: -1169973649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_68
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4d7ccce2737164eb9c9576e2be92b9
+      internalID: -707119825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_69
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 812
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d837c201f4bee4cbf7b4f2b7372aec
+      internalID: 1747115082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee44ab7840421e84599106752b460a48
+      internalID: -1465621183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_71
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff64b2db4d78c243833287d50e1f231
+      internalID: -1363380698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_72
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0fdaba6bb39414ba491c2b4f3e9e14
+      internalID: 319656514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_73
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1c238137b197643a87f924462c6842
+      internalID: 72578061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_74
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bed0475c94f88e43a6c83800698213f
+      internalID: 332957128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_75
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95fb18c4b2af914ebee165d728dc4c7
+      internalID: 2138390476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_76
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e22311ba0b315d428d2d206dbff1774
+      internalID: 1795735749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_77
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8b9fd5eb7ac2140a00b638ee2b8ad1
+      internalID: -1992374182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_78
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0942c447f7de34b9801bce7177dcb0
+      internalID: 619834898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_79
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 609
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7da77cca701e0459c0b61292681e3c
+      internalID: -1891791472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712fd727d7e2fbc4698dc439d0a91ae7
+      internalID: 1695206309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_81
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc05300575d2e64faa31c70f99d9808
+      internalID: 1578271443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_82
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873014932642a5643879fffb587b070e
+      internalID: 2139885816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_83
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd7fd1954ed8a84db785ea77b6d6863
+      internalID: 391525662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_84
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4aecd4f4bf02340a4d6b03a80b39ad
+      internalID: 1524820780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_85
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60cbaa06cb010340b37212b3cea5d29
+      internalID: -433561319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_86
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a91440963d4a54d82f644bde624b27
+      internalID: 1844458963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_87
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a490ae87d0cf6f14b9be65c759e4419a
+      internalID: 1700688941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_88
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7672e682eaf506b4d81a7c27ce9d697f
+      internalID: -1865321856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_89
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 406
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd78b444c859b945a8c50820178dab0
+      internalID: -2082016420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88f20aa227fee24680c26d39140aa86
+      internalID: -1448934932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_91
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b561b4526fb6fa943a7a05c3095e8579
+      internalID: 1314019054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_92
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f64840a21a9744887aa5c06817c5e6
+      internalID: 583045081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_93
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb312ec1bb2da64f91f86ee2beac91c
+      internalID: -1420853068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_94
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89afb4255c314364a9d366d81a521043
+      internalID: 695700550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_95
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ce2eea7973b1e4c8023d4d7169d560
+      internalID: 1234007660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_96
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6177b3eced4a26d4e9f2f14bd0c2782f
+      internalID: 926458571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_97
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d695e458f164d439de883ad1a5693d
+      internalID: 230698410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_98
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfde6c31a70d1e14c9fd3c9f94abb158
+      internalID: 566379990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_99
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 203
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449fec2b0adf76b48980756c9388eb4e
+      internalID: -1845939819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44d4cb6674d1d146ac4c150d74adad7
+      internalID: 1265373132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_101
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8f58630d8043846b9cac56502bea58
+      internalID: 1817864268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_102
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6f4449ecbb1174eb2b507b42e11eb2
+      internalID: 881649912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_103
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e4fe586f5fa484cb71e3ef980e8e7e
+      internalID: 208767484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_104
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0edf009c68f1ad14a94f23c813d150ec
+      internalID: -1217259883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_105
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e1fd5f07663584dab135b7ed26a530
+      internalID: -984594200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_106
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d3735a6bf4c5b4fab753a2fc6814c4
+      internalID: 638884339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_107
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3438634c5cd29bb4c9dd16e59a7efb01
+      internalID: -1059336377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_108
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572b821f2ce22a345b955145b3221d12
+      internalID: -1197325951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MigrationTut1_109
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 256
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a20c0f6e3c6bee42b065c1ab8f469fe
+      internalID: -732006426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b37b926107353fe47937cb57cff010f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MigrationTut1_0: -7440030231666314111
+      MigrationTut1_1: 1129803662
+      MigrationTut1_10: -306684724
+      MigrationTut1_100: 1265373132
+      MigrationTut1_101: 1817864268
+      MigrationTut1_102: 881649912
+      MigrationTut1_103: 208767484
+      MigrationTut1_104: -1217259883
+      MigrationTut1_105: -984594200
+      MigrationTut1_106: 638884339
+      MigrationTut1_107: -1059336377
+      MigrationTut1_108: -1197325951
+      MigrationTut1_109: -732006426
+      MigrationTut1_11: -2066354657
+      MigrationTut1_12: -1714996514
+      MigrationTut1_13: -978754620
+      MigrationTut1_14: -1251190773
+      MigrationTut1_15: 690179529
+      MigrationTut1_16: -538803131
+      MigrationTut1_17: -2052038560
+      MigrationTut1_18: 1058710309
+      MigrationTut1_19: 1091489582
+      MigrationTut1_2: -1255030
+      MigrationTut1_20: -117994450
+      MigrationTut1_21: -1232418597
+      MigrationTut1_22: -2100297238
+      MigrationTut1_23: 332119792
+      MigrationTut1_24: -2081141872
+      MigrationTut1_25: 1088893974
+      MigrationTut1_26: -1589635734
+      MigrationTut1_27: 1051863076
+      MigrationTut1_28: -1651363398
+      MigrationTut1_29: -235986467
+      MigrationTut1_3: -933991825
+      MigrationTut1_30: -1307089593
+      MigrationTut1_31: 704720081
+      MigrationTut1_32: 1206140654
+      MigrationTut1_33: -316776874
+      MigrationTut1_34: -1006473799
+      MigrationTut1_35: -2084076828
+      MigrationTut1_36: 993927639
+      MigrationTut1_37: -2036703475
+      MigrationTut1_38: 743904677
+      MigrationTut1_39: 732060880
+      MigrationTut1_4: 2039592359
+      MigrationTut1_40: 862808623
+      MigrationTut1_41: -1348176545
+      MigrationTut1_42: -903509457
+      MigrationTut1_43: -832080478
+      MigrationTut1_44: 106691869
+      MigrationTut1_45: 1125599431
+      MigrationTut1_46: 885261511
+      MigrationTut1_47: 1338442016
+      MigrationTut1_48: -86402133
+      MigrationTut1_49: -924945937
+      MigrationTut1_5: 1192475200
+      MigrationTut1_50: -376737485
+      MigrationTut1_51: 664626845
+      MigrationTut1_52: -1036379712
+      MigrationTut1_53: 305746607
+      MigrationTut1_54: -2004586032
+      MigrationTut1_55: -411608469
+      MigrationTut1_56: 1779230795
+      MigrationTut1_57: 309206446
+      MigrationTut1_58: -307534116
+      MigrationTut1_59: 1104889608
+      MigrationTut1_6: -1125809582
+      MigrationTut1_60: 1453454411
+      MigrationTut1_61: 1701141462
+      MigrationTut1_62: 2122479130
+      MigrationTut1_63: -1441409320
+      MigrationTut1_64: 1562754080
+      MigrationTut1_65: 1962600387
+      MigrationTut1_66: 554853889
+      MigrationTut1_67: -1169973649
+      MigrationTut1_68: -707119825
+      MigrationTut1_69: 1747115082
+      MigrationTut1_7: -875731954
+      MigrationTut1_70: -1465621183
+      MigrationTut1_71: -1363380698
+      MigrationTut1_72: 319656514
+      MigrationTut1_73: 72578061
+      MigrationTut1_74: 332957128
+      MigrationTut1_75: 2138390476
+      MigrationTut1_76: 1795735749
+      MigrationTut1_77: -1992374182
+      MigrationTut1_78: 619834898
+      MigrationTut1_79: -1891791472
+      MigrationTut1_8: -1521811537
+      MigrationTut1_80: 1695206309
+      MigrationTut1_81: 1578271443
+      MigrationTut1_82: 2139885816
+      MigrationTut1_83: 391525662
+      MigrationTut1_84: 1524820780
+      MigrationTut1_85: -433561319
+      MigrationTut1_86: 1844458963
+      MigrationTut1_87: 1700688941
+      MigrationTut1_88: -1865321856
+      MigrationTut1_89: -2082016420
+      MigrationTut1_9: 985794670
+      MigrationTut1_90: -1448934932
+      MigrationTut1_91: 1314019054
+      MigrationTut1_92: 583045081
+      MigrationTut1_93: -1420853068
+      MigrationTut1_94: 695700550
+      MigrationTut1_95: 1234007660
+      MigrationTut1_96: 926458571
+      MigrationTut1_97: 230698410
+      MigrationTut1_98: 566379990
+      MigrationTut1_99: -1845939819
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
