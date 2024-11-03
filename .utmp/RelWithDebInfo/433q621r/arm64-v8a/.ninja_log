@@ -1,11 +1,11 @@
 # ninja log v5
-63	664	7492989676943952	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b2b40d91ba483737
-667	2179	7492989690243751	C:/Users/izaac/Desktop/Unity Projects/IGB200_TurtleConservation/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/433q621r/obj/arm64-v8a/libswappywrapper.so	175a9aaf7c494981
-34	2537	7492989695813235	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b9088956f48fb02
-1	2625	7492989696830517	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	bdf4973fe06aace
-25	2652	7492989697159913	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e638a85db7a98643
-53	2815	7492989698770964	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	737f3d428b38a51
-17	2892	7492989699554062	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c3b3dde7524975f2
-43	3340	7492989704018339	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1a6fd766bd7045ee
-9	3592	7492989706556467	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e301d46e25a77c5f
-3593	3850	7492989708483519	C:/Users/izaac/Desktop/Unity Projects/IGB200_TurtleConservation/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/433q621r/obj/arm64-v8a/libgame.so	1539b1ec1e80f26a
+59	484	7522267983258269	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b2b40d91ba483737
+486	853	7522267986026975	C:/Users/izaac/Desktop/Unity Projects/IGB200_TurtleConservation/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/433q621r/obj/arm64-v8a/libswappywrapper.so	175a9aaf7c494981
+25	1797	7522267996293079	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b9088956f48fb02
+18	1896	7522267997262897	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	bdf4973fe06aace
+34	1907	7522267997422458	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e638a85db7a98643
+50	2025	7522267998615329	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	737f3d428b38a51
+1	2139	7522267999838791	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c3b3dde7524975f2
+42	2449	7522268002917913	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1a6fd766bd7045ee
+11	2607	7522268004474983	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e301d46e25a77c5f
+2607	2819	7522268006039902	C:/Users/izaac/Desktop/Unity Projects/IGB200_TurtleConservation/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/433q621r/obj/arm64-v8a/libgame.so	1539b1ec1e80f26a

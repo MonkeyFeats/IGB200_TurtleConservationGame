@@ -39,6 +39,8 @@ public class BoatCleanupLevelManager : MonoBehaviour
     private float currentReefHealth = 100f;
     public TextMeshProUGUI reefHealthText;
 
+    public UnityEvent EndGameEvents;
+
     void Start()
     {
         timeLeft = levelTime;
@@ -148,8 +150,12 @@ public class BoatCleanupLevelManager : MonoBehaviour
     // Optional: Handle what happens when the reef is fully destroyed
     void ReefDestroyed()
     {
-        Debug.Log("The reef has been fully destroyed!");
-        // Trigger any destruction effects or game over logic here
+        if (currentState != GameState.EndGame)
+        {
+            currentState = GameState.EndGame;
+            gameplayHUD.gameObject.SetActive(false);
+            EndGameEvents.Invoke();
+        }
     }
 
     // Spawns rubbish in random positions within the defined spawn area
@@ -214,23 +220,27 @@ public class BoatCleanupLevelManager : MonoBehaviour
     // Calculates the star reward based on performance
     int CalculateStarReward()
     {
-        float percentageFound = 0.55f;//(float)objectsFound / totalObjects;
-        //float timePercentage = currentTime / gameTime;
+        // Calculate the percentage of rubbish collected
+        float collectionPercentage = (float)rubbishCollected / totalRubbish;
 
-        // Full completion bonus (3 stars) if all objects are found and time is still left
-        if (percentageFound >= 1f)// && timePercentage > 0)
+        // Calculate the reef health penalty as a percentage
+        float reefHealthPenalty = (maxReefHealth - currentReefHealth) / maxReefHealth;
+
+        // Adjust the collection percentage by reef damage (penalty)
+        float adjustedScore = collectionPercentage * (1f - reefHealthPenalty);
+
+        // Full completion with minimal damage earns 3 stars
+        if (adjustedScore >= 0.9f)
             return 3;
-
-        // 2 stars for completing 60% or more of objects
-        else if (percentageFound >= 0.6f)
+        // Two stars for a high completion rate with moderate damage
+        else if (adjustedScore >= 0.6f)
             return 2;
-
-        // 1 stars for completing 30-65%
-        else if (percentageFound >= 0.3f)
+        // One star for a low completion rate or high reef damage
+        else if (adjustedScore >= 0.3f)
             return 1;
-
-        // 0 stars for less than 30% found
-        return 0;
+        // Zero stars for very low completion or extensive damage
+        else
+            return 0;
     }
 
     // Shows the end game popup with stars earned

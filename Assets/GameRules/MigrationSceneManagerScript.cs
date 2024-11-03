@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using HeneGames.DialogueSystem;
+using UnityEngine.Events;
 
 public class MigrationSceneManagerScript : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MigrationSceneManagerScript : MonoBehaviour
     public ScreenTransitionEffect transitioner;
     public MigrationPlayerMovement playerController;
     public CinemachineDollyCart cart;
+    public UnityEvent EndGameEvents;
+    public TurtleCollisionHandler turtleStatus;
 
     private int lives = 3;
     private int hitsTaken = 0;
@@ -48,6 +51,10 @@ public class MigrationSceneManagerScript : MonoBehaviour
         currentState = GameState.EndGame;
         playerController.enabled = false;
         StartCoroutine(ChangeCartSpeed(0f)); // Gradually stop
+        if (EndGameEvents != null)
+        {
+            EndGameEvents.Invoke();
+        }
     }
 
     public void ChangeSpeed(float speed)
@@ -77,14 +84,35 @@ public class MigrationSceneManagerScript : MonoBehaviour
         if (starsAnimator != null)
             starsAnimator.SetInteger("StarsEarned", starsEarned);
     }
-
     int CalculateStarReward()
     {
-        return 2;
+        float healthPercentage = turtleStatus.health / 100;
+
+        if (healthPercentage >= 0.75f)
+            return 3; // 3 stars for 80% or more health
+        else if (healthPercentage >= 0.5f)
+            return 2; // 2 stars for 50% or more health
+        else if (healthPercentage > 0)
+            return 1; // 1 star for any remaining health
+        else
+            return 0; // 0 stars if no health left
     }
 
     public void LoadScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Stop the game by setting time scale to 0
+        //isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f; // Resume the game by setting time scale to 1
+        //isPaused = false;
+    }
+
 }

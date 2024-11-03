@@ -58,6 +58,18 @@ public class HiddenObjectGameManager : MonoBehaviour
         }
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Stop the game by setting time scale to 0
+        //isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f; // Resume the game by setting time scale to 1
+        //isPaused = false;
+    }
+
     public void StartIntermission()
     {
         currentState = GameState.Intermission;

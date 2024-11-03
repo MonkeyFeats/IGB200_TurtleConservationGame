@@ -11,6 +11,7 @@ public class TurtleCollisionHandler : MonoBehaviour
     public float flashDuration = 0.1f;          // How often the turtle flashes during cooldown
     public float teleportCooldown = 1.0f;       // Cooldown time before movement re-enables
     public Slider healthSlider;                 // UI Slider to display health
+    public UnityEvent onHit;             // Event triggered when health reaches zero
     public UnityEvent onHealthZero;             // Event triggered when health reaches zero
 
     private Rigidbody rb;                       // Reference to the turtle's Rigidbody
@@ -53,6 +54,8 @@ public class TurtleCollisionHandler : MonoBehaviour
 
         // Update the health slider
         UpdateHealthSlider();
+
+        onHit.Invoke();
 
         // Trigger the event if health reaches zero
         if (health <= 0)

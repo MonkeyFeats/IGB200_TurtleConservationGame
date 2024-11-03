@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   qualityLevel: 2
-  masterVolume: 1
+  masterVolume: 0.75
   sfxVolume: 1
   musicVolume: 1
   ambientVolume: 1

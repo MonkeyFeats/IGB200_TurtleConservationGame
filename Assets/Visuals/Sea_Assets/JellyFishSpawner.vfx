@@ -37,7 +37,7 @@ MonoBehaviour:
     x: 852
     y: -1433
     width: 474
-    height: 2211
+    height: 2347
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1984,7 +1984,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.23584908246994019,"g":0.15450601279735566,"b":0.11013706773519516,"a":0.8078431487083435}'
+      m_SerializableObject: '{"r":0.10284701734781265,"g":0.7058823704719544,"b":0.050980400294065478,"a":0.8078431487083435}'
     m_Space: -1
   m_Property:
     name: _Color
@@ -2188,7 +2188,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.12522612512111665,"g":0.06666667014360428,"b":0.18039216101169587,"a":0.24705882370471955}'
+      m_SerializableObject: '{"r":0.17741480469703675,"g":0.027233893051743509,"b":0.3396226167678833,"a":0.9137254953384399}'
     m_Space: -1
   m_Property:
     name: _Emission
@@ -2354,7 +2354,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2.07
+      m_SerializableObject: 3.04
     m_Space: -1
   m_Property:
     name: _FresnelPower
@@ -2985,7 +2985,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+      m_SerializableObject: 1.86
     m_Space: -1
   m_Property:
     name: _Smoothness
@@ -3053,7 +3053,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: -0.33
+      m_SerializableObject: -0.94
     m_Space: -1
   m_Property:
     name: _FresnelOffset
@@ -3087,7 +3087,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.05
     m_Space: -1
   m_Property:
     name: _alpha
@@ -3121,7 +3121,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: 
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"05adb4f1ca08eb14fab84f5c44a22b68","type":3}}'
     m_Space: -1
   m_Property:
     name: _Mask
